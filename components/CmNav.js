@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import 'bootstrap/scss/bootstrap.scss';
+import '../scss/main.scss';
 import {
   Container,
   Collapse,
@@ -27,7 +28,7 @@ export default class CmNav extends React.Component {
   }
   render() {
     return (
-      <Navbar color="trasparent" light expand="md" className='cmnav'>
+      <Navbar color="trasparent" fixed="top" light expand="md" className='cmnav'>
         <Head>
           <title>{this.props.title}</title>
         </Head>
@@ -36,6 +37,9 @@ export default class CmNav extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href="/people">People</NavLink>
+              </NavItem>
               <NavItem>
                 <NavLink href="/about">About</NavLink>
               </NavItem>

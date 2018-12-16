@@ -12,7 +12,7 @@ export default class Blog extends Component {
   static async getInitialProps() {
     const res = await fetch('http://localhost:1337/posts')
     const posts = await res.json()
-    console.log(posts)
+  
     return { posts }
   }
 
@@ -24,7 +24,7 @@ export default class Blog extends Component {
 
   render() {
     return (
-      <Layout title='blog'>
+      <Layout title='blog' pageName='Blog'>
         <Container>
           {this.props.posts.map((post) => (
             <Row className='post-listing'>
@@ -36,8 +36,6 @@ export default class Blog extends Component {
             </Row>
           ))}
         </Container>
-        
-        <p>Blog</p>
       </Layout>
     )
   }
