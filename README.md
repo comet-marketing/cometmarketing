@@ -2,8 +2,18 @@
 ### Front End for the comet marketing website, written with [Next.js](https://nextjs.org/)
 
 To get started: 
+Make sure you have node.js and yarn updated and installed.
 ```git clone https://github.com/almadireddy/cometmarketing
 cd cometmarketing
-yarn```
+yarn
+npm run dev 
+```
+Site is now running at localhost:3000 
 
-Make sure you have node.js and yarn installed. 
+```
+git branch -branchName-
+git checkout -branchName-
+make changes
+git add .
+git commit -m 'your message here'
+git push 
