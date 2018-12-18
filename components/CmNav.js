@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import 'bootstrap/scss/bootstrap.scss';
-import '../scss/main.scss';
+
 import {
   Container,
   Collapse,
@@ -17,10 +16,38 @@ export default class CmNav extends React.Component {
     super(props);
 
     this.toggle = this.toggle.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
+    this.navbar = React.createRef();
     this.state = {
-      isOpen: false
+      isOpen: false,
+      bg: "nav-transparent" 
     };
   }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll() {
+    let supportPageOffset = window.pageXOffset !== undefined;
+    let isCSS1Compat = ((document.compatMode || '') === 'CSS1Compat');
+    let scroll = {
+      x: supportPageOffset ? window.pageXOffset : isCSS1Compat ? document.documentElement.scrollLeft : document.body.scrollLeft,
+      y: supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop
+    };
+
+    if (scroll.y > 50) {
+      this.navbar.current.className = 'nav-solid';
+    } else {
+      this.navbar.current.className = 'nav-transparent';
+    }
+    console.log(this.navbar.current.className);
+  }
+
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
@@ -28,31 +55,33 @@ export default class CmNav extends React.Component {
   }
   render() {
     return (
-      <Navbar color="trasparent" fixed="top" light expand="md" className='cmnav'>
-        <Head>
-          <title>{this.props.title}</title>
-        </Head>
-        <Container>
-          <NavbarBrand href="/index">Comet Marketing</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/people">People</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/about">About</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/blog">Blog</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="#">Join Us</NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Container>
-      </Navbar>
+      <div ref={this.navbar}>
+        <Navbar fixed="top" light expand="md" className='cmnav'>
+          <Head>
+            <title>{this.props.title}</title>
+          </Head>
+          <Container>
+            <NavbarBrand href="/index">Comet Marketing</NavbarBrand>
+            <NavbarToggler onClick={this.toggle} />
+            <Collapse isOpen={this.state.isOpen} navbar>
+              <Nav className="ml-auto" navbar>
+                <NavItem>
+                  <NavLink href="/people">People</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/about">About</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/blog">Blog</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="#">Join Us</NavLink>
+                </NavItem>
+              </Nav>
+            </Collapse>
+          </Container>
+        </Navbar>
+      </div>
     );
   }
 }

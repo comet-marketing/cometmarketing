@@ -41,7 +41,7 @@ export default class People extends Component {
           {this.props.people.map((row) => (
             <Row>
               {row.map((person) => (
-                <Col sm='3'>
+                <Col>
                   <img className='img-fluid' src='https://unsplash.it/400'></img>
                   <h2>{person.name}</h2>
                   <p className='lead'>{person.role}</p>
