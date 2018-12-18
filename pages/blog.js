@@ -25,15 +25,20 @@ export default class Blog extends Component {
   render() {
     return (
       <Layout title='blog' pageName='Blog'>
-        <Container>
+        <Container className='post-listings'>
           {this.props.posts.map((post) => (
-            <Row className='post-listing'>
-              <Col sm='8'>
-                <h2>{post.title}</h2>
-                <p>Updated at: {post.updatedAt}</p>
-                <ReactMarkdown source={post.body}></ReactMarkdown>
-              </Col>
-            </Row>
+            <>
+              <Row className='post-listing'>
+                <Col sm='8' className='post-listing-item'>
+                  <h2 className='display-4'>{post.title}</h2>
+                  <p className='post-listing-data'>Updated at: {post.updatedAt}</p>
+                  <div className='post-listing-preview'>
+                    <ReactMarkdown source={post.body.substring(0, 150) + '...'}></ReactMarkdown>
+                  </div>
+                </Col>
+              </Row>
+              <hr></hr>
+            </>
           ))}
         </Container>
       </Layout>

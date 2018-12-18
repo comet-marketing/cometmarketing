@@ -38,10 +38,10 @@ export default class People extends Component {
     return(
       <Layout title='People' pageName='Blah' intro='Comet Marketing members are awesome'>
         <Container>
-          {this.props.people.map((row) => (
-            <Row>
+          {this.props.people.map((row, i) => (
+            <Row key={i}>
               {row.map((person) => (
-                <Col>
+                <Col key={person.name}>
                   <img className='img-fluid' src='https://unsplash.it/400'></img>
                   <h2>{person.name}</h2>
                   <p className='lead'>{person.role}</p>

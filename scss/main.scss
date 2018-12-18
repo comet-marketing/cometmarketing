@@ -1,6 +1,19 @@
 @import 'vars';
 @import 'typography';
 
+.layout, #__next, body, html {
+  height: 100%;
+}
+.layout {
+  display: flex;
+  flex-direction: column;
+  
+  .layout-body {
+    flex: 1;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+}
 .cmnav {
   padding-top: 25px;
   padding-bottom: 25px;
@@ -9,8 +22,8 @@
 
 .nav-solid {
   > .navbar {
-    background-color: $color-primary;
-    box-shadow: 0 0 30px rgba(30, 30, 30, 0.1)
+    background-color: $color-background-gray;
+    box-shadow: 0 0 30px rgba(30, 30, 30, 0.1);
   }
 }
 
@@ -20,15 +33,13 @@
   }
 }
 
-
 .page-header {
   padding-top: 150px;
-  margin-bottom: 100px;
+  margin-bottom: 0;
 }
 
 .footer {
   padding: 50px;
-  margin-top: 100px;
   background-color: $color-background-light;
 
   hr {
@@ -37,5 +48,25 @@
     outline: none;
     border: none;
     background-color: coral;
+  }
+}
+
+.post-listings {
+  .post-listing-item {
+    > h2 {
+      margin-bottom: 10px;
+    }
+    .post-listing-data {
+      margin-bottom: 35px;
+      padding-left: 5px;
+    }
+  }
+  hr {
+    width: 100px;
+    height: 3px;
+    border: none;
+    outline: none;
+    background-color: $color-primary;
+    margin: 50px auto 50px 0;
   }
 }

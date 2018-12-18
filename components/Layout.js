@@ -8,11 +8,17 @@ import '../scss/main.scss';
 export default class Layout extends Component {
   render() {
     return(
-      <div>
-        <CmNav title={this.props.title}></CmNav>
-        <Header pageName={this.props.pageName} intro={this.props.intro}></Header>
-        {this.props.children}
-        <Footer></Footer>
+      <div className='layout'>
+        <div className='layout-header'>
+          <CmNav title={this.props.title}></CmNav>
+          <Header pageName={this.props.pageName} intro={this.props.intro}></Header>
+        </div>
+        <div className='layout-body'>
+          {this.props.children}
+        </div>
+        <div className='layout-footer'>
+          <Footer></Footer>
+        </div>
       </div>
     )
   }

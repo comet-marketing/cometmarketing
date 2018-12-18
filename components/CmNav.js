@@ -41,11 +41,14 @@ export default class CmNav extends React.Component {
     };
 
     if (scroll.y > 50) {
-      this.navbar.current.className = 'nav-solid';
+      this.setState({
+        bg: 'nav-solid'
+      })
     } else {
-      this.navbar.current.className = 'nav-transparent';
+      this.setState({
+        bg: 'nav-transparent'
+      })
     }
-    console.log(this.navbar.current.className);
   }
 
   toggle() {
@@ -55,7 +58,7 @@ export default class CmNav extends React.Component {
   }
   render() {
     return (
-      <div ref={this.navbar}>
+      <div ref={this.navbar} className={this.state.bg}>
         <Navbar fixed="top" light expand="md" className='cmnav'>
           <Head>
             <title>{this.props.title}</title>
