@@ -32,7 +32,7 @@ export default class Footer extends Component {
                   <NavLink href="/blog">Blog</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="#">Join Us</NavLink>
+                  <NavLink href="https://goo.gl/forms/vCYE7wFGCeralb9B3" target="_blank">Join Us</NavLink>
                 </NavItem>
               </Nav>
               <hr></hr>
