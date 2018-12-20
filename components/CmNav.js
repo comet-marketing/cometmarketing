@@ -81,9 +81,10 @@ export default class CmNav extends React.Component {
                   <ButtonDropdown isOpen={this.state.dropDownOpen} toggle={this.toggle}>
                     <DropdownToggle caret color="nav-transparent">About</DropdownToggle>
                     <DropdownMenu>
-                      <DropdownItem href="/about">About Us</DropdownItem>
                       <DropdownItem>Projects</DropdownItem>
-                      <DropdownItem></DropdownItem>
+                      <DropdownItem href="/about">Our Mission</DropdownItem>
+                      <DropdownItem href="/contact">Contact Us</DropdownItem>
+                      <DropdownItem>Join Us</DropdownItem>
                     </DropdownMenu>
                   </ButtonDropdown>
                 </NavItem>
