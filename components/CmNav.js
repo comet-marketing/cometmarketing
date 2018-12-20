@@ -9,7 +9,11 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink, } from 'reactstrap';
+  NavLink, 
+  ButtonDropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle, } from 'reactstrap';
 
 export default class CmNav extends React.Component {
   constructor(props) {
@@ -20,7 +24,8 @@ export default class CmNav extends React.Component {
     this.navbar = React.createRef();
     this.state = {
       isOpen: false,
-      bg: "nav-transparent" 
+      bg: "nav-transparent",
+      dropDownOpen: false
     };
   }
 
@@ -53,7 +58,8 @@ export default class CmNav extends React.Component {
 
   toggle() {
     this.setState({
-      isOpen: !this.state.isOpen
+      isOpen: !this.state.isOpen,
+      dropDownOpen: !this.state.dropDownOpen,
     });
   }
   render() {
@@ -72,7 +78,14 @@ export default class CmNav extends React.Component {
                   <NavLink href="/people">People</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/about">About</NavLink>
+                  <ButtonDropdown isOpen={this.state.dropDownOpen} toggle={this.toggle}>
+                    <DropdownToggle caret color="nav-transparent">About</DropdownToggle>
+                    <DropdownMenu>
+                      <DropdownItem href="/about">About Us</DropdownItem>
+                      <DropdownItem>Projects</DropdownItem>
+                      <DropdownItem></DropdownItem>
+                    </DropdownMenu>
+                  </ButtonDropdown>
                 </NavItem>
                 <NavItem>
                   <NavLink href="/blog">Blog</NavLink>
