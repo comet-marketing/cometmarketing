@@ -81,9 +81,10 @@ export default class CmNav extends React.Component {
                   <ButtonDropdown isOpen={this.state.dropDownOpen} toggle={this.toggle}>
                     <DropdownToggle caret color="nav-transparent">About</DropdownToggle>
                     <DropdownMenu>
-                      <DropdownItem href="/about">About Us</DropdownItem>
                       <DropdownItem>Projects</DropdownItem>
-                      <DropdownItem></DropdownItem>
+                      <DropdownItem href="/about">Our Mission</DropdownItem>
+                      <DropdownItem href="/contact">Contact Us</DropdownItem>
+                      <DropdownItem href="https://goo.gl/forms/vCYE7wFGCeralb9B3" target="_blank">Join Us</DropdownItem>
                     </DropdownMenu>
                   </ButtonDropdown>
                 </NavItem>
@@ -91,7 +92,7 @@ export default class CmNav extends React.Component {
                   <NavLink href="/blog">Blog</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="#">Join Us</NavLink>
+                  <NavLink href="https://goo.gl/forms/vCYE7wFGCeralb9B3" target="_blank">Join Us</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>
