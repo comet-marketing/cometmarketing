@@ -6,6 +6,7 @@ import {
   Row,
   Col
 } from 'reactstrap';
+import DynamicLink from "../components/DynamicLink";
 
 export default class People extends Component {
   static chunk(array, size) {
@@ -41,11 +42,13 @@ export default class People extends Component {
           {this.props.people.map((row, i) => (
             <Row key={i}>
               {row.map((person) => (
-                <Col key={person.name}>
-                  <img className='img-fluid' src='https://unsplash.it/400'></img>
-                  <h2>{person.name}</h2>
-                  <p className='lead'>{person.role}</p>
-                  <p>{person.bio.substring(0, 100) + '...'}</p>
+                <Col key={person.id}>
+                  <DynamicLink route='person' slug={person.slug}>
+                    <img className='img-fluid' src='https://unsplash.it/400'></img>
+                    <h2>{person.name}</h2>
+                    <p className='lead'>{person.role}</p>
+                    <p>{person.bio.substring(0, 100) + '...'}</p>
+                  </DynamicLink>
                 </Col>
               ))}
             </Row>

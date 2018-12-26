@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Layout from '../components/Layout';
+import DynamicLink from "../components/DynamicLink";
 import fetch from "node-fetch";
 import {
   Container,
@@ -26,14 +27,13 @@ export default class Blog extends Component {
       <Layout title='blog' pageName='Blog'>
         <Container className='post-listings'>
           {this.props.posts.map((post) => (
-            <>
-              <Row className='post-listing'>
-                <BlogPostPreview 
-                  title={post.title} 
-                  updatedAt={post.updatedAt} 
-                  body={post.body}></BlogPostPreview>
-              </Row>
-            </>
+            <Row className='post-listing' key={post.slug}>
+              <BlogPostPreview 
+                title={post.title} 
+                updatedAt={post.updatedAt} 
+                body={post.body}
+                slug={post.slug}></BlogPostPreview>
+            </Row>
           ))}
         </Container>
       </Layout>
