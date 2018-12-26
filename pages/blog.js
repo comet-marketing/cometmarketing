@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import Layout from '../components/Layout';
 import fetch from "node-fetch";
-import ReactMarkdown from 'react-markdown';
 import {
   Container,
-  Row,
-  Col
+  Row
 } from 'reactstrap';
+import BlogPostPreview from '../components/BlogPostPreview';
 
 export default class Blog extends Component {
   static async getInitialProps() {
@@ -29,15 +28,11 @@ export default class Blog extends Component {
           {this.props.posts.map((post) => (
             <>
               <Row className='post-listing'>
-                <Col sm='8' className='post-listing-item'>
-                  <h2 className='display-4'>{post.title}</h2>
-                  <p className='post-listing-data'>Updated at: {post.updatedAt}</p>
-                  <div className='post-listing-preview'>
-                    <ReactMarkdown source={post.body.substring(0, 150) + '...'}></ReactMarkdown>
-                  </div>
-                </Col>
+                <BlogPostPreview 
+                  title={post.title} 
+                  updatedAt={post.updatedAt} 
+                  body={post.body}></BlogPostPreview>
               </Row>
-              <hr></hr>
             </>
           ))}
         </Container>
