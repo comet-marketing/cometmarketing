@@ -15,7 +15,7 @@ class Post extends Component {
   }
   render() {
     return (
-      <Layout >
+      <Layout pageName={this.props.post.title} title={this.props.title}>
         <h1>{this.props.post.title}</h1>
         <ReactMarkdown source={this.props.post.body}></ReactMarkdown>
       </Layout>

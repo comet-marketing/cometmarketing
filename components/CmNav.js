@@ -10,7 +10,7 @@ import {
   Nav,
   NavItem,
   NavLink, 
-  ButtonDropdown,
+  UncontrolledDropdown,
   DropdownItem,
   DropdownMenu,
   DropdownToggle, } from 'reactstrap';
@@ -77,17 +77,17 @@ export default class CmNav extends React.Component {
                 <NavItem>
                   <NavLink href="/people">People</NavLink>
                 </NavItem>
-                <NavItem>
-                  <ButtonDropdown isOpen={this.state.dropDownOpen} toggle={this.toggle}>
-                    <DropdownToggle caret color="nav-transparent">About</DropdownToggle>
-                    <DropdownMenu>
-                      <DropdownItem>Projects</DropdownItem>
-                      <DropdownItem href="/about">Our Mission</DropdownItem>
-                      <DropdownItem href="/contact">Contact Us</DropdownItem>
-                      <DropdownItem href="https://goo.gl/forms/vCYE7wFGCeralb9B3" target="_blank">Join Us</DropdownItem>
-                    </DropdownMenu>
-                  </ButtonDropdown>
-                </NavItem>
+                <UncontrolledDropdown nav inNavbar>
+                  <DropdownToggle nav caret>
+                    About
+                  </DropdownToggle>
+                  <DropdownMenu>
+                    <DropdownItem>Projects</DropdownItem>
+                    <DropdownItem href="/about">Our Mission</DropdownItem>
+                    <DropdownItem href="/contact">Contact Us</DropdownItem>
+                    <DropdownItem href="https://goo.gl/forms/vCYE7wFGCeralb9B3" target="_blank">Join Us</DropdownItem>
+                  </DropdownMenu>
+                </UncontrolledDropdown>
                 <NavItem>
                   <NavLink href="/blog">Blog</NavLink>
                 </NavItem>
