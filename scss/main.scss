@@ -14,33 +14,64 @@
     margin-bottom: 100px;
   }
 }
+
+.cmnav-container {
+  // &::after {
+  //   content:'';
+  //   display: block;
+  //   position: relative;
+  //   bottom: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 4px;
+  //   background: linear-gradient(to right, lighten($color-theme-orange, 10), lighten($color-theme-green, 10))
+  // }
+}
+
 .cmnav {
   padding-top: 25px;
   padding-bottom: 25px;
   transition: all .2s ease;
-}
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  
+  .dropdown-menu {
+    background: $color-background-dark;
 
-.nav-solid {
-  > .navbar {
-    background-color: $color-background-gray;
-    box-shadow: 0 0 30px rgba(30, 30, 30, 0.1);
+    .dropdown-item {
+      transition: all .2s ease;
+
+      &:hover {
+        background: lighten($color-background-dark, 10);
+      }
+    }
   }
-}
-
-.nav-transparent {
-  > .navbar {
-    background-color: transparent;
+  .nav-item .nav-link, .navbar-brand, .dropdown-item {
+    transition: all .2s ease;
+    color: $color-text-light;
+    
+    &:focus {
+      color: $color-text-light;
+    }
+    &:hover {
+      color: darken($color-text-light, 10)
+    }
   }
 }
 
 .page-header {
-  padding-top: 150px;
+  padding-top: 250px;
+  margin-top: -90px;
   margin-bottom: 0;
+  background-image: url('/static/banner.jpg');
+  background-size: cover;
+  color: $color-text-light;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.3)
 }
 
 .footer {
   padding: 50px;
-  background-color: $color-background-light;
+  color: $color-text-light;
+  background-color: $color-background-dark;
 
   hr {
     width: 50px;
@@ -58,7 +89,7 @@
   .blog-post-preview {
     border-bottom: 3px solid $color-primary;
     padding: 35px 0;
-    
+
     > h2 {
       margin-bottom: 10px;
     }

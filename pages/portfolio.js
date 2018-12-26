@@ -4,7 +4,8 @@ import fetch from 'node-fetch';
 import DynamicLink from '../components/DynamicLink';
 import {
   Container, 
-  Row
+  Row,
+  Col
 } from 'reactstrap';
 
 export default class Portfolio extends Component {
@@ -17,15 +18,17 @@ export default class Portfolio extends Component {
 
   render() {
     return(
-      <Layout pageName='Projects' title='Projects'>
+      <Layout pageName='Portfolio' title='Portfolio'>
         <Container>
-          <Row>
             {this.props.projects.map((project) =>(
-              <DynamicLink displayRoute='portfolio' actualRoute='project' slug={project.slug} >
-                <h1>{project.title}</h1>
-              </DynamicLink>
+              <Row>
+                <Col>
+                  <DynamicLink displayRoute='portfolio' actualRoute='project' slug={project.slug} >
+                    <h1>{project.title}</h1>
+                  </DynamicLink>
+                </Col>
+              </Row>
             ))}
-          </Row>
         </Container>
       </Layout>
     )

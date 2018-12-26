@@ -20,40 +20,10 @@ export default class CmNav extends React.Component {
     super(props);
 
     this.toggle = this.toggle.bind(this);
-    this.handleScroll = this.handleScroll.bind(this);
-    this.navbar = React.createRef();
     this.state = {
       isOpen: false,
-      bg: "nav-transparent",
       dropDownOpen: false
     };
-  }
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-  }
-
-  handleScroll() {
-    let supportPageOffset = window.pageXOffset !== undefined;
-    let isCSS1Compat = ((document.compatMode || '') === 'CSS1Compat');
-    let scroll = {
-      x: supportPageOffset ? window.pageXOffset : isCSS1Compat ? document.documentElement.scrollLeft : document.body.scrollLeft,
-      y: supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop
-    };
-
-    if (scroll.y > 50) {
-      this.setState({
-        bg: 'nav-solid'
-      })
-    } else {
-      this.setState({
-        bg: 'nav-transparent'
-      })
-    }
   }
 
   toggle() {
@@ -64,8 +34,8 @@ export default class CmNav extends React.Component {
   }
   render() {
     return (
-      <div ref={this.navbar} className={this.state.bg}>
-        <Navbar fixed="top" light expand="md" className='cmnav'>
+      <div className='cmnav-container'>
+        <Navbar light expand="md" className='cmnav'>
           <Head>
             <title>{this.props.title}</title>
           </Head>
