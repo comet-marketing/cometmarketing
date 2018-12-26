@@ -43,7 +43,7 @@ export default class People extends Component {
             <Row key={i}>
               {row.map((person) => (
                 <Col key={person.id}>
-                  <DynamicLink route='person' slug={person.slug}>
+                  <DynamicLink displayRoute='people' actualRoute='person' slug={person.slug}>
                     <img className='img-fluid' src='https://unsplash.it/400'></img>
                     <h2>{person.name}</h2>
                     <p className='lead'>{person.role}</p>

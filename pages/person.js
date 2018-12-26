@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import { withRouter } from 'next/router'
 import Layout from '../components/Layout';
 import fetch from 'node-fetch';
+import {
+  Container,
+  Row,
+  Col
+} from 'reactstrap';
+
 
 class Person extends Component {
   static async getInitialProps({query}) {
@@ -14,9 +20,14 @@ class Person extends Component {
   }
   render() {
     return(
-      <Layout >
-        <h1>{this.props.person.name}</h1>
-        <p>{this.props.person.bio}</p>
+      <Layout pageName={this.props.person.name} title={this.props.person.name}>
+        <Container>
+          <Row>
+            <Col sm="8">
+              <p>{this.props.person.bio}</p>
+            </Col>
+          </Row>
+        </Container>
       </Layout>
     )
   }

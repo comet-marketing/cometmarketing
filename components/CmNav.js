@@ -82,12 +82,14 @@ export default class CmNav extends React.Component {
                     About
                   </DropdownToggle>
                   <DropdownMenu>
-                    <DropdownItem>Projects</DropdownItem>
                     <DropdownItem href="/about">Our Mission</DropdownItem>
                     <DropdownItem href="/contact">Contact Us</DropdownItem>
                     <DropdownItem href="https://goo.gl/forms/vCYE7wFGCeralb9B3" target="_blank">Join Us</DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>
+                <NavItem>
+                  <NavLink href="/portfolio">Portfolio</NavLink>
+                </NavItem>
                 <NavItem>
                   <NavLink href="/blog">Blog</NavLink>
                 </NavItem>

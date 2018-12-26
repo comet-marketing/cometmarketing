@@ -3,6 +3,12 @@ import { withRouter } from 'next/router'
 import Layout from '../components/Layout';
 import fetch from 'node-fetch';
 import ReactMarkdown from 'react-markdown';
+import {
+  Container,
+  Row,
+  Col
+} from 'reactstrap';
+
 
 class Post extends Component {
   static async getInitialProps({ query }) {
@@ -16,8 +22,18 @@ class Post extends Component {
   render() {
     return (
       <Layout pageName={this.props.post.title} title={this.props.title}>
-        <h1>{this.props.post.title}</h1>
-        <ReactMarkdown source={this.props.post.body}></ReactMarkdown>
+        <Container>
+          <Row>
+            <Col>
+              <h1>{this.props.post.title}</h1>
+            </Col>
+          </Row>
+          <Row className='justify-center'>
+            <Col>
+              <ReactMarkdown source={this.props.post.body}></ReactMarkdown>
+            </Col>
+          </Row>
+        </Container>
       </Layout>
     )
   }
