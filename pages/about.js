@@ -1,4 +1,3 @@
-import CmNav from "../components/CmNav";
 import Layout from "../components/Layout";
 import { Container } from 'reactstrap';
 

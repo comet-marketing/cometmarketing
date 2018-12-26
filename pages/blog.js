@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Layout from '../components/Layout';
+import DynamicLink from "../components/DynamicLink";
 import fetch from "node-fetch";
-import ReactMarkdown from 'react-markdown';
 import {
   Container,
-  Row,
-  Col
+  Row
 } from 'reactstrap';
+import BlogPostPreview from '../components/BlogPostPreview';
 
 export default class Blog extends Component {
   static async getInitialProps() {
@@ -27,18 +27,13 @@ export default class Blog extends Component {
       <Layout title='blog' pageName='Blog'>
         <Container className='post-listings'>
           {this.props.posts.map((post) => (
-            <>
-              <Row className='post-listing'>
-                <Col sm='8' className='post-listing-item'>
-                  <h2 className='display-4'>{post.title}</h2>
-                  <p className='post-listing-data'>Updated at: {post.updatedAt}</p>
-                  <div className='post-listing-preview'>
-                    <ReactMarkdown source={post.body.substring(0, 150) + '...'}></ReactMarkdown>
-                  </div>
-                </Col>
-              </Row>
-              <hr></hr>
-            </>
+            <Row className='post-listing' key={post.slug}>
+              <BlogPostPreview 
+                title={post.title} 
+                updatedAt={post.updatedAt} 
+                body={post.body}
+                slug={post.slug}></BlogPostPreview>
+            </Row>
           ))}
         </Container>
       </Layout>

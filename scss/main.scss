@@ -52,7 +52,13 @@
 }
 
 .post-listings {
-  .post-listing-item {
+  .post-listing {
+    margin-bottom: 50px;
+  }
+  .blog-post-preview {
+    border-bottom: 3px solid $color-primary;
+    padding: 35px 0;
+    
     > h2 {
       margin-bottom: 10px;
     }
