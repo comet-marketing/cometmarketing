@@ -9,23 +9,23 @@ app.prepare()
   .then(() => {
     const server = express()
 
-    server.get('/person/:slug', (req, res) => {
+    server.get('/people/:slug', (req, res) => {
       const personPage = '/person'
       const queryParams = { slug: req.params.slug }
       app.render(req, res, personPage, queryParams)
     })
 
-    server.get('/posts/:slug', (req, res) => {
+    server.get('/blog/:slug', (req, res) => {
       const postPage = '/post'
       const queryParams = { slug: req.params.slug }
       app.render(req, res, postPage, queryParams)
     })
 
-    // server.get('/projects/:slug', (req, res) => {
-    //   const actualPage = '/person'
-    //   const queryParams = { slug: req.params.slug }
-    //   app.render(req, res, actualPage, queryParams)
-    // })
+    server.get('/portfolio/:slug', (req, res) => {
+      const actualPage = '/project'
+      const queryParams = { slug: req.params.slug }
+      app.render(req, res, actualPage, queryParams)
+    })
 
     server.get('*', (req, res) => {
       return handle(req, res)

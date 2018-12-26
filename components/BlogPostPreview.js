@@ -9,7 +9,7 @@ export default class BlogPostPreview extends Component {
   render() {
     return(
       <Col sm='8' className='blog-post-preview'>
-        <DynamicLink slug={this.props.slug} route='posts'>
+        <DynamicLink slug={this.props.slug} actualRoute='post' displayRoute='blog'>
           <h2 className='display-4'>{this.props.title}</h2>
         </DynamicLink>
         <p className='post-listing-data'>Updated at: {this.props.updatedAt}</p>
