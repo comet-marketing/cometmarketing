@@ -1,13 +1,20 @@
 import Layout from "../components/Layout";
 import { Component } from 'react';
-import { Container } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
+import ReactPlayer from 'react-player';
 
 export default class Index extends Component {
   render() {
     return (
-      <Layout title="Home" pageName='Comet Marketing'>
+      <Layout title="Home" pageName='Comet Marketing' intro='Welcome to Comet Marketing'>
         <Container>
-          <p>Welcome to Comet Marketing</p>
+          <Row>
+            <Col></Col>
+            <Col xs='auto'>
+              <ReactPlayer className='video' width='624px' url='https://www.youtube.com/watch?v=qLmomGuId6Y' playing />
+            </Col>
+            <Col></Col>
+          </Row>
         </Container>
       </Layout>
     )

@@ -37,7 +37,7 @@ export default class People extends Component {
 
   render() {
     return(
-      <Layout title='People' pageName='People' intro='Comet Marketing members are awesome' banner='/static/Group_pic.jpg'>
+      <Layout title='People' pageName='People' intro='This Is Us' banner='/static/Group_pic.jpg'>
         <Container>
           {this.props.people.map((row, i) => (
             <Row key={i}>
@@ -45,10 +45,10 @@ export default class People extends Component {
                 <Col key={person.id}>
                   <DynamicLink displayRoute='people' actualRoute='person' slug={person.slug}>
                     <img className='img-fluid' src='https://unsplash.it/400'></img>
-                    <h2>{person.name}</h2>
-                    <p className='lead'>{person.role}</p>
-                    <p>{person.bio.substring(0, 100) + '...'}</p>
+                    <h2 className='heading'>{person.name}</h2>
                   </DynamicLink>
+                    <p className='lead'>{person.role}</p>
+                    <p className='content'>{person.bio.substring(0, 100) + '...'}</p>
                 </Col>
               ))}
             </Row>

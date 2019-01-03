@@ -59,7 +59,7 @@
 }
 
 .page-header {
-  padding-top: 250px;
+  padding-top: 200px;
   margin-top: -90px;
   margin-bottom: 0;
   background-image: url('/static/banner.jpg');
@@ -106,4 +106,14 @@
     background-color: $color-primary;
     margin: 50px auto 50px 0;
   }
+}
+
+.heading, .lead, .content {
+  color: $color-text-dark;
+}
+
+.video {
+  padding: 10px;
+  background-size: cover;
+  align-content: center;
 }
