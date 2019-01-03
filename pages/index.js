@@ -6,7 +6,7 @@ import ReactPlayer from 'react-player';
 export default class Index extends Component {
   render() {
     return (
-      <Layout title="Home" pageName='Comet Marketing' intro='Welcome to Comet Marketing'>
+      <Layout title="Home" pageName='...' intro='...' banner='/static/homeBanner.jpg'>
         <Container>
           <Row>
             <Col></Col>
