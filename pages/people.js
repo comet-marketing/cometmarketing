@@ -23,9 +23,9 @@ export default class People extends Component {
   }
 
   static async getInitialProps() {
-    const res = await fetch('http://localhost:1337/members')
+    const res = await fetch('https://utdcometmarketing-api.herokuapp.com/members')
     let people = await res.json()
-    people = this.chunk(people, 4)
+    people = this.chunk(people, 3)
     return { people }
   }
 
@@ -42,13 +42,15 @@ export default class People extends Component {
           {this.props.people.map((row, i) => (
             <Row key={i}>
               {row.map((person) => (
-                <Col key={person.id}>
+                <Col className='person-listing' sm="4" key={person.id}>
                   <DynamicLink displayRoute='people' actualRoute='person' slug={person.slug}>
-                    <img className='img-fluid' src='https://unsplash.it/400'></img>
+                    {!!person.profilepicture &&
+                      <img className='img-fluid' src={person.profilepicture.url}></img>
+                    }
                     <h2 className='heading'>{person.name}</h2>
-                  </DynamicLink>
                     <p className='lead'>{person.role}</p>
                     <p className='content'>{person.bio.substring(0, 100) + '...'}</p>
+                  </DynamicLink>
                 </Col>
               ))}
             </Row>
