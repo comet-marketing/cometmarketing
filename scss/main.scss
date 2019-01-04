@@ -59,7 +59,7 @@
 }
 
 .page-header {
-  padding-top: 200px;
+  padding-top: 250px;
   margin-top: -90px;
   margin-bottom: 0;
   background-image: url('/static/banner.jpg');
@@ -112,8 +112,19 @@
   color: $color-text-dark;
 }
 
-.video {
-  padding: 10px;
+.parallax-div {
+  position: relative;
+  min-width: 100%;
+  right: 0;
+  width: auto;
+  height: auto;
   background-size: cover;
-  align-content: center;
+}
+
+.player-wrapper {
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  height: 100vh;
+  box-sizing: border-box;
 }
