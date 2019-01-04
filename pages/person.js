@@ -11,7 +11,7 @@ import {
 
 class Person extends Component {
   static async getInitialProps({query}) {
-    const res = await fetch(`http://localhost:1337/members/${query.slug}`)
+    const res = await fetch(`https://utdcometmarketing-api.herokuapp.com/members/${query.slug}`)
     const data = await res.json()
 
     return {
@@ -20,12 +20,18 @@ class Person extends Component {
   }
   render() {
     return(
-      <Layout pageName={this.props.person.name} title={this.props.person.name}>
-        <Container>
+      <Layout pageName={this.props.person.name} title={this.props.person.name} intro={this.props.person.role}>
+        <Container className='person'>
           <Row>
-            <Col sm="8">
-              <p>{this.props.person.bio}</p>
+            <Col>
+              <img className='img-fluid profile' src={this.props.person.profilepicture.url}></img>
             </Col>
+            <Col sm="7">
+              <p className='lead'>{this.props.person.bio}</p>
+            </Col>
+          </Row>
+          <Row>
+            
           </Row>
         </Container>
       </Layout>

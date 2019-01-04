@@ -8,12 +8,10 @@ export default class Index extends Component {
     return (
       <Layout title="Home" pageName='Comet Marketing' intro='Welcome to Comet Marketing'>
         <Container>
-          <Row>
-            <Col></Col>
+          <Row className='justify-content-center'>
             <Col xs='auto'>
-              <ReactPlayer className='video' width='624px' url='https://www.youtube.com/watch?v=qLmomGuId6Y' playing />
+              <ReactPlayer className='video' width='624px' url='https://www.youtube.com/watch?v=qLmomGuId6Y' />
             </Col>
-            <Col></Col>
           </Row>
         </Container>
       </Layout>

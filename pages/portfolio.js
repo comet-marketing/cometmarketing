@@ -10,7 +10,7 @@ import {
 
 export default class Portfolio extends Component {
   static async getInitialProps() {
-    const res = await fetch('http://localhost:1337/projects')
+    const res = await fetch('https://utdcometmarketing-api.herokuapp.com/projects')
     const projects = await res.json()
 
     return { projects }
@@ -20,7 +20,7 @@ export default class Portfolio extends Component {
     return(
       <Layout pageName='Portfolio' title='Portfolio'>
         <Container>
-            {this.props.projects.map((project) =>(
+            {this.props.projects.length > 0 && this.props.projects.map((project) =>(
               <Row>
                 <Col>
                   <DynamicLink displayRoute='portfolio' actualRoute='project' slug={project.slug} >
