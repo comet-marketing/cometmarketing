@@ -6,7 +6,7 @@ Make sure you have node.js and yarn updated and installed.
 ```git clone https://github.com/almadireddy/cometmarketing
 cd cometmarketing
 yarn
-npm run dev 
+node server.js 
 ```
 Site is now running at localhost:3000 
 
