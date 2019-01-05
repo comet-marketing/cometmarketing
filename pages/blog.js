@@ -10,7 +10,7 @@ import BlogPostPreview from '../components/BlogPostPreview';
 
 export default class Blog extends Component {
   static async getInitialProps() {
-    const res = await fetch('http://localhost:1337/posts')
+    const res = await fetch('https://utdcometmarketing-api.herokuapp.com/posts')
     const posts = await res.json()
   
     return { posts }
@@ -20,7 +20,7 @@ export default class Blog extends Component {
     return (
       <Layout title='blog' pageName='Blog'>
         <Container className='post-listings'>
-          {this.props.posts.map((post) => (
+          {this.props.posts.length > 0 && this.props.posts.map((post) => (
             <Row className='post-listing' key={post.slug}>
               <BlogPostPreview 
                 title={post.title} 

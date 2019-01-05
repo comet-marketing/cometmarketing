@@ -5,12 +5,10 @@ import {
 } from 'reactstrap';
 
 export default class Header extends Component {
-
-  
   render() {
-  var string = ''
-  this.props.banner ? string = 'url(' + this.props.banner + ')' : 'url(static/banner.jpg)'
-  var divStyle = {backgroundImage: string}
+    var string = ''
+    this.props.banner ? string = 'url(' + this.props.banner + ')' : 'url(static/banner.jpg)'
+    var divStyle = {backgroundImage: string}
     return (
       <Jumbotron className='page-header' style={divStyle} >
         <Container>

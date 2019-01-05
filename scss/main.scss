@@ -15,19 +15,6 @@
   }
 }
 
-.cmnav-container {
-  // &::after {
-  //   content:'';
-  //   display: block;
-  //   position: relative;
-  //   bottom: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 4px;
-  //   background: linear-gradient(to right, lighten($color-theme-orange, 10), lighten($color-theme-green, 10))
-  // }
-}
-
 .cmnav {
   padding-top: 25px;
   padding-bottom: 25px;
@@ -59,13 +46,15 @@
 }
 
 .page-header {
-  padding-top: 200px;
+  padding-top: 250px;
   margin-top: -90px;
   margin-bottom: 0;
   background-image: url('/static/banner.jpg');
   background-size: cover;
   color: $color-text-light;
-  text-shadow: 0 0 15px rgba(0, 0, 0, 0.3)
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 30px rgba(50, 50, 50, 0.3);
+  border-radius: 0;
 }
 
 .footer {
@@ -112,8 +101,53 @@
   color: $color-text-dark;
 }
 
-.video {
-  padding: 10px;
+.parallax-div {
+  position: relative;
+  min-width: 100%;
+  right: 0;
+  width: auto;
+  height: auto;
   background-size: cover;
+}
+
+.player-wrapper {
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  height: 100vh;
+  box-sizing: border-box;
   align-content: center;
+}
+
+.person-listing {
+  margin-bottom: 35px;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  
+  a {
+    transition: all .2s ease;
+    padding: 25px;
+    display: block;
+    background-color: $color-background-gray;
+    &:hover {
+      text-decoration: none;
+      background-color: lighten($color-background-light, 10);
+    }
+  }
+
+  img {
+    margin-bottom: 15px;
+  }
+
+  .content {
+    flex: 1
+  }
+}
+
+.person {
+  .profile {
+    border-radius: 5px;
+    box-shadow: 5px 5px 35px rgba(80, 80, 80, 0.25)
+  }
 }
