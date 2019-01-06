@@ -23,7 +23,7 @@ export default class People extends Component {
   }
 
   static async getInitialProps() {
-    const res = await fetch('https://utdcometmarketing-api.herokuapp.com/members')
+    const res = await fetch('https://utdcometmarketing-api.herokuapp.com/members?_sort=name')
     let people = await res.json()
     people = this.chunk(people, 3)
     return { people }

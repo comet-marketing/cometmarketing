@@ -101,22 +101,47 @@
   color: $color-text-dark;
 }
 
-.parallax-div {
+.home {
   position: relative;
   min-width: 100%;
-  right: 0;
-  width: auto;
-  height: auto;
+  height: 100%;
   background-size: cover;
-}
+  margin-top: 0;
 
-.player-wrapper {
-  margin: 0;
-  padding: 0;
-  border-width: 0;
-  height: 100vh;
-  box-sizing: border-box;
-  align-content: center;
+  .player {
+    //margin: 0;
+    //padding: 0;
+    //box-sizing: border-box;
+  }
+
+  .child1, .child2 {
+    padding: 15px;
+    min-width: 100%;
+    align-content: center;
+
+    > h2 {
+      margin: 10px;
+    }
+  }
+
+  .child1 {
+    background-color: $color-background-gray;
+  }
+
+  .child2 {
+    background-color: $color-background-light;
+
+    .project-card {
+      background-color: $color-background-gray;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-background-dark;
+      }
+    }
+  }
+
+
 }
 
 .person-listing {
