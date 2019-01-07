@@ -104,47 +104,37 @@
 .home {
   position: relative;
   min-width: 100%;
-  height: 100%;
   background-size: cover;
   margin-top: 0;
 
-  .player {
+  //.player {
     //margin: 0;
     //padding: 0;
     //box-sizing: border-box;
-  }
+  //}
 
   .child1, .child2 {
     padding: 15px;
-    min-width: 100%;
     align-content: center;
-
-    > h2 {
-      margin: 10px;
-    }
+    min-width: 100%;
+    height: auto;
   }
 
   .child1 {
-    background-color: $color-background-gray;
+    background-color: white;
   }
 
   .child2 {
-    background-color: $color-background-light;
-
-    .project-card {
-      background-color: $color-background-gray;
-      cursor: pointer;
-
-      &:hover {
-        background-color: $color-background-dark;
-      }
+    background-color: $color-background-dark;
+    .title {
+      color: white;
+      font-size: 3em;
+      text-align: center;
     }
   }
-
-
 }
 
-.person-listing {
+.person-listing, .project-listing {
   margin-bottom: 35px;
   align-self: stretch;
   display: flex;
@@ -167,6 +157,14 @@
 
   .content {
     flex: 1
+  }
+}
+
+.project-listing {
+  a{
+    &:hover {
+      background-color: lighten($color-theme-green, 50);
+    }
   }
 }
 

@@ -1,9 +1,8 @@
 import Layout from "../components/Layout";
+import DynamicLink from "../components/DynamicLink";
 import fetch from "node-fetch";
 import { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import { Card, CardImg, CardText, CardBody, CardDeck,
-  CardTitle, CardSubtitle, Button } from 'reactstrap'
 import ReactPlayer from 'react-player';
 
 export default class Index extends Component {
@@ -22,41 +21,42 @@ export default class Index extends Component {
   }
 
   render() {
+    const divStyle={
+      marginBottom: 0
+    }
     return (    
       <div class='home'>
-        <Layout title="Home" pageName='Comet Marketing' intro='Here to help you, market you.'>
+        <Layout title='Home' pageName='Comet Marketing' intro='Here to help you, market you.'>
+        <div class='child1'>
+          <div class='d-flex flex-row justify-content-center'>
+            <ReactPlayer class='player' 
+              url='https://www.youtube.com/watch?v=qLmomGuId6Y' 
+              playing 
+              muted
+              controls/>
+          </div>
+        </div>
+        <div class='child2'>
           <Container>
-            <div class='d-flex flex-row justify-content-center'>
-              <div class='child1'>
-              <ReactPlayer class='player' 
-                url='https://www.youtube.com/watch?v=qLmomGuId6Y' 
-                playing 
-                muted/>
-              </div>
-            </div>
-            <div class='d-flex flex-row justify-content-center'>
-              <div class='child2'>
-                <Row>
-                <h2>Recent Projects</h2>
-                 <CardDeck class='project-card'> 
-                 {this.props.projects.reverse().map((project) => (
-                        <Col sm='4'>
-                          <Card>
-                            <CardImg top src={project.pictures[0].url} alt="Card image cap" />
-                            <CardBody>
-                              <CardTitle>{project.title}</CardTitle>
-                              <CardSubtitle>{project.partners}</CardSubtitle>
-                              <CardText>{project.description.substring(0,100) + '...'}</CardText>
-                              <Button>View More</Button>
-                            </CardBody>
-                          </Card>
-                      </Col>
-                  ))}
-                  </CardDeck>
-                </Row>
-              </div>
-            </div>
+              <div class='title'>Recent Projects</div>
+            <Row>
+              {this.props.projects.reverse().map((project) => (
+                  <Col className='project-listing' sm="4" key={project.id}>
+                      <DynamicLink displayRoute='portfolio' actualRoute='project' slug={project.slug}>
+                      {!!project.pictures[0] &&
+                        <img className='img-fluid' src={project.pictures[0].url}></img>
+                      }
+                      <h2 className='heading'>{project.title}</h2>
+                      <p className='lead'>{project.partners}</p>
+                      <p className='content'>{project.description.substring(0, 100) + '...'}</p>
+                      </DynamicLink>
+                 </Col>
+                ))}
+            </Row>
           </Container>
+        </div>
+        <div class='child3'>
+        </div>
         </Layout>
       </div>
     )
