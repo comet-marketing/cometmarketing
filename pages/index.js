@@ -10,7 +10,7 @@ export default class Index extends Component {
   static async getInitialProps() {
     const res = await fetch('https://utdcometmarketing-api.herokuapp.com/projects?featured=true&_sort=createdAt')
     let projects = await res.json()
-    projects = projects.slice(0,2)
+    projects = projects.slice(0,3)
     return { projects }
   }
 
@@ -41,7 +41,7 @@ export default class Index extends Component {
               <div class='title'>Recent Projects</div>
             <Row>
               {this.props.projects.reverse().map((project) => (
-                  <Col className='project-listing' sm="4" key={project.id}>
+                  <Col className='project-listing' sm="3" key={project.id}>
                       <DynamicLink displayRoute='portfolio' actualRoute='project' slug={project.slug}>
                       {!!project.pictures[0] &&
                         <img className='img-fluid' src={project.pictures[0].url}></img>
