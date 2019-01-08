@@ -55,14 +55,18 @@ export default class Index extends Component {
             </Row>
           </Container>
         </div>
-        <div class='child3'>
-          <a href='/people'>
-            <div class='team-text'>
-              <Container>
-                <div class='d-flex flex-row justify-content-end'> Meet Our Team</div>
-              </Container>
-            </div>
-          </a>
+        <a href='/people'>
+          <div class='child3'>
+            
+              <div class='team-text'>
+                <Container>
+                  <div class='d-flex flex-row justify-content-end'> Meet Our Team</div>
+                </Container>
+              </div>
+          </div>
+        </a>
+        <div class='child4'>
+                
         </div>
         </Layout>
       </div>

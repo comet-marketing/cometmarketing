@@ -37,7 +37,7 @@ export default class People extends Component {
 
   render() {
     return(
-      <Layout title='People' pageName='People' intro='This Is Us' banner='/static/Group_pic.jpg'>
+      <Layout title='People' pageName='People' intro='This Is Us' banner='/static/Group_pic2.jpg'>
         <Container>
           {this.props.people.map((row, i) => (
             <Row key={i}>
