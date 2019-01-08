@@ -113,7 +113,7 @@
     //box-sizing: border-box;
   //}
 
-  .child1, .child2 {
+  .child1, .child2, .child3 {
     padding: 15px;
     align-content: center;
     min-width: 100%;
@@ -132,7 +132,63 @@
       text-align: center;
     }
   }
+
+  .child3 {
+    background-image: url('/static/group-home.jpg');
+    background-color: gray;
+    background-blend-mode: screen;
+    background-size: cover;
+    padding-top: 250px;
+    padding-bottom: 25px;
+    position: relative;
+    //height: 75vh;
+    //min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+
+
+    &:hover {
+      background-color: black;
+      background-image: url('/static/group-home.jpg');
+      background-blend-mode: screen;
+      .team-text {
+        color: $color-text-light
+      }
+      cursor: pointer;
+    }
+    
+    > a {
+      text-decoration: none;
+    }
+
+    > video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: 0;
+      -ms-transform: translateX(-50%) translateY(-50%);
+      -moz-transform: translateX(-50%) translateY(-50%);
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+    }
+    .team-text{
+      color: $color-text-dark;
+      font-family: $lobster-display-font;
+      font-size: 64px;
+      text-decoration: none;
+      z-index: 1;
+    }
+  }
 }
+
+//<video playsinline="playsinline" loop="loop" muted="muted" autoplay="autoplay">
+  //              <source src="video/group_vid_crop_optimized.mp4" type="video/mp4"></source>
+  //              Video is not playing
+  //            </video>
 
 .person-listing, .project-listing {
   margin-bottom: 35px;
@@ -160,7 +216,7 @@
   }
 }
 
-.project-listing {
+.project-listing {  
   a{
     &:hover {
       background-color: lighten($color-theme-green, 50);
