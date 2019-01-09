@@ -23,7 +23,7 @@ export default class People extends Component {
   }
 
   static async getInitialProps() {
-    const res = await fetch('https://utdcometmarketing-api.herokuapp.com/members')
+    const res = await fetch('https://utdcometmarketing-api.herokuapp.com/members?_sort=name')
     let people = await res.json()
     people = this.chunk(people, 3)
     return { people }
@@ -37,7 +37,7 @@ export default class People extends Component {
 
   render() {
     return(
-      <Layout title='People' pageName='People' intro='This Is Us' banner='/static/Group_pic.jpg'>
+      <Layout title='People' pageName='People' intro='This Is Us' banner='/static/Group_pic2.jpg'>
         <Container>
           {this.props.people.map((row, i) => (
             <Row key={i}>

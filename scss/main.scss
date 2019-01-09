@@ -101,25 +101,107 @@
   color: $color-text-dark;
 }
 
-.parallax-div {
+.home {
   position: relative;
   min-width: 100%;
-  right: 0;
-  width: auto;
-  height: auto;
   background-size: cover;
+  margin-top: 0;
+
+  //.player {
+    //margin: 0;
+    //padding: 0;
+    //box-sizing: border-box;
+  //}
+
+  a {
+    text-decoration: none;
+  }
+
+  .child1, .child2, .child3, .child4 {
+    padding: 15px;
+    align-content: center;
+    min-width: 100%;
+    height: auto;
+  }
+
+  .title {
+    font-family: $lobster-display-font;
+    font-size: 48px;
+  }
+
+  .child1 {
+    background-color: white;
+  }
+
+  .child2 {
+    background-color: $color-background-dark;
+    .title {
+      color: white;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+  .child3 {
+    transition: all .1s ease;
+    background-image: url('/static/group-home.jpg');
+    background-color: gray;
+    background-blend-mode: screen;
+    background-size: cover;
+    padding-top: 250px;
+    padding-bottom: 25px;
+    position: relative;
+    //height: 75vh;
+    //min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+    text-decoration: none;
+
+    &:hover {
+      background-image: url('/static/group-home2.jpg');
+      background-color: black;
+      background-blend-mode: screen;
+      .title {
+        color: $color-text-light;
+      }
+    }
+
+    /*> video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: 0;
+      -ms-transform: translateX(-50%) translateY(-50%);
+      -moz-transform: translateX(-50%) translateY(-50%);
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+    }*/
+
+    .title{
+      color: $color-text-dark;
+      font-family: $lobster-display-font;
+      text-decoration: none;
+      z-index: 1;
+    }
+  }
+  .child4 {
+    .title {
+      padding: 15px;
+    }
+  }
+  .facebook-embed {
+    border: none;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
 }
 
-.player-wrapper {
-  margin: 0;
-  padding: 0;
-  border-width: 0;
-  height: 100vh;
-  box-sizing: border-box;
-  align-content: center;
-}
-
-.person-listing {
+.person-listing, .project-listing {
   margin-bottom: 35px;
   align-self: stretch;
   display: flex;
@@ -142,6 +224,14 @@
 
   .content {
     flex: 1
+  }
+}
+
+.project-listing {  
+  a{
+    &:hover {
+      background-color: lighten($color-theme-green, 50);
+    }
   }
 }
 
