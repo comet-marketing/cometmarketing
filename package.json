@@ -13,6 +13,7 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-facebook": "^6.0.15",
+    "react-instagram-embed": "^1.4.1",
     "react-markdown": "^4.0.4",
     "react-player": "^1.8.0",
     "reactstrap": "^6.5.0"

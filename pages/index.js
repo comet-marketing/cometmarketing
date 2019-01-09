@@ -4,6 +4,8 @@ import fetch from "node-fetch";
 import { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import ReactPlayer from 'react-player';
+import InstagramEmbed from 'react-instagram-embed'
+
 
 export default class Index extends Component {
 
@@ -21,9 +23,6 @@ export default class Index extends Component {
   }
 
   render() {
-    const divStyle={
-      marginBottom: 0
-    }
     return (    
       <div class='home'>
         <Layout title='Home' pageName='Comet Marketing' intro='Here to help you, market you.'>
@@ -33,12 +32,15 @@ export default class Index extends Component {
               url='https://www.youtube.com/watch?v=qLmomGuId6Y' 
               playing 
               muted
-              controls/>
+              controls
+              loop/>
           </div>
         </div>
         <div class='child2'>
           <Container>
-              <div class='title'>Recent Projects</div>
+              <a href='/portfolio'>
+                <div class='title'>Check Out Our Latest Projects</div>
+              </a>
             <Row>
               {this.props.projects.reverse().map((project) => (
                   <Col className='project-listing' sm="3" key={project.id}>
@@ -57,8 +59,7 @@ export default class Index extends Component {
         </div>
         <a href='/people'>
           <div class='child3'>
-            
-              <div class='team-text'>
+              <div class='title'>
                 <Container>
                   <div class='d-flex flex-row justify-content-end'> Meet Our Team</div>
                 </Container>
@@ -66,7 +67,26 @@ export default class Index extends Component {
           </div>
         </a>
         <div class='child4'>
-                
+          <Container>
+            <Row><div class='title'>Follow Us On Social Media</div></Row>
+            <Row class='d-flex flex-row'>
+              <Col sm='1'></Col>
+              <Col sm='4'class='insta-embed'>
+                <InstagramEmbed 
+                  url='http://instagr.am/p/BrItl_Wgf1v/'
+                  />
+              </Col>
+              <Col sm='6'>
+                <iframe class='facebook-embed'
+                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Futdcometmarketing&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
+                scrolling="no"
+                frameborder="0" 
+                allowTransparency="true" 
+                allow="encrypted-media"
+                height="100%"/>
+              </Col>
+            </Row>        
+          </Container>
         </div>
         </Layout>
       </div>

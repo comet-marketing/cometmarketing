@@ -113,11 +113,20 @@
     //box-sizing: border-box;
   //}
 
-  .child1, .child2, .child3 {
+  a {
+    text-decoration: none;
+  }
+
+  .child1, .child2, .child3, .child4 {
     padding: 15px;
     align-content: center;
     min-width: 100%;
     height: auto;
+  }
+
+  .title {
+    font-family: $lobster-display-font;
+    font-size: 48px;
   }
 
   .child1 {
@@ -128,59 +137,68 @@
     background-color: $color-background-dark;
     .title {
       color: white;
-      font-size: 3em;
       text-align: center;
-      font-family: $lobster-display-font;
       margin-bottom: 10px;
     }
   }
-    .child3 {
-      transition: all .1s ease;
-      background-image: url('/static/group-home.jpg');
-      background-color: gray;
+  .child3 {
+    transition: all .1s ease;
+    background-image: url('/static/group-home.jpg');
+    background-color: gray;
+    background-blend-mode: screen;
+    background-size: cover;
+    padding-top: 250px;
+    padding-bottom: 25px;
+    position: relative;
+    //height: 75vh;
+    //min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+    text-decoration: none;
+
+    &:hover {
+      background-image: url('/static/group-home2.jpg');
+      background-color: black;
       background-blend-mode: screen;
-      background-size: cover;
-      padding-top: 250px;
-      padding-bottom: 25px;
-      position: relative;
-      //height: 75vh;
-      //min-height: 25rem;
-      width: 100%;
-      overflow: hidden;
-      text-decoration: none;
-
-      &:hover {
-        background-image: url('/static/group-home2.jpg');
-        background-color: black;
-        background-blend-mode: screen;
-        .team-text {
-          color: $color-text-light;
-        }
-      }
-
-      /*> video {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        z-index: 0;
-        -ms-transform: translateX(-50%) translateY(-50%);
-        -moz-transform: translateX(-50%) translateY(-50%);
-        -webkit-transform: translateX(-50%) translateY(-50%);
-        transform: translateX(-50%) translateY(-50%);
-      }*/
-
-      .team-text{
-        color: $color-text-dark;
-        font-family: $lobster-display-font;
-        font-size: 64px;
-        text-decoration: none;
-        z-index: 1;
+      .title {
+        color: $color-text-light;
       }
     }
+
+    /*> video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: 0;
+      -ms-transform: translateX(-50%) translateY(-50%);
+      -moz-transform: translateX(-50%) translateY(-50%);
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+    }*/
+
+    .title{
+      color: $color-text-dark;
+      font-family: $lobster-display-font;
+      text-decoration: none;
+      z-index: 1;
+    }
+  }
+  .child4 {
+    .title {
+      padding: 15px;
+    }
+  }
+  .facebook-embed {
+    border: none;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
 }
 
 .person-listing, .project-listing {
