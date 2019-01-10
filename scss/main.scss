@@ -113,6 +113,13 @@
   margin-bottom: 100px;
 }
 
+.team-header {
+  background-image: linear-gradient(to right, rgba(253, 153, 23, 0.5), rgba(29,178,75, 0.4)), url('/static/group-home.jpg');
+  &:hover {
+    background-image: url('/static/group-home2.jpg');
+  }
+}
+
 .title-row {
   margin: 50px auto;
 }
