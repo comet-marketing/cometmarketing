@@ -11,7 +11,7 @@ export default class Layout extends Component {
       <div className='layout'>
         <div className='layout-header'>
           <CmNav title={this.props.title}></CmNav>
-          <Header pageName={this.props.pageName} intro={this.props.intro} banner={this.props.banner}></Header>
+          <Header isHome={this.props.isHome} pageName={this.props.pageName} intro={this.props.intro} banner={this.props.banner}></Header>
         </div>
         <div className='layout-body'>
           {this.props.children}

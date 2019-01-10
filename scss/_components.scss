@@ -1,0 +1,69 @@
+.row:not(.row-no-margin) {
+  margin-bottom: 100px;
+}
+
+.btn-call-to-action {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 3px solid $color-text-light;
+  color: $color-text-light;
+  transition: all .2s ease;
+  font-size: 18px;
+  position: relative;
+  background: transparent;
+  z-index: 100;
+  box-shadow: 0 0 0 0 transparent;
+
+  &:hover {
+    background: $color-background-dark;
+    text-decoration: none;
+    color: $color-theme-orange;
+    border: 3px solid $color-background-dark;
+    box-shadow: -5px 5px 0 0 $color-text-light;
+  }
+}
+
+.btn-call-to-action-dark {
+  color: $color-background-dark;
+  border-color: $color-background-dark;
+
+  &:hover {
+    box-shadow: -5px 5px 0 0 $color-theme-orange;
+  }
+}
+
+.person-listing, .project-listing {
+  margin-bottom: 35px;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  
+  a {
+    transition: all .2s ease;
+    padding: 25px;
+    display: block;
+    background-color: $color-background-gray;
+    color: $color-background-dark;
+
+    &:hover {
+      text-decoration: none;
+      background-color: lighten($color-background-light, 10);
+    }
+  }
+
+  img {
+    margin-bottom: 15px;
+  }
+
+  .content {
+    flex: 1
+  }
+}
+
+.project-listing {  
+  a {
+    &:hover {
+      background-color: lighten($color-theme-green, 50);
+    }
+  }
+}

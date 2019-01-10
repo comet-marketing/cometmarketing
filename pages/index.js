@@ -2,15 +2,14 @@ import Layout from "../components/Layout";
 import DynamicLink from "../components/DynamicLink";
 import fetch from "node-fetch";
 import { Component } from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Button } from 'reactstrap';
 import ReactPlayer from 'react-player';
-import InstagramEmbed from 'react-instagram-embed'
 
 
 export default class Index extends Component {
 
   static async getInitialProps() {
-    const res = await fetch('https://utdcometmarketing-api.herokuapp.com/projects?featured=true&_sort=createdAt')
+    const res = await fetch('https://utdcometmarketing-api.herokuapp.com/projects?featured=true&_sort=createdAt:ASC')
     let projects = await res.json()
     projects = projects.slice(0,3)
     return { projects }
@@ -24,72 +23,47 @@ export default class Index extends Component {
 
   render() {
     return (    
-      <div class='home'>
-        <Layout title='Home' pageName='Comet Marketing' intro='Here to help you, market you.'>
-        <div class='child1'>
-          <div class='d-flex flex-row justify-content-center'>
-            <ReactPlayer class='player' 
-              url='https://www.youtube.com/watch?v=qLmomGuId6Y' 
-              playing 
-              muted
-              controls
-              loop/>
-          </div>
-        </div>
-        <div class='child2'>
-          <Container>
-              <a href='/portfolio'>
-                <div class='title'>Check Out Our Latest Projects</div>
-              </a>
-            <Row>
-              {this.props.projects.reverse().map((project) => (
-                  <Col className='project-listing' sm="3" key={project.id}>
-                      <DynamicLink displayRoute='portfolio' actualRoute='project' slug={project.slug}>
-                      {!!project.pictures[0] &&
-                        <img className='img-fluid' src={project.pictures[0].url}></img>
-                      }
-                      <h2 className='heading'>{project.title}</h2>
-                      <p className='lead'>{project.partners}</p>
-                      <p className='content'>{project.description.substring(0, 100) + '...'}</p>
-                      </DynamicLink>
-                 </Col>
-                ))}
+      <Layout title='Home' pageName='Comet Marketing' isHome={true}>
+        <Container>
+          <Row className='home-video justify-content-center'>
+            <div className='player-wrapper'>
+              <ReactPlayer
+                url='https://www.youtube.com/watch?v=qLmomGuId6Y'
+                className='react-player'
+                playing
+                muted
+                controls
+                width='100%'
+                height='100%'
+              />
+            </div>
+          </Row>
+          <div className='recent-projects'>
+            <Row className='recent-projects-title title-row'>
+              <Col sm='12' className='text-center'>
+                <h2 className='display-4'>Recent Projects</h2>
+              </Col>
             </Row>
-          </Container>
-        </div>
-        <a href='/people'>
-          <div class='child3'>
-              <div class='title'>
-                <Container>
-                  <div class='d-flex flex-row justify-content-end'> Meet Our Team</div>
-                </Container>
-              </div>
+            <Row className='recent-projects-row'>
+              {this.props.projects.map((project) => (
+                <Col className='project-listing' key={project.id}>
+                  <DynamicLink displayRoute='portfolio' actualRoute='project' slug={project.slug}>
+                    {!!project.pictures[0] &&
+                      <img className='img-fluid' src={project.pictures[0].url}></img>
+                    }
+                    <h2 className='heading'>{project.title}</h2>
+                    <p className='lead'>{project.partners}</p>
+                    <p className='content'>{project.description.substring(0, 100) + '...'}</p>
+                  </DynamicLink>
+                </Col>
+              ))}
+              <Col sm='12' className='d-flex justify-content-center'>
+                <a className='btn-call-to-action btn-call-to-action-dark' href='/portfolio'>View all</a>
+              </Col>
+            </Row>
           </div>
-        </a>
-        <div class='child4'>
-          <Container>
-            <Row><div class='title'>Follow Us On Social Media</div></Row>
-            <Row class='d-flex flex-row'>
-              <Col sm='1'></Col>
-              <Col sm='4'class='insta-embed'>
-                <InstagramEmbed 
-                  url='http://instagr.am/p/BrItl_Wgf1v/'
-                  />
-              </Col>
-              <Col sm='6'>
-                <iframe class='facebook-embed'
-                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Futdcometmarketing&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
-                scrolling="no"
-                frameborder="0" 
-                allowTransparency="true" 
-                allow="encrypted-media"
-                height="100%"/>
-              </Col>
-            </Row>        
-          </Container>
-        </div>
-        </Layout>
-      </div>
+        </Container>
+      </Layout>
     )
   }
 }

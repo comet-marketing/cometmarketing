@@ -1,9 +1,11 @@
 @import 'vars';
 @import 'typography';
+@import 'components';
 
 .layout, #__next, body, html {
   height: 100%;
 }
+
 .layout {
   display: flex;
   flex-direction: column;
@@ -40,7 +42,17 @@
       color: $color-text-light;
     }
     &:hover {
-      color: darken($color-text-light, 10)
+      color: white;
+      background: transparent;
+      
+    }
+  }
+  .nav-item .nav-link {
+    box-shadow: 0 0 0 3px transparent;
+    padding: 5px 10px;
+    margin: 0 5px;
+    &:hover {
+      box-shadow: 0 0 0 3px white;
     }
   }
 }
@@ -49,7 +61,7 @@
   padding-top: 250px;
   margin-top: -90px;
   margin-bottom: 0;
-  background-image: url('/static/banner.jpg');
+  background: url('/static/banner.jpg');
   background-size: cover;
   color: $color-text-light;
   text-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
@@ -67,7 +79,7 @@
     height: 3px;
     outline: none;
     border: none;
-    background-color: coral;
+    background-color: $color-theme-orange;
   }
 }
 
@@ -97,142 +109,8 @@
   }
 }
 
-.heading, .lead, .content {
+.heading, .content {
   color: $color-text-dark;
-}
-
-.home {
-  position: relative;
-  min-width: 100%;
-  background-size: cover;
-  margin-top: 0;
-
-  //.player {
-    //margin: 0;
-    //padding: 0;
-    //box-sizing: border-box;
-  //}
-
-  a {
-    text-decoration: none;
-  }
-
-  .child1, .child2, .child3, .child4 {
-    padding: 15px;
-    align-content: center;
-    min-width: 100%;
-    height: auto;
-  }
-
-  .title {
-    font-family: $lobster-display-font;
-    font-size: 48px;
-  }
-
-  .child1 {
-    background-color: white;
-  }
-
-  .child2 {
-    background-color: $color-background-dark;
-    .title {
-      color: white;
-      text-align: center;
-      margin-bottom: 10px;
-    }
-  }
-  .child3 {
-    transition: all .1s ease;
-    background-image: url('/static/group-home.jpg');
-    background-color: gray;
-    background-blend-mode: screen;
-    background-size: cover;
-    padding-top: 250px;
-    padding-bottom: 25px;
-    position: relative;
-    //height: 75vh;
-    //min-height: 25rem;
-    width: 100%;
-    overflow: hidden;
-    text-decoration: none;
-
-    &:hover {
-      background-image: url('/static/group-home2.jpg');
-      background-color: black;
-      background-blend-mode: screen;
-      .title {
-        color: $color-text-light;
-      }
-    }
-
-    /*> video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      z-index: 0;
-      -ms-transform: translateX(-50%) translateY(-50%);
-      -moz-transform: translateX(-50%) translateY(-50%);
-      -webkit-transform: translateX(-50%) translateY(-50%);
-      transform: translateX(-50%) translateY(-50%);
-    }*/
-
-    .title{
-      color: $color-text-dark;
-      font-family: $lobster-display-font;
-      text-decoration: none;
-      z-index: 1;
-    }
-  }
-  .child4 {
-    .title {
-      padding: 15px;
-    }
-  }
-  .facebook-embed {
-    border: none;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-  }
-
-}
-
-.person-listing, .project-listing {
-  margin-bottom: 35px;
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  
-  a {
-    transition: all .2s ease;
-    padding: 25px;
-    display: block;
-    background-color: $color-background-gray;
-    &:hover {
-      text-decoration: none;
-      background-color: lighten($color-background-light, 10);
-    }
-  }
-
-  img {
-    margin-bottom: 15px;
-  }
-
-  .content {
-    flex: 1
-  }
-}
-
-.project-listing {  
-  a{
-    &:hover {
-      background-color: lighten($color-theme-green, 50);
-    }
-  }
 }
 
 .person {
@@ -240,4 +118,52 @@
     border-radius: 5px;
     box-shadow: 5px 5px 35px rgba(80, 80, 80, 0.25)
   }
+}
+
+.home-video {
+  margin-bottom: 100px;
+}
+
+.title-row {
+  margin: 50px auto;
+}
+
+.player-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 720 / 1280 = 0.5625 */
+}
+
+@media (min-width: 650px) {
+  .player-wrapper {
+    margin-bottom: 50px;
+    &::after {
+      content:'';
+      display: block;
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 100%;
+      width: 110%;
+      background: linear-gradient(45deg, rgba($color-theme-orange, 0.5), rgba($color-theme-green, 0.5));
+      z-index: -1;
+    }
+  }
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0 15px 50px rgba(40, 40, 40, 0.4);
+}
+
+.call-to-action-paragraph {
+  font-size: 22px;
+  margin-top: 50px;
+}
+
+#main-call-to-action {
+  margin: 15px auto 0 auto;
 }
