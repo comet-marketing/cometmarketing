@@ -47,12 +47,12 @@
       
     }
   }
-  .nav-item .nav-link {
-    box-shadow: 0 0 0 3px transparent;
+  .nav-item .nav-link, .navbar-brand {
+    box-shadow: 0 3px 0 0 transparent;
     padding: 5px 10px;
     margin: 0 5px;
     &:hover {
-      box-shadow: 0 0 0 3px white;
+      box-shadow: 0 3px 0 0 white;
     }
   }
 }
