@@ -1,6 +1,4 @@
 import React from 'react';
-import Head from 'next/head';
-
 import {
   Container,
   Collapse,
@@ -32,13 +30,11 @@ export default class CmNav extends React.Component {
       dropDownOpen: !this.state.dropDownOpen,
     });
   }
+
   render() {
     return (
       <div className='cmnav-container'>
         <Navbar light expand="md" className='cmnav'>
-          <Head>
-            <title>{this.props.title}</title>
-          </Head>
           <Container>
             <NavbarBrand href="/index">Comet Marketing</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
@@ -57,12 +53,6 @@ export default class CmNav extends React.Component {
                     <DropdownItem href="https://goo.gl/forms/vCYE7wFGCeralb9B3" target="_blank">Join Us</DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>
-                <NavItem>
-                  <NavLink href="/portfolio">Portfolio</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="/blog">Blog</NavLink>
-                </NavItem>
                 <NavItem>
                   <NavLink href="https://goo.gl/forms/vCYE7wFGCeralb9B3" target="_blank">Join Us</NavLink>
                 </NavItem>

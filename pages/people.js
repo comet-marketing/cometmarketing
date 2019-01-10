@@ -40,7 +40,7 @@ export default class People extends Component {
       <Layout title='People' pageName='People' intro='This Is Us' banner='/static/Group_pic2.jpg'>
         <Container>
           {this.props.people.map((row, i) => (
-            <Row key={i}>
+            <Row key={i} className='row-no-margin'>
               {row.map((person) => (
                 <Col className='person-listing' sm="4" key={person.id}>
                   <DynamicLink displayRoute='people' actualRoute='person' slug={person.slug}>

@@ -1,0 +1,112 @@
+.row:not(.row-no-margin) {
+  margin-bottom: 100px;
+}
+
+.btn-call-to-action {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 3px solid $color-text-light;
+  color: $color-text-light;
+  transition: all .2s ease;
+  font-size: 18px;
+  position: relative;
+  background: transparent;
+  z-index: 100;
+  box-shadow: 0 0 0 0 transparent;
+
+  &:hover {
+    background: $color-text-light;
+    text-decoration: none;
+    color: $color-text-dark;
+    border: 3px solid $color-text-light;
+    box-shadow: -5px 5px 0 0 $color-theme-orange;
+  }
+}
+
+.btn-call-to-action-dark {
+  color: $color-background-dark;
+  border-color: $color-background-dark;
+
+  &:hover {
+    background: $color-text-dark;
+    color: $color-text-light;
+    border-color: $color-background-dark;
+    box-shadow: -5px 5px 0 0 $color-theme-orange;
+  }
+}
+
+.person-listing, .project-listing {
+  margin-bottom: 35px;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  
+  a {
+    transition: all .2s ease;
+    padding: 25px;
+    display: block;
+    background-color: $color-background-gray;
+    color: $color-background-dark;
+
+    &:hover {
+      text-decoration: none;
+      background-color: lighten($color-background-light, 10);
+    }
+  }
+
+  img {
+    margin-bottom: 15px;
+  }
+
+  .content {
+    flex: 1
+  }
+}
+
+.project-listing {  
+  a {
+    &:hover {
+      background-color: lighten($color-theme-green, 50);
+    }
+  }
+}
+
+.fluid-section-header {
+  height: 400px;
+  background-image: url("/static/banner.jpg");
+  background-size: cover;
+  margin-bottom: 100px;
+
+  h2 {
+    padding: 35px 50px;
+    margin-top: 300px;
+    text-align: center;
+    color: $color-text-dark;
+    background: $white
+  }
+}
+
+.footer {
+  padding: 100px 0;
+  color: $color-text-light;
+  background-color: $color-background-dark;
+
+  .row {
+    margin: 0;
+  }
+
+  .nav {
+    a {
+      padding: 0 5px;
+      margin: 0 15px;
+    }
+  }
+  hr {
+    width: 50px;
+    height: 3px;
+    outline: none;
+    border: none;
+    background-color: $color-theme-orange;
+    margin: 15px 20px 0 auto;
+  }
+}
