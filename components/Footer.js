@@ -21,15 +21,12 @@ export default class Footer extends Component {
               <p>Coming soon.</p>
             </Col>
             <Col>
-              <Nav>
+              <Nav className='justify-content-end'>
                 <NavItem>
                   <NavLink href="/people">People</NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink href="/about">About</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="/blog">Blog</NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink href="https://goo.gl/forms/vCYE7wFGCeralb9B3" target="_blank">Join Us</NavLink>

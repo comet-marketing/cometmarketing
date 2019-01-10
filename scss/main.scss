@@ -64,22 +64,11 @@
   background: url('/static/banner.jpg');
   background-size: cover;
   color: $color-text-light;
-  text-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   box-shadow: 0 3px 30px rgba(50, 50, 50, 0.3);
   border-radius: 0;
-}
 
-.footer {
-  padding: 50px;
-  color: $color-text-light;
-  background-color: $color-background-dark;
-
-  hr {
-    width: 50px;
-    height: 3px;
-    outline: none;
-    border: none;
-    background-color: $color-theme-orange;
+  p, h1, .nav-item {
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   }
 }
 
