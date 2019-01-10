@@ -67,3 +67,18 @@
     }
   }
 }
+
+.fluid-section-header {
+  height: 400px;
+  background-image: url("/static/banner.jpg");
+  background-size: cover;
+  margin-bottom: 100px;
+
+  h2 {
+    padding: 35px 50px;
+    margin-top: 300px;
+    text-align: center;
+    color: $color-text-dark;
+    background: $white
+  }
+}

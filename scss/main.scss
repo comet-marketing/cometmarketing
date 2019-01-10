@@ -136,7 +136,8 @@
 
 @media (min-width: 650px) {
   .player-wrapper {
-    margin-bottom: 50px;
+    margin: 50px 0 100px 0;
+
     &::after {
       content:'';
       display: block;
@@ -161,7 +162,7 @@
 
 .call-to-action-paragraph {
   font-size: 22px;
-  margin-top: 50px;
+  margin-top: 15px;
 }
 
 #main-call-to-action {
