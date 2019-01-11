@@ -4,7 +4,8 @@ import Layout from '../components/Layout';
 import {
   Container,
   Row,
-  Col
+  Col,
+  Button
 } from 'reactstrap';
 import DynamicLink from "../components/DynamicLink";
 
@@ -39,6 +40,14 @@ export default class People extends Component {
     return(
       <Layout title='People' pageName='People' intro='This Is Us' banner='/static/Group_pic2.jpg'>
         <Container>
+          <Row className='justify-content-center'>
+            <Col sm='6'>
+              <p className='lead'>Creative, talented, and looking for a way to show it off?</p>
+              <p className='lead'>Comet Marketing is looking for designers, photographers, videographers, illustrators, and more to join the team!</p>
+              <p className='lead'>We work on flyers, posters, social media posts, short videos, photoshoots, and more!</p>
+              <a className='btn-call-to-action btn-call-to-action-dark' href='https://goo.gl/forms/vCYE7wFGCeralb9B3'>Join Here!</a>
+            </Col>
+          </Row>
           {this.props.people.map((row, i) => (
             <Row key={i} className='row-no-margin'>
               {row.map((person) => (
@@ -50,6 +59,7 @@ export default class People extends Component {
                     <h2 className='heading'>{person.name}</h2>
                     <p className='lead'>{person.role}</p>
                     <p className='content'>{person.bio.substring(0, 100) + '...'}</p>
+                    <Button>Read more</Button>
                   </DynamicLink>
                 </Col>
               ))}
