@@ -32,9 +32,9 @@ export default class Index extends Component {
                 <Col>
                   <h1 className='title'>Photography</h1>
                   <ul>
-                    <li><h5>We can help cover large or small events with our amazing photographers.</h5></li>
-                    <li><h5>After an editing period, we'll provide you with high-quality, edited photos for you to use as you see fit.</h5></li>
-                    <li><h5>A great way to make a legacy for the future of your club.</h5></li>
+                    <li><p>We can help cover large or small events with our amazing photographers.</p></li>
+                    <li><p>After an editing period, we'll provide you with high-quality, edited photos for you to use as you see fit.</p></li>
+                    <li><p>A great way to make a legacy for the future of your club.</p></li>
                   </ul>
                 </Col>
                 <Col>
@@ -47,8 +47,8 @@ export default class Index extends Component {
                 <Col>
                   <h1 className='title'>Graphic Design</h1>
                   <ul>
-                    <li><h5>Our team of designers can help inspire new designs and ideas to advertise your upcoming events!</h5></li>
-                    <li><h5>With custom flyers and posters to put around campus and online your event will be as bustling as ever.</h5></li>
+                    <li><p>Our team of designers can help inspire new designs and ideas to advertise your upcoming events!</p></li>
+                    <li><p>With custom flyers and posters to put around campus and online your event will be as bustling as ever.</p></li>
                   </ul>
                 </Col>
                 <Col>
@@ -63,9 +63,9 @@ export default class Index extends Component {
                 <Col>
                   <h1 className="title">Web Design</h1>
                   <ul>
-                    <li><h5><span>&#191;</span>Like our website?</h5></li>
-                    <li><h5>We can help you make a new or update an old website to cater to your clubs needs on the internet.</h5></li>
-                    <li><h5>Having an online presence will help to keep your organization relevant in the 21st century.</h5></li>
+                    <li><p><span>&#191;</span>Like our website?</p></li>
+                    <li><p>We can help you make a new or update an old website to cater to your clubs needs on the internet.</p></li>
+                    <li><p>Having an online presence will help to keep your organization relevant in the 21st century.</p></li>
                   </ul>
                 </Col>
                 <Col>
@@ -78,8 +78,8 @@ export default class Index extends Component {
                 <Col>
                   <h1 className='title'>Videography</h1>
                   <ul>
-                    <li><h5>Invite some of our talented film crew to your events and we can create you a video to highlight your organization.</h5></li>
-                    <li><h5>Whether it be for spreading information or promoting an upcoming event, video advertising is a powerful tool we can help you with.</h5></li>
+                    <li><p>Invite some of our talented film crew to your events and we can create you a video to highlight your organization.</p></li>
+                    <li><p>Whether it be for spreading information or promoting an upcoming event, video advertising is a powerful tool we can help you with.</p></li>
                   </ul>
                 </Col>
                 <Col>

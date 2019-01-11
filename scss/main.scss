@@ -47,7 +47,16 @@
       
     }
   }
-  .nav-item .nav-link, .navbar-brand {
+  .nav-item .nav-link:not(.icon-wrapper), .navbar-brand {
+    box-shadow: 0 3px 0 0 transparent;
+    padding: 5px 10px;
+    margin: 0 5px;
+    &:hover {
+      box-shadow: 0 3px 0 0 white;
+    }
+  }
+
+  .icon-wrapper {
     box-shadow: 0 3px 0 0 transparent;
     padding: 5px 10px;
     margin: 0 5px;
@@ -116,7 +125,7 @@
 .team-header {
   background-image: linear-gradient(to right, rgba(253, 153, 23, 0.5), rgba(29,178,75, 0.4)), url('/static/group-home.jpg');
   &:hover {
-    background-image: url('/static/group-home2.jpg');
+    background-image: linear-gradient(to right, rgba(253, 153, 23, 0), rgba(29, 178, 75, 0)), url('/static/group-home.jpg');
   }
 }
 
@@ -166,11 +175,18 @@
 }
 
 .fb-icon, .insta-icon {
+  transition: all .2s ease;
   fill: white;
   margin-top: -2px;
   margin-left: 0px;
   margin-right: 0px;
   margin-bottom: 2px;
+  border: none;
+  
+  &:hover {
+    //fill: $color-text-dark;
+    //box-shadow: 0px 0px 0px 3px $color-theme-orange;
+  }
 }
 
 .services-grid {
