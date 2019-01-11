@@ -12,7 +12,6 @@ import {
   DropdownItem,
   DropdownMenu,
   DropdownToggle, } from 'reactstrap';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 
 export default class CmNav extends React.Component {
