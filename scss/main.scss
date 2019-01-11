@@ -47,7 +47,16 @@
       
     }
   }
-  .nav-item .nav-link, .navbar-brand {
+  .nav-item .nav-link:not(.icon-wrapper), .navbar-brand {
+    box-shadow: 0 3px 0 0 transparent;
+    padding: 5px 10px;
+    margin: 0 5px;
+    &:hover {
+      box-shadow: 0 3px 0 0 white;
+    }
+  }
+
+  .icon-wrapper {
     box-shadow: 0 3px 0 0 transparent;
     padding: 5px 10px;
     margin: 0 5px;
@@ -113,6 +122,13 @@
   margin-bottom: 100px;
 }
 
+.team-header {
+  background-image: linear-gradient(to right, rgba(253, 153, 23, 0.5), rgba(29,178,75, 0.4)), url('/static/group-home.jpg');
+  &:hover {
+    background-image: linear-gradient(to right, rgba(253, 153, 23, 0), rgba(29, 178, 75, 0)), url('/static/group-home.jpg');
+  }
+}
+
 .title-row {
   margin: 50px auto;
 }
@@ -156,4 +172,78 @@
 
 #main-call-to-action {
   margin: 15px auto 0 auto;
+}
+
+.fb-icon, .insta-icon {
+  transition: all .2s ease;
+  fill: white;
+  margin-top: -2px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 2px;
+  border: none;
+  
+  &:hover {
+    //fill: $color-text-dark;
+    //box-shadow: 0px 0px 0px 3px $color-theme-orange;
+  }
+}
+
+.services-grid {
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+.grid-row {
+  max-height: 77vh;
+  margin: -75px;
+}
+
+.grid-square {
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: all .1s ease;
+  display: block;
+  position: relative;
+  //background-color: $color-background-gray;
+  //margin: 2%;
+  max-height: 80%;
+  height: auto;
+  flex: 1;
+  color: $color-text-dark;
+
+  .image {
+    padding-top: 20px;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 36px;
+    padding: 20px;
+  }
+
+  /*&::after{
+    content:'';
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 45%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(45deg, rgba($color-theme-orange, 0.5), rgba($color-theme-green, 0.5)), white;
+    z-index: -1;
+    padding-bottom: -20px;
+  }
+
+  &:hover {
+    box-shadow: -20px 20px 30px 0px rgba(40, 40, 40, 0.4);
+    //box-shadow: -20px 20px 0 0 $color-theme-orange;
+    background: white;
+    color: black;
+    &::after{
+      display: block;
+    }
+  }
+  */
 }
