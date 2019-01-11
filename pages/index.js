@@ -31,10 +31,10 @@ export default class Index extends Component {
             <Col sm='6' className='grid-square'>
               <Row>
                 <Col>
-                  <h1 className='title'>Photo and Video</h1>
+                  <h1 className='title'>Photography</h1>
                   <ul>
-                    <li><h5>We can help cover large or small events with our amazing photographers and/or videographers.</h5></li>
-                    <li><h5>After an editing period, we'll provide you with high-quality, edited photos and/or videos.</h5></li>
+                    <li><h5>We can help cover large or small events with our amazing photographers.</h5></li>
+                    <li><h5>After an editing period, we'll provide you with high-quality, edited photos for you to use as you see fit.</h5></li>
                     <li><h5>A great way to make a legacy for the future of your club.</h5></li>
                   </ul>
                 </Col>
@@ -77,11 +77,10 @@ export default class Index extends Component {
             <Col sm='6' className='grid-square'>
             <Row>
                 <Col>
-                  <h1 className='title'>Social Media</h1>
+                  <h1 className='title'>Videography</h1>
                   <ul>
-                    <li><h5>Running social media and understanding its inner workings is difficult.</h5></li>
-                    <li><h5>We gotchu fam, our pros can help you manage your social media account.</h5></li>
-                    <li><h5>With equal parts edginess and relatability we'll help keep your organization on the rise ;)</h5></li>
+                    <li><h5>Invite some of our talented film crew to your events and we can create you a video to highlight your organization.</h5></li>
+                    <li><h5>Whether it be for spreading information or promoting an upcoming event, video advertising is a powerful tool we can help you with.</h5></li>
                   </ul>
                 </Col>
                 <Col>
