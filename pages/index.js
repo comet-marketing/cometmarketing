@@ -27,7 +27,7 @@ export default class Index extends Component {
       <Layout title='Home' pageName='Comet Marketing' isHome={true}>
         <Container className='services-grid'>
           <Row className='grid-row'>
-            <Col sm='6' className='grid-square'>
+            <Col sm='6' className='grid-square top-left'>
               <Row>
                 <Col>
                   <h1 className='title'>Photography</h1>
@@ -38,11 +38,11 @@ export default class Index extends Component {
                   </ul>
                 </Col>
                 <Col>
-                  <img height='100%' width='100%' src='https://source.unsplash.com/random/400x600/'></img>
+                  <img className='image' height='100%' width='100%' src='https://source.unsplash.com/random/400x600/'></img>
                 </Col>
               </Row>
             </Col>
-            <Col sm='6' className='grid-square'>
+            <Col sm='6' className='grid-square top-right'>
               <Row>
                 <Col>
                   <h1 className='title'>Graphic Design</h1>
@@ -52,13 +52,13 @@ export default class Index extends Component {
                   </ul>
                 </Col>
                 <Col>
-                  <img height='100%' width='100%' src='https://source.unsplash.com/random/400x600/'></img>
+                  <img className='image' height='100%' width='100%' src='https://source.unsplash.com/random/400x600/'></img>
                 </Col>
               </Row>
             </Col>
-          </Row>
+          </Row>          
           <Row className='grid-row'>
-            <Col sm='6' className='grid-square'>
+            <Col sm='6' className='grid-square bottom-left'>
             <Row>
                 <Col>
                   <h1 className="title">Web Design</h1>
@@ -69,11 +69,11 @@ export default class Index extends Component {
                   </ul>
                 </Col>
                 <Col>
-                  <img height='100%' width='100%' src='https://source.unsplash.com/random/400x600/'></img>
+                  <img className='image' height='100%' width='100%' src='https://source.unsplash.com/random/400x600/'></img>
                 </Col>
               </Row>
             </Col>
-            <Col sm='6' className='grid-square'>
+            <Col sm='6' className='grid-square bottom-right'>
             <Row>
                 <Col>
                   <h1 className='title'>Videography</h1>
@@ -83,7 +83,7 @@ export default class Index extends Component {
                   </ul>
                 </Col>
                 <Col>
-                  <img height='100%' width='100%' src='https://source.unsplash.com/random/400x600/'></img>
+                  <img className='image' height='100%' width='100%' src='https://source.unsplash.com/random/400x600/'></img>
                 </Col>
               </Row>
             </Col>

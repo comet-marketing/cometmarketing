@@ -196,32 +196,33 @@
 
 .grid-row {
   max-height: 77vh;
-  margin: -50px;
+  margin: -75px;
 }
 
 .grid-square {
+  margin-left: 10px;
+  margin-right: 10px;
   transition: all .1s ease;
   display: block;
-  //border: 3px solid $color-text-light;
   position: relative;
-  background-color: $color-background-gray;
-  padding: 25px;
-  margin: 2%;
+  //background-color: $color-background-gray;
+  //margin: 2%;
   max-height: 80%;
   height: auto;
   flex: 1;
   color: $color-text-dark;
 
+  .image {
+    padding-top: 20px;
+  }
+
   .title {
     text-align: center;
     font-size: 36px;
+    padding: 20px;
   }
 
-  h5 {
-    font-size: 15px;
-  }
-
-  &::after{
+  /*&::after{
     content:'';
     display: none;
     position: absolute;
@@ -244,4 +245,5 @@
       display: block;
     }
   }
+  */
 }
