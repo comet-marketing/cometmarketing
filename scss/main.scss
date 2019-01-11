@@ -173,16 +173,26 @@
   margin-bottom: 2px;
 }
 
+.services-grid {
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+.grid-row {
+  max-height: 75vh;
+  margin: -50px;
+}
+
 .grid-square {
   transition: all .1s ease;
   display: block;
   //border: 3px solid $color-text-light;
   position: relative;
   background-color: $color-background-gray;
-  min-width: 40%;
-  min-height: 40%;
   padding: 25px;
   margin: 2%;
+  max-height: 80%;
+  height: auto;
   flex: 1;
   color: $color-text-dark;
 
@@ -210,7 +220,8 @@
   }
 
   &:hover {
-    box-shadow: -15px 15px 30px 0px rgba(40, 40, 40, 0.4);
+    box-shadow: -20px 20px 30px 0px rgba(40, 40, 40, 0.4);
+    //box-shadow: -20px 20px 0 0 $color-theme-orange;
     background: white;
     color: black;
     &::after{
