@@ -172,3 +172,53 @@
   margin-right: 0px;
   margin-bottom: 2px;
 }
+
+.services-grid {
+
+}
+
+.grid-square {
+  transition: all .1s ease;
+  display: block;
+  //border: 3px solid $color-text-light;
+  position: relative;
+  background-color: $color-background-gray;
+  min-width: 40%;
+  min-height: 40%;
+  padding: 25px;
+  margin: 2%;
+  flex: 1;
+  color: $color-text-dark;
+
+  .title {
+    text-align: center;
+    font-size: 36px;
+  }
+
+  h5 {
+    font-size: 15px;
+  }
+
+  &::after{
+    content:'';
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 45%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(45deg, rgba($color-theme-orange, 0.5), rgba($color-theme-green, 0.5)), white;
+    z-index: -1;
+    padding-bottom: -20px;
+  }
+
+  &:hover {
+    box-shadow: -15px 15px 30px 0px rgba(40, 40, 40, 0.4);
+    background: white;
+    color: black;
+    &::after{
+      display: block;
+    }
+  }
+}
