@@ -3,8 +3,7 @@ import DynamicLink from "../components/DynamicLink";
 import FluidSectionHeader from '../components/FluidSectionHeader';
 import fetch from "node-fetch";
 import { Component } from 'react';
-import { Container, Row, Col, Button } from 'reactstrap';
-import ReactPlayer from 'react-player';
+import { Container, Row, Col } from 'reactstrap';
 
 
 export default class Index extends Component {
@@ -88,21 +87,6 @@ export default class Index extends Component {
                 </Col>
               </Row>
             </Col>
-          </Row>
-        </Container>
-        <Container>
-          <Row className='home-video justify-content-center'>
-            <div className='player-wrapper'>
-              <ReactPlayer
-                url='https://www.youtube.com/watch?v=qLmomGuId6Y'
-                className='react-player'
-                playing
-                muted
-                controls
-                width='100%'
-                height='100%'
-              />
-            </div>
           </Row>
         </Container>
         <FluidSectionHeader text='Recent Projects'></FluidSectionHeader>
