@@ -13,6 +13,7 @@
   background: transparent;
   z-index: 100;
   box-shadow: 0 0 0 0 transparent;
+  border-radius: 0;
 
   &:hover {
     background: $color-text-light;
@@ -110,4 +111,15 @@
     background-color: $color-theme-orange;
     margin: 15px 20px 0 auto;
   }
+}
+
+input[type="text"], input[type="email"], .message-input {
+  border: 2px solid $color-background-dark;
+  border-radius: 0;
+  padding: 5px 10px;
+  color: $color-background-dark;
+}
+
+.message-input {
+  width: 100%;
 }
