@@ -92,7 +92,7 @@ export default class Contact extends Component {
                   <p>Try submitting the form again.</p>
                 </div>
               }
-              <Form onSubmit={this.submitHandler}>
+              <Form className='contact-form' onSubmit={this.submitHandler}>
                 <FormGroup>
                   <Label for="contactEmail">Email</Label>
                   <Input onBlur={this.displayEmailInvalid} onChange={this.onEmailChange} value={this.state.email} type="email" name="email" id="email" placeholder="your_org@mail.com" />
@@ -106,12 +106,12 @@ export default class Contact extends Component {
                 </FormGroup>
                 <FormGroup>
                   <Label for="contactBody">Message Body</Label>
-                  <FormText color='#2b2b2b' className='message-input' tag='textarea' onChange={this.onMessageChange} value={this.state.message} type="textarea" name="message" id="message" placeholder="Enarc is the realest"></FormText>
+                  <FormText rows='8' color='#2b2b2b' className='message-input' tag='textarea' onChange={this.onMessageChange} value={this.state.message} type="textarea" name="message" id="message" placeholder="Enarc is the realest"></FormText>
                 </FormGroup>
                 {this.state.displayEmptyMessage &&
                   <p className='text-danger'>Make sure everything is filled out!</p>
                 }
-                <Button className='btn-call-to-action btn-call-to-action-dark'>Submit</Button>
+                <Button className='submit-button btn-call-to-action btn-call-to-action-dark'>Submit</Button>
               </Form>
             </Col>
           </Row>

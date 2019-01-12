@@ -215,6 +215,17 @@
   }
 }
 
+.contact-form {
+  label {
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+
+  .submit-button {
+    margin-top: 10px;
+  }
+}
+
 .success-message, .error-message {
   text-align: center;
   margin-bottom: 100px;
@@ -225,6 +236,8 @@
 }
 
 .form-control, .message-input {
+  transition: all .2s ease;
+  
   &:focus {
     outline: 0;
     border-color: $color-theme-orange;
