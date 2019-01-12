@@ -221,6 +221,10 @@
     margin-bottom: 0;
   }
 
+  textarea {
+    margin-bottom: 25px;
+  }
+
   .submit-button {
     margin-top: 10px;
   }
@@ -237,7 +241,7 @@
 
 .form-control, .message-input {
   transition: all .2s ease;
-  
+
   &:focus {
     outline: 0;
     border-color: $color-theme-orange;

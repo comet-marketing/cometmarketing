@@ -12,6 +12,7 @@
     "node-sass": "^4.11.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-google-recaptcha": "^1.0.5",
     "react-instagram-embed": "^1.4.1",
     "react-markdown": "^4.0.4",
     "react-player": "^1.8.0",

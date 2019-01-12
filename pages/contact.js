@@ -1,6 +1,8 @@
 import Layout from "../components/Layout";
+import Head from 'next/head';
 import { Component } from 'react';
 import { Container, Button, Form, FormGroup, FormText, Label, Input, Row, Col } from 'reactstrap';
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default class Contact extends Component {
   constructor(props) {
@@ -13,9 +15,11 @@ export default class Contact extends Component {
       displayInvalidMessage: false,
       displayEmptyMessage: false,
       displaySuccessMessage: false,
-      displayErrorMessage: false
+      displayErrorMessage: false,
+      recaptchaScore: ""
     };
     this.submitHandler = this.submitHandler.bind(this);
+    this.onRecaptchaChange = this.onRecaptchaChange.bind(this);
     this.onEmailChange = this.onEmailChange.bind(this);
     this.onNameChange = this.onNameChange.bind(this);
     this.onMessageChange = this.onMessageChange.bind(this);
@@ -24,7 +28,7 @@ export default class Contact extends Component {
 
   async submitHandler(e) {
     e.preventDefault();
-    if (!(this.state.email == '' || this.state.name == '' || this.state.message == '' || this.state.emailInvalid)) {
+    if (!(this.state.email == '' || this.state.name == '' || this.state.message == '' || this.state.emailInvalid || this.state.recaptchaScore == "")) {
       this.setState({ displayEmptyMessage: false });
       let response = await fetch('https://utdcometmarketing-api.herokuapp.com/contactmesssages', {
         method: 'POST',
@@ -34,7 +38,8 @@ export default class Contact extends Component {
         body: JSON.stringify({
           email: this.state.email,
           name: this.state.name,
-          message: this.state.message
+          message: this.state.message,
+          recaptchaScore: this.state.recaptchaScore
         })
       });
       if (response.status == 200) {
@@ -45,6 +50,10 @@ export default class Contact extends Component {
     }
     else 
       this.setState({displayEmptyMessage: true});
+  }
+
+  onRecaptchaChange(e) {
+    this.setState({recaptchaScore: e});
   }
 
   onEmailChange(e) {
@@ -111,6 +120,12 @@ export default class Contact extends Component {
                 {this.state.displayEmptyMessage &&
                   <p className='text-danger'>Make sure everything is filled out!</p>
                 }
+                <FormGroup>
+                  <ReCAPTCHA
+                    sitekey="6LeyIokUAAAAAD86i0PeGaQUFDNzpa4pIuePOIp8"
+                    onChange={this.onRecaptchaChange}
+                  />
+                </FormGroup>
                 <Button className='submit-button btn-call-to-action btn-call-to-action-dark'>Submit</Button>
               </Form>
             </Col>
