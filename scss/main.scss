@@ -181,11 +181,6 @@
   margin-right: 0px;
   margin-bottom: 2px;
   border: none;
-  
-  &:hover {
-    //fill: $color-text-dark;
-    //box-shadow: 0px 0px 0px 3px $color-theme-orange;
-  }
 }
 
 .services-grid {
@@ -204,8 +199,6 @@
   transition: all .1s ease;
   display: block;
   position: relative;
-  //background-color: $color-background-gray;
-  //margin: 2%;
   max-height: 80%;
   height: auto;
   flex: 1;
@@ -220,29 +213,38 @@
     font-size: 36px;
     padding: 20px;
   }
+}
 
-  /*&::after{
-    content:'';
-    display: none;
-    position: absolute;
-    top: 20px;
-    left: 45%;
-    transform: translateX(-50%);
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(45deg, rgba($color-theme-orange, 0.5), rgba($color-theme-green, 0.5)), white;
-    z-index: -1;
-    padding-bottom: -20px;
+.contact-form {
+  label {
+    margin-top: 5px;
+    margin-bottom: 0;
   }
 
-  &:hover {
-    box-shadow: -20px 20px 30px 0px rgba(40, 40, 40, 0.4);
-    //box-shadow: -20px 20px 0 0 $color-theme-orange;
-    background: white;
-    color: black;
-    &::after{
-      display: block;
-    }
+  textarea {
+    margin-bottom: 25px;
   }
-  */
+
+  .submit-button {
+    margin-top: 10px;
+  }
+}
+
+.success-message, .error-message {
+  text-align: center;
+  margin-bottom: 100px;
+
+  h3 {
+    color: $color-theme-green
+  }
+}
+
+.form-control, .message-input {
+  transition: all .2s ease;
+
+  &:focus {
+    outline: 0;
+    border-color: $color-theme-orange;
+    box-shadow: 0 0 0 0.2rem rgba($color-theme-orange, 0.25);
+  }
 }
