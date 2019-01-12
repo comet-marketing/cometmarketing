@@ -30,7 +30,7 @@ export default class Contact extends Component {
     e.preventDefault();
     if (!(this.state.email == '' || this.state.name == '' || this.state.message == '' || this.state.emailInvalid || this.state.recaptchaScore == "")) {
       this.setState({ displayEmptyMessage: false });
-      let response = await fetch('http://localhost:1337/contactmesssages', {
+      let response = await fetch('https://utdcometmarketing-api.herokuapp.com/contactmesssages', {
         method: 'POST',
         headers: {
           "Content-Type": "application/json"
