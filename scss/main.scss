@@ -81,6 +81,10 @@
   p, h1, .nav-item {
     text-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   }
+
+  h1 {
+    word-wrap: break-word
+  }
 }
 
 .post-listings {
@@ -208,24 +212,14 @@
   margin-bottom: 50px;
 }
 
-.grid-row {
-  max-height: 77vh;
-  margin: -75px;
-}
-
 .grid-square {
   color: $color-text-dark;
-  display: flex;
-  flex-direction: row;
-  padding: 25px;
-
-  img {
-    padding-top: 20px;
-  }
+  padding: 20px;
 
   .title {
     font-size: 36px;
-    padding: 20px;
+    padding-bottom: 20px;
+    word-wrap: break-word
   }
 }
 

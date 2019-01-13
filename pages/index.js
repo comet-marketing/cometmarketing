@@ -26,58 +26,66 @@ export default class Index extends Component {
     return (    
       <Layout title='Home' pageName='Comet Marketing' isHome={true}>
         <Container className='services-grid'>
-          <Row className='grid-row'>
+          <Row className='grid-row row-no-margin'>
             <Col sm='6' className='grid-square top-left'>
-              <Col>
-                <h1 className='title'>Photography</h1>
-                <ul>
-                  <li><p>We can help cover large or small events with our amazing photographers.</p></li>
-                  <li><p>After an editing period, we'll provide you with high-quality, edited photos for you to use as you see fit.</p></li>
-                  <li><p>A great way to make a legacy for the future of your club.</p></li>
-                </ul>
-              </Col>
-              <Col>
-                <img className='img-fluid' height='100%' width='100%' src='https://source.unsplash.com/random/400x600/'></img>
-              </Col>
+              <Row className='row-no-margin'>
+                <Col md='6'>
+                  <h1 className='title'>Photography</h1>
+                  <ul>
+                    <li><p>We can help cover large or small events with our amazing photographers.</p></li>
+                    <li><p>After an editing period, we'll provide you with high-quality, edited photos for you to use as you see fit.</p></li>
+                    <li><p>A great way to make a legacy for the future of your club.</p></li>
+                  </ul>
+                </Col>
+                <Col md='6'>
+                  <img className='img-fluid' height='100%' width='100%' src='https://source.unsplash.com/random/400x600/'></img>
+                </Col>
+              </Row>
             </Col>
             <Col sm='6' className='grid-square top-right'>
-                <Col>
+              <Row className='row-no-margin'>
+                <Col md='6'>
                   <h1 className='title'>Graphic Design</h1>
                   <ul>
                     <li><p>Our team of designers can help inspire new designs and ideas to advertise your upcoming events!</p></li>
                     <li><p>With custom flyers and posters to put around campus and online your event will be as bustling as ever.</p></li>
                   </ul>
-                </Col>
-                <Col>
+                  </Col>
+                <Col md='6'>
                   <img className='img-fluid' height='100%' width='100%' src='https://source.unsplash.com/random/400x600/'></img>
                 </Col>
+              </Row>
             </Col>
           </Row>          
           <Row className='grid-row'>
             <Col sm='6' className='grid-square bottom-left'>
-              <Col>
-                <h1 className="title">Web Design</h1>
-                <ul>
-                  <li><p><span>&#191;</span>Like our website?</p></li>
-                  <li><p>We can help you make a new or update an old website to cater to your clubs needs on the internet.</p></li>
-                  <li><p>Having an online presence will help to keep your organization relevant in the 21st century.</p></li>
-                </ul>
-              </Col>
-              <Col>
-                <img className='img-fluid' height='100%' width='100%' src='https://source.unsplash.com/random/400x600/'></img>
-              </Col>
+              <Row className='row-no-margin'>
+                <Col md='6'>
+                  <h1 className="title">Web Design</h1>
+                  <ul>
+                    <li><p><span>&#191;</span>Like our website?</p></li>
+                    <li><p>We can help you make a new or update an old website to cater to your clubs needs on the internet.</p></li>
+                    <li><p>Having an online presence will help to keep your organization relevant in the 21st century.</p></li>
+                  </ul>
+                </Col>
+                <Col md='6'>
+                  <img className='img-fluid' height='100%' width='100%' src='https://source.unsplash.com/random/400x600/'></img>
+                </Col>
+              </Row>
             </Col>
             <Col sm='6' className='grid-square bottom-right'>
-              <Col>
-                <h1 className='title'>Videography</h1>
-                <ul>
-                  <li><p>Invite some of our talented film crew to your events and we can create you a video to highlight your organization.</p></li>
-                  <li><p>Whether it be for spreading information or promoting an upcoming event, video advertising is a powerful tool we can help you with.</p></li>
-                </ul>
-              </Col>
-              <Col>
-                <img className='img-fluid' height='100%' width='100%' src='https://source.unsplash.com/random/400x600/'></img>
-              </Col>
+              <Row className='row-no-margin'>
+                <Col md='6'>
+                  <h1 className='title'>Videography</h1>
+                  <ul>
+                    <li><p>Invite some of our talented film crew to your events and we can create you a video to highlight your organization.</p></li>
+                    <li><p>Whether it be for spreading information or promoting an upcoming event, video advertising is a powerful tool we can help you with.</p></li>
+                  </ul>
+                </Col>
+                <Col md='6'>
+                  <img className='img-fluid' height='100%' width='100%' src='https://source.unsplash.com/random/400x600/'></img>
+                </Col>
+              </Row>
             </Col>
           </Row>
         </Container>
