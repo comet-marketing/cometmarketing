@@ -85,6 +85,7 @@ export default class Contact extends Component {
           <Row className='justify-content-center'>
             <Col sm='6'>
               <p className='lead text-center'>Email us about your project ideas!</p>
+              <p className='lead text-center'>Remember, we can help with event photography, flyer/graphic design, videoshoots, and much more!</p>
             </Col>
           </Row>
           <Row className='justify-content-center'>
