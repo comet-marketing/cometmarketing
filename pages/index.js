@@ -89,7 +89,7 @@ export default class Index extends Component {
             </Col>
           </Row>
         </Container>
-        <FluidSectionHeader text='Recent Projects'></FluidSectionHeader>
+        <FluidSectionHeader text='Recent Projects' className='projects-header'></FluidSectionHeader>
         <Container>
           <div className='recent-projects'>
             <Row className='recent-projects-row'>

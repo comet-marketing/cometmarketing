@@ -14,7 +14,7 @@ export default class FluidSectionHeader extends Component {
     if(this.props.className){classstring = this.props.className}
 
     return (
-      <Container fluid style={divStyle} className={classstring}>
+      <Container fluid className={classstring} syle={divStyle}>
         <Container>
           <Row className=''>
             <Col sm='6'>

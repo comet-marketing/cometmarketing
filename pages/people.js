@@ -38,7 +38,7 @@ export default class People extends Component {
 
   render() {
     return(
-      <Layout title='People' pageName='People' intro='This Is Us' banner='/static/Group_pic2.jpg'>
+      <Layout title='People' pageName='People' intro='This Is Us' banner='/static/Group_pic2_optimized.jpg'>
         <Container>
           <Row className='justify-content-center'>
             <Col sm='6'>
