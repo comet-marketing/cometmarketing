@@ -1,6 +1,7 @@
 import Layout from "../components/Layout";
 import { Container, Row, Col } from 'reactstrap';
 import ReactPlayer from 'react-player';
+import CallToAction from "../components/CallToAction";
 
 export default () => {
   return (
@@ -49,7 +50,7 @@ export default () => {
           </Row>
           <Row>
             <Col className='text-center'>
-              <a className='btn-call-to-action btn-call-to-action-dark' href='/contact'>Contact us now!</a>
+              <CallToAction dark href='/contact'>Contact us now!</CallToAction>
             </Col>
           </Row>
         </Container>
