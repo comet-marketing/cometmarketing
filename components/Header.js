@@ -26,9 +26,9 @@ export default class Header extends Component {
             <Row className='row-no-margin'>
               <Col sm='6'>
                 <p className='lead call-to-action-paragraph'>
-                  Comet Marketing helps your organization market your events.
-                  We will design your posters, create your videos, take your photos, and shoot your videos.
-                  Have an event or program planned? Let us get the word out!
+                Here at Comet Marketing we help YOU market YOU! <br/>
+                From photographing your biggest event of the semester to revamping your 
+                social media presence - we are here to make your organization and events a success!
                 </p>
                 <a href='/contact' id='main-call-to-action' className='btn-call-to-action'>
                   Contact Us!

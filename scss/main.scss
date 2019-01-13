@@ -121,7 +121,7 @@
 }
 
 .home-video {
-  margin-bottom: 100px;
+  //margin-bottom: 100px;
 }
 
 .team-header {
@@ -144,7 +144,8 @@
 
 .player-wrapper {
   position: relative;
-  width: 100%;
+  width: 80%;
+  float: left;
   padding-top: 56.25%; /* 720 / 1280 = 0.5625 */
 }
 
@@ -165,6 +166,17 @@
       z-index: -1;
     }
   }
+}
+
+.about-text {
+  font-size: 24px;
+  text-indent: 24px;
+  display: block;
+  background-color: $color-background-gray;
+  color: $color-text-dark;
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: -50px;
 }
 
 .react-player {
