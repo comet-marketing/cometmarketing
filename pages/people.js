@@ -8,6 +8,7 @@ import {
   Button
 } from 'reactstrap';
 import DynamicLink from "../components/DynamicLink";
+import CallToAction from "../components/CallToAction";
 
 export default class People extends Component {
   static chunk(array, size) {
@@ -45,7 +46,7 @@ export default class People extends Component {
               <p className='lead'>Creative, talented, and looking for a way to show it off?</p>
               <p className='lead'>Comet Marketing is looking for designers, photographers, videographers, illustrators, and more to join the team!</p>
               <p className='lead'>We work on flyers, posters, social media posts, short videos, photoshoots, and more!</p>
-              <a className='btn-call-to-action btn-call-to-action-dark' href='https://goo.gl/forms/vCYE7wFGCeralb9B3'>Join Here!</a>
+              <CallToAction dark href='https://goo.gl/forms/vCYE7wFGCeralb9B3'>Join Here!</CallToAction>
             </Col>
           </Row>
           {this.props.people.map((row, i) => (

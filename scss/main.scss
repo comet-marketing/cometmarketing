@@ -155,7 +155,7 @@
 
 @media (min-width: 650px) {
   .player-wrapper {
-    margin: 50px 0 100px 0;
+    margin: 0 0 50px 0;
 
     &::after {
       content:'';
@@ -173,12 +173,10 @@
 }
 
 .about-text {
-  font-size: 24px;
-  text-indent: 36px;
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 35px;
   color: $color-text-dark;
-  padding: 20px;
-  border-radius: 20px;
-  margin-top: -50px;
 }
 
 .react-player {

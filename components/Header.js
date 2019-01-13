@@ -5,6 +5,7 @@ import {
   Row,
   Col
 } from 'reactstrap';
+import CallToAction from './CallToAction';
 
 export default class Header extends Component {
   render() {
@@ -30,9 +31,7 @@ export default class Header extends Component {
                 From photographing your biggest event of the semester to revamping your 
                 social media presence - we are here to make your organization and events a success!
                 </p>
-                <a href='/contact' id='main-call-to-action' className='btn-call-to-action'>
-                  Contact Us!
-                </a>
+                <CallToAction href='/contact' id='main-call-to-action'>Contact Us Now!</CallToAction>
               </Col>
             </Row>
           }

@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import Head from 'next/head';
+import CallToAction from '../components/CallToAction';
 import { Component } from 'react';
 import { Container, Button, Form, FormGroup, FormText, Label, Input, Row, Col } from 'reactstrap';
 import ReCAPTCHA from "react-google-recaptcha";
@@ -85,6 +85,7 @@ export default class Contact extends Component {
           <Row className='justify-content-center'>
             <Col sm='6'>
               <p className='lead text-center'>Email us about your project ideas!</p>
+              <p className='lead text-center'>Remember, we can help with event photography, flyer/graphic design, videoshoots, and much more!</p>
             </Col>
           </Row>
           <Row className='justify-content-center'>
@@ -126,7 +127,7 @@ export default class Contact extends Component {
                     onChange={this.onRecaptchaChange}
                   />
                 </FormGroup>
-                <Button className='submit-button btn-call-to-action btn-call-to-action-dark'>Submit</Button>
+                <CallToAction className='submit-button' dark>Submit</CallToAction>
               </Form>
             </Col>
           </Row>

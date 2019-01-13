@@ -4,6 +4,7 @@ import FluidSectionHeader from '../components/FluidSectionHeader';
 import fetch from "node-fetch";
 import { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import CallToAction from "../components/CallToAction";
 
 
 export default class Index extends Component {
@@ -106,7 +107,7 @@ export default class Index extends Component {
                 </Col>
               ))}
               <Col sm='12' className='d-flex justify-content-center'>
-                <a className='btn-call-to-action btn-call-to-action-dark' href='/portfolio'>View all</a>
+                <CallToAction dark href='/portfolio'>View all</CallToAction>
               </Col>
             </Row>
           </div>
@@ -128,7 +129,7 @@ export default class Index extends Component {
                 </Col>
               ))}
               <Col sm='12' className='d-flex justify-content-center'>
-                <a className='btn-call-to-action btn-call-to-action-dark' href='/people'>View all</a>
+                <CallToAction dark href='/people'>View all</CallToAction>
               </Col>
             </Row>
           </div>
