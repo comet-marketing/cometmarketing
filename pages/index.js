@@ -11,7 +11,7 @@ export default class Index extends Component {
   static async getInitialProps() {
     const res = await fetch('https://utdcometmarketing-api.herokuapp.com/projects?featured=true&_limit=3&_sort=createdAt:ASC')
     let projects = await res.json()
-    const res2 = await fetch('https://utdcometmarketing-api.herokuapp.com/members?_limit=3&_start=1&_sort=gradyear:ASC')
+    const res2 = await fetch('https://utdcometmarketing-api.herokuapp.com/members?_limit=3&_sort=gradyear:ASC')
     let members = await res2.json()
     return { projects, members }
   }
