@@ -5,7 +5,7 @@ import CallToAction from "../components/CallToAction";
 
 export default () => {
   return (
-    <Layout title="about" pageName='Our Mission' intro="We're here to help you market you">
+    <Layout title="About Comet Marketing" pageName='About' intro="We're here to help you market you">
       <Container>
           <Row className='home-video justify-content-center'>
             <div className='player-wrapper justify-content-center'>

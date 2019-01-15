@@ -45,7 +45,7 @@ export default class Index extends Component {
 
   render() {
     return (    
-      <Layout title='Home' pageName='Comet Marketing' isHome={true}>
+      <Layout title='Comet Marketing' pageName='Comet Marketing' isHome={true}>
         <Container className='services-grid'>
           <Row className='grid-row row-no-margin'>
             <Col sm='6' className='grid-square top-left'>

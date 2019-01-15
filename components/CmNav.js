@@ -45,7 +45,7 @@ export default class CmNav extends React.Component {
                   <NavLink href="/people">People</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/about">Our Mission</NavLink>
+                  <NavLink href="/about">About</NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink href="/contact">Contact</NavLink>
