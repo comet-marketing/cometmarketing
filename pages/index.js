@@ -110,7 +110,7 @@ export default class Index extends Component {
             </Col>
           </Row>
         </Container>
-        <FluidSectionHeader text='Recent Projects' className='projects-header'></FluidSectionHeader>
+        <FluidSectionHeader text='Recent Projects' className='projects-header' backgroundImage='/static/bookparty_optimized.jpg'></FluidSectionHeader>
         <Container>
           <div className='recent-projects'>
           <Row className='home-video justify-content-center'>
@@ -126,12 +126,12 @@ export default class Index extends Component {
           </Row>
           </div>
         </Container>
-        <FluidSectionHeader text='Meet Our Team' className='team-header'></FluidSectionHeader>
+        <FluidSectionHeader text='Meet Our Team' className='team-header' backgroundImage='/static/group-home-optimized.jpg'></FluidSectionHeader>
         <Container>
           <div className='meet-our-team'>
             <Row className='recent-projects-row row-no-margin'>
               {this.props.members.map((person) => (
-                <Col className='person-listing' key={person.id}>
+                <Col md='4' className='person-listing' key={person.id}>
                   <DynamicLink displayRoute='people' actualRoute='person' slug={person.slug}>
                     {!!person.profilepicture &&
                         <img className='img-fluid' src={person.profilepicture.url}></img>
