@@ -10,7 +10,7 @@ export default () => {
           <Row className='home-video justify-content-center'>
             <div className='player-wrapper justify-content-center'>
               <ReactPlayer
-                url='https://www.youtube.com/watch?v=qLmomGuId6Y'
+                url='https://www.youtube.com/watch?v=5iL6a54k1-8'
                 className='react-player'
                 playing
                 muted

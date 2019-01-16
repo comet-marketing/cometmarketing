@@ -14,6 +14,9 @@ export default class Layout extends Component {
           <title>{this.props.title}</title>
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
           <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400" rel="stylesheet"></link>
+          <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet"></link>
+          <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon-32x32.png"></link>
+          <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon-16x16.png"></link>
         </Head>
         <div className='layout-header'>
           <CmNav title={this.props.title}></CmNav>
