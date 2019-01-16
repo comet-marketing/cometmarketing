@@ -43,10 +43,21 @@ export default class Contact extends Component {
         })
       });
       if (response.status == 200) {
-        this.setState({displaySuccessMessage: true})
+        this.setState({displaySuccessMessage: true});
+
+        this.setState({
+          email: "",
+          name: "",
+          message: "",
+          emailInvalid: false,
+          displayInvalidMessage: false,
+          displayEmptyMessage: false,
+          recaptchaScore: ""
+        });
       } else {
         this.setState({displayErrorMessage: true})
       }
+      grecaptcha.reset();
     }
     else 
       this.setState({displayEmptyMessage: true});
@@ -102,7 +113,7 @@ export default class Contact extends Component {
                   <p>Try submitting the form again.</p>
                 </div>
               }
-              <Form className='contact-form' onSubmit={this.submitHandler}>
+              <Form id='contact-form' className='contact-form' onSubmit={this.submitHandler}>
                 <FormGroup>
                   <Label for="contactEmail">Email</Label>
                   <Input onBlur={this.displayEmailInvalid} onChange={this.onEmailChange} value={this.state.email} type="email" name="email" id="email" placeholder="your_org@mail.com" />

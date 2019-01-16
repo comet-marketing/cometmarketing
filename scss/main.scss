@@ -124,24 +124,6 @@
   }
 }
 
-.home-video {
-  //margin-bottom: 100px;
-}
-
-.team-header {
-  background-image: linear-gradient(to right, rgba(253, 153, 23, 0.5), rgba(29,178,75, 0.4)), url('/static/group-home-optimized.jpg');
-  &:hover {
-    background-image: linear-gradient(to right, rgba(253, 153, 23, 0), rgba(29, 178, 75, 0)), url('/static/group-home-optimized.jpg');
-  }
-}
-
-.projects-header {
-  background-image: linear-gradient(to right, rgba(253, 153, 23, 0.5), rgba(29,178,75, 0.4)), url('/static/bookparty_optimized.jpg');
-  &:hover {
-    background-image: linear-gradient(to right, rgba(253, 153, 23, 0), rgba(29, 178, 75, 0)), url('/static/bookparty_optimized.jpg');
-  }
-}
-
 .title-row {
   margin: 50px auto;
 }

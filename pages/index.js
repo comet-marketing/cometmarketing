@@ -16,25 +16,6 @@ export default class Index extends Component {
     let members = await res2.json()
     return { projects, members }
   }
-  /*
-      <Row className='recent-projects-row'>
-              {this.props.projects.map((project) => (
-                <Col className='project-listing' key={project.id}>
-                  <DynamicLink displayRoute='portfolio' actualRoute='project' slug={project.slug}>
-                    {!!project.pictures[0] &&
-                      <img className='img-fluid' src={project.pictures[0].url}></img>
-                    }
-                    <h2>{project.title}</h2>
-                    <p className='lead'>{project.partners}</p>
-                    <p className='content'>{project.description.substring(0, 100) + '...'}</p>
-                  </DynamicLink>
-                </Col>
-              ))}
-              <Col sm='12' className='d-flex justify-content-center'>
-                <CallToAction dark href='/portfolio'>View all</CallToAction>
-              </Col>
-            </Row>
-  */
 
   componentWillMount() {
     this.setState({
@@ -45,7 +26,7 @@ export default class Index extends Component {
 
   render() {
     return (    
-      <Layout title='Home' pageName='Comet Marketing' isHome={true}>
+      <Layout title='Comet Marketing' pageName='Comet Marketing' isHome={true}>
         <Container className='services-grid'>
           <Row className='grid-row row-no-margin'>
             <Col sm='6' className='grid-square top-left'>
@@ -110,13 +91,13 @@ export default class Index extends Component {
             </Col>
           </Row>
         </Container>
-        <FluidSectionHeader text='Recent Projects' className='projects-header'></FluidSectionHeader>
+        <FluidSectionHeader text='Recent Projects' className='projects-header' backgroundImage='/static/bookparty_optimized.jpg'></FluidSectionHeader>
         <Container>
           <div className='recent-projects'>
           <Row className='home-video justify-content-center'>
             <div className='player-wrapper justify-content-center'>
               <ReactPlayer
-                url='https://www.youtube.com/watch?v=SNR5vzwwrj0&t=29s'
+                url='https://www.youtube.com/watch?v=SNR5vzwwrj0'
                 className='react-player'
                 controls
                 width='100%'
@@ -126,12 +107,12 @@ export default class Index extends Component {
           </Row>
           </div>
         </Container>
-        <FluidSectionHeader text='Meet Our Team' className='team-header'></FluidSectionHeader>
+        <FluidSectionHeader text='Meet Our Team' className='team-header' backgroundImage='/static/group-home-optimized.jpg'></FluidSectionHeader>
         <Container>
           <div className='meet-our-team'>
             <Row className='recent-projects-row row-no-margin'>
               {this.props.members.map((person) => (
-                <Col className='person-listing' key={person.id}>
+                <Col md='4' className='person-listing' key={person.id}>
                   <DynamicLink displayRoute='people' actualRoute='person' slug={person.slug}>
                     {!!person.profilepicture &&
                         <img className='img-fluid' src={person.profilepicture.url}></img>

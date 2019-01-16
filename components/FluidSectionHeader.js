@@ -6,18 +6,33 @@ import {
 } from 'reactstrap';
 
 export default class FluidSectionHeader extends Component {
+  constructor(props) {
+    super(props);
+    this.rootClassNames = this.rootClassNames.bind(this)
+  }
+
+  rootClassNames() {
+    let names;
+    if (!!this.props.className) {
+      names = this.props.className.split(' ');
+    }
+    else {
+      names = []
+    }
+    names.push('fluid-section-header');
+    return names.join(' ');
+  }
+
   render() {
-    var string = ''
-    this.props.banner ? string = 'linear-gradient(to right, rgba(253, 153, 23, 0.5), rgba(29,178,75, 0.4)), url(' + this.props.banner + ')' : 'url("../static/banner.jpg")'
-    var divStyle = {backgroundImage: string};
-    var classstring = 'fluid-section-header'
-    if(this.props.className){classstring = this.props.className}
+    let string = '';
+    this.props.backgroundImage ? string = 'url(' + this.props.backgroundImage + ')' : 'url(static/banner.jpg)';
+    let divStyle = { backgroundImage: string };
 
     return (
-      <Container fluid className={classstring} syle={divStyle}>
+      <Container fluid className={this.rootClassNames()} style={divStyle}>
         <Container>
           <Row className=''>
-            <Col sm='6'>
+            <Col md='6'>
               <h2 className='display-4'>{this.props.text}</h2>
             </Col>
           </Row>

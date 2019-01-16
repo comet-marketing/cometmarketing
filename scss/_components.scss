@@ -72,12 +72,18 @@
   }
 }
 
-.fluid-section-header, .team-header, .projects-header{
+.fluid-section-header {
   height: 400px;
   background-image: url("/static/banner.jpg");
   background-size: cover;
   margin-bottom: 100px;
-  transition: all .2s ease;
+  position: relative;
+    
+  &:hover {
+    &::before {
+      opacity: 0;
+    }
+  }
 
   h2 {
     padding: 35px 50px;
@@ -86,10 +92,21 @@
     color: $color-text-dark;
     background: $white
   }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(253, 153, 23, 0.4), rgba(29, 178, 75, 0.4));
+    transition: all .2s ease;
+    margin-left: -15px;
+  }
 }
 
 .footer {
-  padding: 100px 0;
+  padding: 75px 0;
   color: $color-text-light;
   background-color: $color-background-dark;
 
@@ -109,7 +126,11 @@
     outline: none;
     border: none;
     background-color: $color-theme-orange;
-    margin: 15px 20px 0 auto;
+    margin: 30px 20px 30px auto;
+  }
+
+  .github {
+    margin-right: 20px;
   }
 }
 
