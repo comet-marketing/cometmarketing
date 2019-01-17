@@ -117,11 +117,20 @@
   color: $color-text-light;
   background-color: $color-background-dark;
 
+  @media (max-width: 600px) {
+    text-align: center;
+  }
+
   .row {
     margin: 0;
   }
 
   .nav {
+    @media(min-width: 600px) {
+      justify-content: flex-end;
+      margin: 0;
+    }
+    margin: 30px auto;
     a {
       padding: 0 5px;
       margin: 0 15px;
@@ -133,11 +142,17 @@
     outline: none;
     border: none;
     background-color: $color-theme-orange;
-    margin: 30px 20px 30px auto;
+    @media (min-width: 600px) {
+      margin: 30px 20px 30px auto;
+    }
+    margin: 30px auto;
   }
 
   .github {
-    margin-right: 20px;
+    @media (min-width: 600px) {
+      text-align: right;
+      margin-right: 20px;
+    }
   }
 }
 
