@@ -21,7 +21,7 @@ export default class Footer extends Component {
               <p>Here to help you market you.</p>
             </Col>
             <Col sm='8'>
-              <Nav className='justify-content-end'>
+              <Nav>
                 <NavItem>
                   <NavLink href="/people">People</NavLink>
                 </NavItem>
@@ -51,7 +51,7 @@ export default class Footer extends Component {
                 </NavItem>
               </Nav>
               <hr></hr>
-              <p className='text-right github'>Website by Al and Mustafa | <a href='https://github.com/almadireddy/cometmarketing'>Github</a></p>
+              <p className='github'>Website by Al and Mustafa | <a href='https://github.com/almadireddy/cometmarketing'>Github</a></p>
             </Col>
           </Row>
         </Container>
