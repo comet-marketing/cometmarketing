@@ -32,7 +32,7 @@ export default class FluidSectionHeader extends Component {
       <Container fluid className={this.rootClassNames()} style={divStyle}>
         <Container>
           <Row className=''>
-            <Col md='6'>
+            <Col md='8' lg='6'>
               <h2 className='display-4'>{this.props.text}</h2>
             </Col>
           </Row>

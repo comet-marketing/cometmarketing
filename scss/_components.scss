@@ -76,9 +76,13 @@
   height: 400px;
   background-image: url("/static/banner.jpg");
   background-size: cover;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
   position: relative;
     
+  @media (min-width: 600px) {
+    margin-bottom: 100px;
+  }
+
   &:hover {
     &::before {
       opacity: 0;
@@ -86,7 +90,10 @@
   }
 
   h2 {
-    padding: 35px 50px;
+    @media (min-width: 600px) {
+      padding: 35px 50px;
+    }
+    padding: 15px;
     margin-top: 300px;
     text-align: center;
     color: $color-text-dark;

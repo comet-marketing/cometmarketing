@@ -6,6 +6,7 @@ import {
   Col
 } from 'reactstrap';
 import CallToAction from './CallToAction';
+import CmNav from './CmNav';
 
 export default class Header extends Component {
   render() {
@@ -14,6 +15,7 @@ export default class Header extends Component {
     var divStyle = {backgroundImage: string}
     return (
       <Jumbotron className='page-header' style={divStyle} >
+        <CmNav title={this.props.title}></CmNav>
         <Container>
           <Row className='row-no-margin'>
             <Col>

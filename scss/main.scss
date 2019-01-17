@@ -25,7 +25,8 @@
   padding-bottom: 25px;
   transition: all .2s ease;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  
+  margin-bottom: 150px;
+
   .dropdown-menu {
     background: $color-background-dark;
 
@@ -70,11 +71,11 @@
 }
 
 .page-header {
-  padding-top: 250px;
-  margin-top: -90px;
+  padding: 0 2rem 4rem 2rem;
   margin-bottom: 0;
   background: url('/static/banner.jpg');
   background-size: cover;
+  background-position: center top;
   color: $color-text-light;
   border-radius: 0;
 
@@ -159,6 +160,14 @@
   font-weight: 300;
   margin-bottom: 35px;
   color: $color-text-dark;
+
+  p.lead {
+    font-weight: 400;
+  }
+
+  p:not(.lead) {
+    margin-bottom: 50px;
+  }
 }
 
 .react-player {
