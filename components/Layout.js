@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Head from 'next/head';
-import CmNav from './CmNav';
 import Header from "./Header";
 import Footer from './Footer';
 import 'bootstrap/scss/bootstrap.scss';
@@ -19,8 +18,7 @@ export default class Layout extends Component {
           <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon-16x16.png"></link>
         </Head>
         <div className='layout-header'>
-          <CmNav title={this.props.title}></CmNav>
-          <Header isHome={this.props.isHome} pageName={this.props.pageName} intro={this.props.intro} banner={this.props.banner}></Header>
+          <Header title={this.props.title} isHome={this.props.isHome} pageName={this.props.pageName} intro={this.props.intro} banner={this.props.banner}></Header>
         </div>
         <div className='layout-body'>
           {this.props.children}
