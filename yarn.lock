@@ -3391,10 +3391,9 @@ neo-async@^2.5.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.0.tgz#b9d15e4d71c6762908654b5183ed38b753340835"
 
-next-ga@^2.3.4:
+"next-ga@https://github.com/almadireddy/next-ga":
   version "2.3.4"
-  resolved "https://registry.yarnpkg.com/next-ga/-/next-ga-2.3.4.tgz#0bec23e7c2eea35485af0b342e7794bbbdb61d04"
-  integrity sha512-mIol83ehPCz9Z+QtK6ig1w9Db4ShoyhjS6NgDnTIVJuBQ1iobiZap2xXn6KtYWBc+AH5DdTCBtZRF8PP5yJAVA==
+  resolved "https://github.com/almadireddy/next-ga#623f60b5049177b23f56a89c79b9baf2795cb6a3"
   dependencies:
     debug "^4.0.0"
     react-ga "^2.5.3"
