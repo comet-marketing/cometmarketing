@@ -199,19 +199,40 @@
   border: none;
 }
 
+.services-container {
+  margin-top: -100px;
+  margin-bottom: -100px;
+  padding: 100px 0;
+  background: linear-gradient(to bottom, rgba(darken($color-background-gray, 10), 0.3), rgba(darken($color-background-light, 10), 0.5))
+}
+
 .services-grid {
   margin-top: 50px;
   margin-bottom: 50px;
 }
 
-.grid-square {
-  color: $color-text-dark;
-  padding: 20px;
+.grid-row {
+  align-items: stretch;
 
-  .title {
-    font-size: 36px;
-    padding-bottom: 20px;
-    word-wrap: break-word
+  .col-md-7 {
+    padding: 35px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    h3 {
+      font-size: 35px
+    }
+    hr {
+      width: 50px;
+      height: 3px;
+      background-color: $color-theme-orange;
+      margin: 25px auto 35px 0;
+    }
+    div {
+      flex-grow: 1;
+      font-size: 20px;
+    }
   }
 }
 
