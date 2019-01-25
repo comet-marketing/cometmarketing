@@ -34,9 +34,8 @@ export default class Index extends Component {
                 <h3 className='title'>Photography</h3>
                 <hr></hr>
                 <div>
-                  <p>We can help cover large or small events with our amazing photographers.</p>
-                  <p>After an editing period, we'll provide you with high-quality, edited photos for you to use as you see fit.</p>
-                  <p>A great way to make a legacy for the future of your club.</p>
+                  <p>We can help cover your events with trained and experienced photographers and professional photo editors.</p>
+                  <p>We provide high-quality, edited photos for you to use as you see fit. A great way to create a lasting visual legacy for your club</p>
                 </div>
               </Col>
               <Col md='5'>
@@ -48,8 +47,8 @@ export default class Index extends Component {
                 <h3 className='title'>Graphic Design</h3>
                 <hr></hr>
                 <div>
-                  <p>Our team of designers can help inspire new designs and ideas to advertise your upcoming events!</p>
-                  <p>With custom flyers and posters to put around campus and online your event will be as bustling as ever.</p>
+                  <p>Our team of designers can help create and inspire new designs and ideas to advertise your upcoming events!</p>
+                  <p>With attractive custom flyers and posters to put around campus and online, your club will have eye-catching design content.</p>
                 </div>
               </Col>
               <Col md='5'>
@@ -62,8 +61,8 @@ export default class Index extends Component {
                 <hr></hr>
                 <div>
                   <p><span>&#191;</span>Like our website?</p>
-                  <p>We can help you make a new or update an old website to cater to your clubs needs on the internet.</p>
-                  <p>Having an online presence will help to keep your organization relevant in the 21st century.</p>
+                  <p>We can help you make a new website or update an existing one to cater to your club's needs on the internet.</p>
+                  <p>Having an beautiful online website will help to keep your organization relevant and visually stunning.</p>
                 </div>
               </Col>
               <Col md='5'>
@@ -75,8 +74,8 @@ export default class Index extends Component {
                 <h3 className='title'>Videography</h3>
                 <hr></hr>
                 <div>
-                  <p>Invite some of our talented film crew to your events and we can create you a video to highlight your organization.</p>
-                  <p>Whether it be for spreading information or promoting an upcoming event, video advertising is a powerful tool we can help you with.</p>
+                  <p>Invite some of our talented film crew to create a video to highlight any aspect of your organization!</p>
+                  <p>Whether it be for spreading information or promoting an upcoming event, video advertising is a power story-telling tool that we can provide for your team.</p>
                 </div>
               </Col>
               <Col md='5'>
