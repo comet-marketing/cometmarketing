@@ -35,7 +35,7 @@ export default class Index extends Component {
                 <hr></hr>
                 <div>
                   <p>We can help cover your events with trained and experienced photographers and professional photo editors.</p>
-                  <p>We provide high-quality, edited photos for you to use as you see fit. A great way to create a lasting visual legacy for your club</p>
+                  <p>We provide high-quality, edited photos for you to use as you see fit. A great way to create a lasting visual legacy for your club.</p>
                 </div>
               </Col>
               <Col md='5'>
