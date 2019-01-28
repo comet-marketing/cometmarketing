@@ -30,8 +30,8 @@ export default class Header extends Component {
               <Col sm='6'>
                 <p className='lead call-to-action-paragraph'>
                 Here at Comet Marketing we help YOU market YOU! <br/>
-                From photographing your biggest event of the semester to revamping your 
-                social media presence - we are here to make your organization and events a success!
+                From photographing your biggest event of the semester to revamping your social media presence
+                - we are here to make your UTD organization and events a success!
                 </p>
                 <CallToAction href='/contact' id='main-call-to-action'>Contact Us Now!</CallToAction>
               </Col>

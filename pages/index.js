@@ -62,7 +62,7 @@ export default class Index extends Component {
                 <div>
                   <p><span>&#191;</span>Like our website?</p>
                   <p>We can help you make a new website or update an existing one to cater to your club's needs on the internet.</p>
-                  <p>Having an beautiful online website will help to keep your organization relevant and visually stunning.</p>
+                  <p>Having a beautiful online website will help to keep your organization relevant and visually stunning.</p>
                 </div>
               </Col>
               <Col md='5'>
