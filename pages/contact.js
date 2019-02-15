@@ -30,7 +30,7 @@ export default class Contact extends Component {
     e.preventDefault();
     if (!(this.state.email == '' || this.state.name == '' || this.state.message == '' || this.state.emailInvalid || this.state.recaptchaScore == "")) {
       this.setState({ displayEmptyMessage: false });
-      let response = await fetch('https://utdcometmarketing-api.herokuapp.com/contactmesssages', {
+      let response = await fetch('https://utdcometmarketing-api.herokuapp.com/contactmessages', {
         method: 'POST',
         headers: {
           "Content-Type": "application/json"
@@ -39,7 +39,8 @@ export default class Contact extends Component {
           email: this.state.email,
           name: this.state.name,
           message: this.state.message,
-          recaptchaScore: this.state.recaptchaScore
+          recaptchaScore: this.state.recaptchaScore,
+          whom: "client"
         })
       });
       if (response.status == 200) {
