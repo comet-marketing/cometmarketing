@@ -3,6 +3,29 @@ import CallToAction from '../components/CallToAction';
 import { Component } from 'react';
 import { Container, Button, Form, FormGroup, FormText, Label, Input, Row, Col } from 'reactstrap';
 import ReCAPTCHA from "react-google-recaptcha";
+import Select from 'react-select';
+
+const options = [
+  { value: 'client', label: 'Student Organization' },
+  { value: 'partner', label: 'Business' },
+  { value: 'other', label: 'Other' }
+];
+
+const selectStyles = {
+  option: (provided, state) => ({
+    ...provided,
+    color: state.isSelected ? 'white' : 'black',
+    padding: 20,
+  }),
+  control : (provided, state) => ({
+    ...provided,
+    borderColor: state.isSelected ? 'orange' : 'black',
+    borderWidth: '2',
+    '&:focus': { outline: 0, borderColor: 'orange', boxShadow: '0 0 0 0.2rem peachpuff', },
+    '&:hover': { outline: 0, borderColor: 'orange', boxShadow: '0 0 0 0.2rem peachpuff', },
+    transition: 'all .2s'
+  })
+}
 
 export default class Contact extends Component {
   constructor(props) {
@@ -11,6 +34,7 @@ export default class Contact extends Component {
       email: "",
       name: "",
       message: "",
+      whom: "",
       emailInvalid: false,
       displayInvalidMessage: false,
       displayEmptyMessage: false,
@@ -24,11 +48,12 @@ export default class Contact extends Component {
     this.onNameChange = this.onNameChange.bind(this);
     this.onMessageChange = this.onMessageChange.bind(this);
     this.displayEmailInvalid = this.displayEmailInvalid.bind(this);
+    this.onWhomChange = this.onWhomChange.bind(this);
   }
 
   async submitHandler(e) {
     e.preventDefault();
-    if (!(this.state.email == '' || this.state.name == '' || this.state.message == '' || this.state.emailInvalid || this.state.recaptchaScore == "")) {
+    if (!(this.state.whome == '' || this.state.email == '' || this.state.name == '' || this.state.message == '' || this.state.emailInvalid || this.state.recaptchaScore == "")) {
       this.setState({ displayEmptyMessage: false });
       let response = await fetch('https://utdcometmarketing-api.herokuapp.com/contactmessages', {
         method: 'POST',
@@ -39,8 +64,8 @@ export default class Contact extends Component {
           email: this.state.email,
           name: this.state.name,
           message: this.state.message,
+          whom: this.state.whom.value,
           recaptchaScore: this.state.recaptchaScore,
-          whom: "client"
         })
       });
       if (response.status == 200) {
@@ -50,6 +75,7 @@ export default class Contact extends Component {
           email: "",
           name: "",
           message: "",
+          whom: "",
           emailInvalid: false,
           displayInvalidMessage: false,
           displayEmptyMessage: false,
@@ -90,6 +116,10 @@ export default class Contact extends Component {
     this.setState({ message: e.target.value })
   }
 
+  onWhomChange(option) {
+    this.setState({ whom: option });
+  }
+
   render() {
     return (
       <Layout title="Contact Us" pageName='Contact Us'>
@@ -116,6 +146,18 @@ export default class Contact extends Component {
               }
               <Form id='contact-form' className='contact-form' onSubmit={this.submitHandler}>
                 <FormGroup>
+                  <Label for="contactWhom">Who are you?</Label>
+                  <Select styles={selectStyles} value={this.state.whom} onChange={this.onWhomChange} options={options}
+                          theme={(theme) => ({
+                            ...theme,
+                            colors: {
+                            ...theme.colors,
+                              primary: 'black',
+                            },
+                          })}
+                   />
+                </FormGroup>
+                <FormGroup>
                   <Label for="contactEmail">Email</Label>
                   <Input onBlur={this.displayEmailInvalid} onChange={this.onEmailChange} value={this.state.email} type="email" name="email" id="email" placeholder="your_org@mail.com" />
                   {this.state.displayInvalidMessage && 
@@ -128,7 +170,9 @@ export default class Contact extends Component {
                 </FormGroup>
                 <FormGroup>
                   <Label for="contactBody">Message Body</Label>
-                  <FormText rows='8' color='#2b2b2b' className='message-input' tag='textarea' onChange={this.onMessageChange} value={this.state.message} type="textarea" name="message" id="message" placeholder="Enarc is the realest"></FormText>
+                  <FormText rows='8' color='#2b2b2b' className='message-input' tag='textarea' onChange={this.onMessageChange} value={this.state.message} type="textarea" name="message" id="message" 
+                            placeholder="Enarc is the realest~~~                                                                                                                
+                            If enquiring about a future project please also include a probable timeline/deadline."></FormText>
                 </FormGroup>
                 {this.state.displayEmptyMessage &&
                   <p className='text-danger'>Make sure everything is filled out!</p>
