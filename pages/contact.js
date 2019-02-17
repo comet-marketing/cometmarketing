@@ -17,15 +17,18 @@ const selectStyles = {
   option: (provided, state) => ({
     ...provided,
     color: state.isSelected ? 'white' : 'black',
-    padding: 20,
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingLeft: 20
   }),
   control : (provided, state) => ({
     ...provided,
-    borderColor: state.isSelected ? 'orange' : 'black',
+    borderColor: state.isSelected ? 'rgb(253, 153, 23)' : 'black',
     borderWidth: '2',
     '&:focus': { outline: 0, borderColor: 'orange', boxShadow: '0 0 0 0.2rem peachpuff', },
     '&:hover': { outline: 0, borderColor: 'orange', boxShadow: '0 0 0 0.2rem peachpuff', },
-    transition: 'all .2s'
+    transition: 'all .2s',
+    borderRadius: 0
   })
 }
 
@@ -61,7 +64,7 @@ export default class Contact extends Component {
 
   async submitHandler(e) {
     e.preventDefault();
-    if (!(this.state.whome == '' || this.state.email == '' || this.state.name == '' || this.state.message == '' || this.state.emailInvalid || this.state.recaptchaScore == "")) {
+    if (!(this.state.whom == '' || this.state.email == '' || this.state.name == '' || this.state.message == '' || this.state.emailInvalid || this.state.recaptchaScore == "")) {
       this.setState({ displayEmptyMessage: false });
       let response = await fetch('https://utdcometmarketing-api.herokuapp.com/contactmessages', {
         method: 'POST',
@@ -133,18 +136,16 @@ export default class Contact extends Component {
       <Layout title="Contact Us" pageName='Contact Us'>
         <Container>
           <Row className='justify-content-center'>
-          <p className='lead text-center'>Hear what our past clients have to say!</p>
-          <Slider className='slider' autoplay={3000} infinite='true' >
-            {this.props.testimonials.map((testimonial, i) => 
-            <div className='justify-content-center testimonial' key={i}
-                  style={{background: 'no-repeat center center'}}>
-              <div className='text-center'>
-                <p className='justify-content-center testimonial-quote'>" {testimonial.quote} "</p>
-                <h4 className='justify-content-center testimonial-author'>- {testimonial.client}</h4>
-              </div>
-            </div>
-            )}
-          </Slider>
+            <Slider className='slider' autoplay={3000} infinite='true' >
+              {this.props.testimonials.map((testimonial, i) => 
+                <div className='justify-content-center testimonial' key={i}>
+                  <div className='text-center'>
+                    <p className='testimonial-quote'>" {testimonial.quote} "</p>
+                    <h4 className='testimonial-author'>- {testimonial.client}</h4>
+                  </div>
+                </div>
+              )}
+            </Slider>
           </Row>
           <Row className='justify-content-center'>
             <Col sm='6'>
@@ -193,8 +194,7 @@ export default class Contact extends Component {
                 <FormGroup>
                   <Label for="contactBody">Message Body</Label>
                   <FormText rows='8' color='#2b2b2b' className='message-input' tag='textarea' onChange={this.onMessageChange} value={this.state.message} type="textarea" name="message" id="message" 
-                            placeholder="Enarc is the realest~~~                                                                                                                
-                            If enquiring about a future project please also include a probable timeline/deadline."></FormText>
+                            placeholder="If enquiring about a future project please also include a probable timeline/deadline."></FormText>
                 </FormGroup>
                 {this.state.displayEmptyMessage &&
                   <p className='text-danger'>Make sure everything is filled out!</p>
