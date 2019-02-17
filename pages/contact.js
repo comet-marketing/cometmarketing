@@ -54,7 +54,7 @@ export default class Contact extends Component {
   }
 
   static async getInitialProps() {
-    const res = await fetch('https://utdcometmarketing-api.herokuapp.com/testimonials?_limit=3&_sort=createdAt')
+    const res = await fetch('https://utdcometmarketing-api.herokuapp.com/testimonials?')
     let testimonials = await res.json()
     return {testimonials}
   }
@@ -134,9 +134,10 @@ export default class Contact extends Component {
         <Container>
           <Row className='justify-content-center'>
           <p className='lead text-center'>Hear what our past clients have to say!</p>
-          <Slider className='slider' autoplay={3000}>
-            {this.props.testimonials.map((testimonial) => 
-            <div className='justify-content-center testimonial' key={testimonial.id}>
+          <Slider className='slider' autoplay={3000} infinite='true' >
+            {this.props.testimonials.map((testimonial, i) => 
+            <div className='justify-content-center testimonial' key={i}
+                  style={{background: 'no-repeat center center'}}>
               <div className='text-center'>
                 <p className='justify-content-center testimonial-quote'>" {testimonial.quote} "</p>
                 <h4 className='justify-content-center testimonial-author'>- {testimonial.client}</h4>
