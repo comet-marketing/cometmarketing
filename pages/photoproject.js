@@ -8,9 +8,9 @@ import {
   Col
 } from 'reactstrap';
 
-class Project extends Component {
+class Photoproject extends Component {
   static async getInitialProps({query}) {
-    const res = await fetch(`https://utdcometmarketing-api.herokuapp.com/projects/${query.slug}`)
+    const res = await fetch(`https://utdcometmarketing-api.herokuapp.com/photoprojects/${query.slug}`)
     const data = await res.json()
 
     return {
@@ -33,4 +33,4 @@ class Project extends Component {
   }
 }
 
-export default withRouter(Project);
+export default withRouter(Photoproject);
