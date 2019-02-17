@@ -1,0 +1,125 @@
+@import 'vars';
+
+.slider {
+	position: relative;
+	width: 100%;
+	height: 200px;
+    overflow: hidden;
+    align-content: center;
+    align-items: center;
+    //background: #eff0ef;
+    border-radius: 10px;
+    //box-shadow: -3px 3px 0 0 darken(#eff0ef, 20); 
+}
+
+.slider .testimonial {
+    position: absolute;
+    left: 50%;
+    transform: translate(75%, 30%);
+    width: 40%;
+    height: 100%;
+    font-size: 20px;
+}
+
+.slider .testimonial-quote {
+    font-size: 120%;
+    display: block;
+    border-width: 2px 0;
+    border-style: solid;
+    border-color: #eee;
+    position: relative;
+    color: lighten($color-text-dark, $amount: 25);
+    font-style: italic;
+    line-height: 2.5 !important;
+}
+
+.slider .testimonial-author {
+    padding-top: 20px;
+    padding-left: 60%;
+    color: $color-text-dark;
+    font-weight: 300;
+    font-size: 80%;
+}
+
+.slider a.previousButton, .slider a.nextButton {
+	font-size: 22px;
+	line-height: 0;
+	display: block;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	        transform: translateY(-50%);
+	-webkit-transition: all .2s linear;
+	transition: all .2s linear;
+	z-index: 1;
+
+	padding: 10px;
+	text-decoration: none;
+	-webkit-backface-visibility: hidden;
+	        backface-visibility: hidden
+	/* prevent jump effect when scaling */
+}
+
+.slider a.previousButton:not(.disabled):hover, .slider a.nextButton:not(.disabled):hover {
+	-webkit-transform: translateY(-50%) scale(1.25);
+	        transform: translateY(-50%) scale(1.25);
+	cursor: pointer;
+}
+
+.slider a.previousButton {
+    size: 110%;
+    color: $color-theme-orange;
+    background-color: inherit;
+	left: 20px;
+}
+
+.slider a.nextButton {
+    right: 20px;
+    &:hover {
+        size: 110%;
+        background-color: inherit;
+    }
+}
+
+.slide {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden
+}
+
+.slide.hidden {
+	visibility: hidden;
+}
+
+.slide.previous {
+	left: -100%;
+}
+
+.slide.current {
+	left: 0;
+}
+
+.slide.next {
+	left: 100%;
+}
+
+.slide.animateIn,
+	.slide.animateOut {
+	-webkit-transition: all 1s ease;
+	transition: all 1s ease;
+}
+
+.slide.animateIn.previous,
+		.slide.animateIn.next {
+	left: 0;
+	visibility: visible;
+}
+
+.slide.animateOut.previous {
+	left: 100%;
+}
+
+.slide.animateOut.next {
+	left: -100%;
+}

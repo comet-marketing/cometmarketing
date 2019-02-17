@@ -4,6 +4,8 @@ import { Component } from 'react';
 import { Container, Button, Form, FormGroup, FormText, Label, Input, Row, Col } from 'reactstrap';
 import ReCAPTCHA from "react-google-recaptcha";
 import Select from 'react-select';
+import fetch from "node-fetch";
+import Slider from 'react-animated-slider';
 
 const options = [
   { value: 'client', label: 'Student Organization' },
@@ -40,7 +42,7 @@ export default class Contact extends Component {
       displayEmptyMessage: false,
       displaySuccessMessage: false,
       displayErrorMessage: false,
-      recaptchaScore: ""
+      recaptchaScore: "",
     };
     this.submitHandler = this.submitHandler.bind(this);
     this.onRecaptchaChange = this.onRecaptchaChange.bind(this);
@@ -49,6 +51,12 @@ export default class Contact extends Component {
     this.onMessageChange = this.onMessageChange.bind(this);
     this.displayEmailInvalid = this.displayEmailInvalid.bind(this);
     this.onWhomChange = this.onWhomChange.bind(this);
+  }
+
+  static async getInitialProps() {
+    const res = await fetch('https://utdcometmarketing-api.herokuapp.com/testimonials?_limit=3&_sort=createdAt')
+    let testimonials = await res.json()
+    return {testimonials}
   }
 
   async submitHandler(e) {
@@ -124,6 +132,19 @@ export default class Contact extends Component {
     return (
       <Layout title="Contact Us" pageName='Contact Us'>
         <Container>
+          <Row className='justify-content-center'>
+          <p className='lead text-center'>Hear what our past clients have to say!</p>
+          <Slider className='slider' autoplay={3000}>
+            {this.props.testimonials.map((testimonial) => 
+            <div className='justify-content-center testimonial' key={testimonial.id}>
+              <div className='text-center'>
+                <p className='justify-content-center testimonial-quote'>" {testimonial.quote} "</p>
+                <h4 className='justify-content-center testimonial-author'>- {testimonial.client}</h4>
+              </div>
+            </div>
+            )}
+          </Slider>
+          </Row>
           <Row className='justify-content-center'>
             <Col sm='6'>
               <p className='lead text-center'>Email us about your project ideas!</p>
