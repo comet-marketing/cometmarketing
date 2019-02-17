@@ -8,8 +8,8 @@ import {
   Col
 } from 'reactstrap';
 import Gallery from 'react-photo-gallery';
-import Lightbox from 'react-images';
-import DynamicLink from '../components/DynamicLink'
+import {Lightbox} from 'react-images';
+import DynamicLink from '../components/DynamicLink';
 
 class Photoproject extends Component {
   constructor(){
@@ -19,6 +19,9 @@ class Photoproject extends Component {
     this.openLightbox = this.openLightbox.bind(this);
     this.gotoNext = this.gotoNext.bind(this);
     this.gotoPrevious = this.gotoPrevious.bind(this);
+    this.gcd = this.gcd.bind(this);
+    this.getMeta = this.getMeta.bind(this);
+    this.getDate = this.getDate.bind(this);
   }
   static async getInitialProps({query}) {
     const res = await fetch(`https://utdcometmarketing-api.herokuapp.com/photoprojects/${query.slug}`)
@@ -34,24 +37,27 @@ class Photoproject extends Component {
       lightboxIsOpen: true,
     });
   }
+
   closeLightbox() {
     this.setState({
       currentImage: 0,
       lightboxIsOpen: false,
     });
   }
+  
   gotoPrevious() {
     this.setState({
       currentImage: this.state.currentImage - 1,
     });
   }
+
   gotoNext() {
     this.setState({
       currentImage: this.state.currentImage + 1,
     });
   }
 
-  gcd = function(a, b) {
+  gcd(a, b) {
     if ( ! b) {
         return a;
     }
@@ -59,7 +65,7 @@ class Photoproject extends Component {
     return this.gcd(b, a % b);
   };
 
-  getMeta = function(url){   
+  getMeta(url) {   
     var img = new Image();
     img.addEventListener("load", function(){
       
@@ -68,23 +74,21 @@ class Photoproject extends Component {
     return {w: img.naturalWidth, h: img.naturalHeight}
   }
 
-  getDate = function(){
+  getDate() {
     var d = new Date(this.props.project.date)
     var string = d.toDateString()
     return string
   }
 
-
   render() {
-    const galleryPhotos = []
-    this.props.project.photos.map((photo, i) => {
+    const galleryPhotos =  this.props.project.photos.map((photo, i) => {
       let dimensions = this.getMeta(photo.url);
       let fitWidth = dimensions.w
       let fitHeight = dimensions.h
       let divisor = this.gcd(fitWidth, fitHeight);
       fitWidth = fitWidth / divisor
       fitHeight = fitHeight / divisor
-      galleryPhotos[i] = {
+      return {
         src: photo.url,
         width: fitWidth,
         height: fitHeight,
@@ -109,9 +113,9 @@ class Photoproject extends Component {
           <Col sm='8'>
             <p className='lead'>Project Members:</p>
             {this.props.project.members.map((person) => (
-                      <DynamicLink displayRoute='people' actualRoute='person' slug={person.slug}>
-                          <h2 className='lead'>{person.name}</h2>
-                      </DynamicLink>
+              <DynamicLink displayRoute='people' actualRoute='person' slug={person.slug}>
+                  <h2 className='lead'>{person.name}</h2>
+              </DynamicLink>
             ))}
           </Col>
           <Col sm='4'>
