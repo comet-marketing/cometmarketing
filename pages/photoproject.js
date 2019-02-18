@@ -65,7 +65,7 @@ class Photoproject extends Component {
     return this.gcd(b, a % b);
   };
 
-  getMeta = function(url){   
+  getMeta(url) {   
     var img = new Image();
     img.addEventListener("load", function(){
       
