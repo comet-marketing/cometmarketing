@@ -33,6 +33,12 @@ app.prepare()
       app.render(req, res, photoPage, queryParams)
     })
 
+    server.get('/video-project/:slug', (req, res) => {
+      const photoPage = '/videoproject'
+      const queryParams = { slug: req.params.slug }
+      app.render(req, res, photoPage, queryParams)
+    })
+
     server.get('*', (req, res) => {
       return handle(req, res)
     })
