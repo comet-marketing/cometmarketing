@@ -7,9 +7,7 @@
     overflow: hidden;
     align-content: center;
     align-items: center;
-    //background: #eff0ef;
     border-radius: 10px;
-    //box-shadow: -3px 3px 0 0 darken(#eff0ef, 20); 
 }
 
 .slider .testimonial {
@@ -24,21 +22,21 @@
 
 .slider .testimonial-quote {
     display: block;
-    border-width: 2px 0;
-    border-style: solid;
-    border-color: #eee;
     position: relative;
-    color: lighten($color-text-dark, $amount: 25);
+    color: $color-text-dark;
     font-style: italic;
-    line-height: 1.5 !important;
+	line-height: 32px !important;
+	font-weight: 300;
+	font-size: 22px
 }
 
 .slider .testimonial-author {
     padding-top: 20px;
     padding-left: 60%;
-    color: $color-text-dark;
+    color: lighten($color-text-dark, 25);
     font-weight: 300;
-    font-size: 80%;
+	font-size: 80%;
+	font-style: italic
 }
 
 .slider a.previousButton, .slider a.nextButton {
