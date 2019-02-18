@@ -27,6 +27,12 @@ app.prepare()
       app.render(req, res, actualPage, queryParams)
     })
 
+    server.get('/photo-project/:slug', (req, res) => {
+      const photoPage = '/photoproject'
+      const queryParams = { slug: req.params.slug }
+      app.render(req, res, photoPage, queryParams)
+    })
+
     server.get('*', (req, res) => {
       return handle(req, res)
     })

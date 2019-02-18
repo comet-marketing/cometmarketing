@@ -16,8 +16,10 @@
     "react-animated-slider": "^1.1.4",
     "react-dom": "^16.6.3",
     "react-google-recaptcha": "^1.0.5",
+    "react-images": "^0.5.19",
     "react-instagram-embed": "^1.4.1",
     "react-markdown": "^4.0.4",
+    "react-photo-gallery": "^6.3.1",
     "react-player": "^1.8.0",
     "react-select": "^2.4.0",
     "reactstrap": "^6.5.0"
