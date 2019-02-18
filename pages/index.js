@@ -88,15 +88,15 @@ export default class Index extends Component {
         <Container>
           <div className='recent-projects'>
           <Row className='home-video justify-content-center'>
-            <div className='player-wrapper justify-content-center'>
-              <ReactPlayer
-                url='https://www.youtube.com/watch?v=SNR5vzwwrj0'
-                className='react-player'
-                controls
-                width='100%'
-                height='100%'
-              />
-            </div>
+              <div className='player-wrapper justify-content-center'>
+                <ReactPlayer
+                  url='https://www.youtube.com/watch?v=SNR5vzwwrj0'
+                  className='react-player'
+                  controls
+                  width='100%'
+                  height='100%'
+                />
+              </div>
           </Row>
           </div>
         </Container>
