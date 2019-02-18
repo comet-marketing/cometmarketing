@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { withRouter } from 'next/router'
+import Link from "next/link";
 import Layout from '../components/Layout';
 import fetch from 'node-fetch';
 import {
   Container,
   Row,
-  Col
+  Col,
+  Breadcrumb, 
+  BreadcrumbItem
 } from 'reactstrap';
 import Gallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
@@ -68,7 +71,7 @@ class Photoproject extends Component {
   getMeta(url) {   
     var img = new Image();
     img.addEventListener("load", function(){
-      
+      console.log('image loaded')
     });
     img.src = url;
     return {w: img.naturalWidth, h: img.naturalHeight}
@@ -81,6 +84,7 @@ class Photoproject extends Component {
   }
 
   render() {
+<<<<<<< Updated upstream
     const galleryPhotos =  this.props.project.photos.map((photo, i) => {
       //let dimensions = this.getMeta(photo.url);
       //let fitWidth = dimensions.w
@@ -88,6 +92,15 @@ class Photoproject extends Component {
       //let divisor = this.gcd(fitWidth, fitHeight);
       //fitWidth = fitWidth / divisor
       //fitHeight = fitHeight / divisor
+=======
+    const galleryPhotos = this.props.project.photos.map((photo, i) => {
+      let dimensions = this.getMeta(photo.url);
+      let fitWidth = dimensions.w
+      let fitHeight = dimensions.h
+      let divisor = this.gcd(fitWidth, fitHeight);
+      fitWidth = fitWidth / divisor
+      fitHeight = fitHeight / divisor
+>>>>>>> Stashed changes
       return {
         src: photo.url,
         width: 3,
@@ -98,6 +111,11 @@ class Photoproject extends Component {
     return(
       <Layout pageName={this.props.project.title} title={this.props.project.title}>
         <Container>
+          <Row>
+            <Breadcrumb>
+              <BreadcrumbItem><Link href='/index'></Link></BreadcrumbItem>
+            </Breadcrumb>
+          </Row>
           <Row>
             <p className='lead'>{this.props.project.description}</p>
           </Row>
