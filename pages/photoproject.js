@@ -13,6 +13,7 @@ import {
 import Gallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
 import DynamicLink from '../components/DynamicLink';
+import BreadcrumbRow from '../components/Breadcrumb';
 
 class Photoproject extends Component {
   constructor(){
@@ -76,15 +77,8 @@ class Photoproject extends Component {
     return(
       <Layout pageName={this.props.project.title} title={this.props.project.title}>
         <Container>
-          <Row className='breadcrumb-row row-no-margin'>
-            <Col>
-              <Breadcrumb>
-                <BreadcrumbItem><a href="/index">Home</a></BreadcrumbItem>
-                <BreadcrumbItem><a href="/portfolio">Portfolio</a></BreadcrumbItem>
-                <BreadcrumbItem active>{this.props.project.title}</BreadcrumbItem>
-              </Breadcrumb>
-            </Col>
-          </Row>
+          <BreadcrumbRow parentHref="/portfolio" parentText="Portfolio" activeText=   {this.props.project.title}>
+          </BreadcrumbRow>
           <Row className='justify-content-center'>
             <Col sm='8'>
               <p className='lead'>{this.props.project.description}</p>
