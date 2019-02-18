@@ -22,8 +22,6 @@ class Photoproject extends Component {
     this.openLightbox = this.openLightbox.bind(this);
     this.gotoNext = this.gotoNext.bind(this);
     this.gotoPrevious = this.gotoPrevious.bind(this);
-    this.gcd = this.gcd.bind(this);
-    this.getMeta = this.getMeta.bind(this);
     this.getDate = this.getDate.bind(this);
   }
   static async getInitialProps({query}) {
@@ -60,23 +58,6 @@ class Photoproject extends Component {
     });
   }
 
-  gcd(a, b) {
-    if ( ! b) {
-        return a;
-    }
-
-    return this.gcd(b, a % b);
-  };
-
-  getMeta(url) {   
-    var img = new Image();
-    img.addEventListener("load", function(){
-      console.log('image loaded')
-    });
-    img.src = url;
-    return {w: img.naturalWidth, h: img.naturalHeight}
-  }
-
   getDate() {
     var d = new Date(this.props.project.date)
     var string = d.toDateString()
@@ -84,23 +65,7 @@ class Photoproject extends Component {
   }
 
   render() {
-<<<<<<< Updated upstream
-    const galleryPhotos =  this.props.project.photos.map((photo, i) => {
-      //let dimensions = this.getMeta(photo.url);
-      //let fitWidth = dimensions.w
-      //let fitHeight = dimensions.h
-      //let divisor = this.gcd(fitWidth, fitHeight);
-      //fitWidth = fitWidth / divisor
-      //fitHeight = fitHeight / divisor
-=======
     const galleryPhotos = this.props.project.photos.map((photo, i) => {
-      let dimensions = this.getMeta(photo.url);
-      let fitWidth = dimensions.w
-      let fitHeight = dimensions.h
-      let divisor = this.gcd(fitWidth, fitHeight);
-      fitWidth = fitWidth / divisor
-      fitHeight = fitHeight / divisor
->>>>>>> Stashed changes
       return {
         src: photo.url,
         width: 3,
@@ -111,13 +76,19 @@ class Photoproject extends Component {
     return(
       <Layout pageName={this.props.project.title} title={this.props.project.title}>
         <Container>
-          <Row>
-            <Breadcrumb>
-              <BreadcrumbItem><Link href='/index'></Link></BreadcrumbItem>
-            </Breadcrumb>
+          <Row className='breadcrumb-row row-no-margin'>
+            <Col>
+              <Breadcrumb>
+                <BreadcrumbItem><a href="/index">Home</a></BreadcrumbItem>
+                <BreadcrumbItem><a href="/portfolio">Portfolio</a></BreadcrumbItem>
+                <BreadcrumbItem active>{this.props.project.title}</BreadcrumbItem>
+              </Breadcrumb>
+            </Col>
           </Row>
-          <Row>
-            <p className='lead'>{this.props.project.description}</p>
+          <Row className='justify-content-center'>
+            <Col sm='8'>
+              <p className='lead'>{this.props.project.description}</p>
+            </Col>
           </Row>
           <Gallery photos={galleryPhotos} onClick={this.openLightbox} />
           <Lightbox images={galleryPhotos}

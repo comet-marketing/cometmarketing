@@ -275,3 +275,18 @@
   padding: 10px;
   margin-top: 50px;
 }
+
+.breadcrumb-row {
+  margin-top: -50px;
+  padding: 0;
+  margin-bottom: 30px;
+
+  .breadcrumb {
+    background: none;
+    border-bottom: 3px solid;
+    border-radius: 0;
+    border-color: $color-theme-orange;
+    padding: 0 0 25px 0;
+    margin-bottom: 75px;
+  }
+}
