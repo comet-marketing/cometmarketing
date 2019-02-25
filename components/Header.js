@@ -7,6 +7,7 @@ import {
 } from 'reactstrap';
 import CallToAction from './CallToAction';
 import CmNav from './CmNav';
+import ReactFitText from "react-fittext";
 
 export default class Header extends Component {
   render() {
@@ -19,7 +20,9 @@ export default class Header extends Component {
         <Container>
           <Row className='row-no-margin'>
             <Col>
-              <h1 className='display-2'>{this.props.pageName}</h1>
+              <ReactFitText maxFontSize={100} minFontSize={55} compressor={0.7}>
+                <h1 className='display-2'>{this.props.pageName}</h1>
+              </ReactFitText>
               {this.props.intro != undefined &&
                 <h3>{this.props.intro}</h3>
               }

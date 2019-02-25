@@ -15,6 +15,7 @@
     "react": "^16.6.3",
     "react-animated-slider": "^1.1.4",
     "react-dom": "^16.6.3",
+    "react-fittext": "^1.0.0",
     "react-google-recaptcha": "^1.0.5",
     "react-images": "^0.5.19",
     "react-instagram-embed": "^1.4.1",
