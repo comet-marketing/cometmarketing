@@ -1,7 +1,10 @@
 import Layout from "../components/Layout";
 import CallToAction from '../components/CallToAction';
 import { Component } from 'react';
-import { Container, Button, Form, FormGroup, FormText, Label, Input, Row, Col } from 'reactstrap';
+import { Container,
+          Button, 
+          Form, FormGroup, FormText, Label, Input, 
+          Row, Col, } from 'reactstrap';
 import ReCAPTCHA from "react-google-recaptcha";
 import Select from 'react-select';
 import fetch from "node-fetch";
@@ -46,6 +49,7 @@ export default class Contact extends Component {
       displaySuccessMessage: false,
       displayErrorMessage: false,
       recaptchaScore: "",
+      dropdownOpen: false,
     };
     this.submitHandler = this.submitHandler.bind(this);
     this.onRecaptchaChange = this.onRecaptchaChange.bind(this);
@@ -152,7 +156,7 @@ export default class Contact extends Component {
               <p className='lead text-center'>Email us about your project ideas!</p>
               <p className='lead text-center'>Remember, we can help with event photography, flyer/graphic design, videoshoots, and much more!</p>
               <p className='lead text-center'>
-                Approximate Comet Marketing Creation Timelines:
+                Approximate Comet Marketing Creation Timelines: <br></br>
                 One week for a flyer <br></br>  
                 3 days for event photography or group pictures <br></br>  
                 Videos under one minute: ~2 weeks <br></br>  
@@ -177,7 +181,7 @@ export default class Contact extends Component {
               <Form id='contact-form' className='contact-form' onSubmit={this.submitHandler}>
                 <FormGroup>
                   <Label for="contactWhom">Who are you?</Label>
-                  <Select styles={selectStyles} value={this.state.whom} onChange={this.onWhomChange} options={options}
+                  <Select onBlur={event => event.preventDefault()} styles={selectStyles} value={this.state.whom} onChange={this.onWhomChange} options={options}
                           theme={(theme) => ({
                             ...theme,
                             colors: {
