@@ -191,14 +191,12 @@ export default class Contact extends Component {
               <Form id='contact-form' className='contact-form' onSubmit={this.submitHandler}>
                 <FormGroup>
                   <Label for="contactWhom">Who are you?</Label>
-                  <Select onBlur={event => event.preventDefault()} styles={selectStyles} value={this.state.whom} onChange={this.onWhomChange} options={options}
-                          theme={(theme) => ({
-                            ...theme,
-                            colors: {
-                            ...theme.colors,
-                              primary: 'black',
-                            },
-                          })}
+                  <Select className='basic-single'
+                          classNamePrefix='select'
+                          styles={selectStyles}
+                          value={this.state.whom}
+                          onChange={this.onWhomChange}
+                          options={options}
                    />
                 </FormGroup>
                 <FormGroup>
