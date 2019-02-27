@@ -16,6 +16,14 @@ const options = [
   { value: 'other', label: 'Other' }
 ];
 
+const whereOptions = [
+  { value: 'Facebook', label: 'Facebook' },
+  { value: 'Instagram', label: 'Instagram' },
+  { value: 'Twitter', label: 'Twitter' },
+  { value: 'Youtube', label: 'Youtube' },
+  { value: 'Word of Mouth', label: 'Word of Mouth'}
+];
+
 const selectStyles = {
   option: (provided, state) => ({
     ...provided,
@@ -43,6 +51,7 @@ export default class Contact extends Component {
       name: "",
       message: "",
       whom: "",
+      where: "",
       emailInvalid: false,
       displayInvalidMessage: false,
       displayEmptyMessage: false,
@@ -80,6 +89,7 @@ export default class Contact extends Component {
           name: this.state.name,
           message: this.state.message,
           whom: this.state.whom.value,
+          where: "Facebook",
           recaptchaScore: this.state.recaptchaScore,
         })
       });
