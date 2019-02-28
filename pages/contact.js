@@ -4,9 +4,9 @@ import { Component } from 'react';
 import { Container,
           Button, 
           Form, FormGroup, FormText, Label, Input, 
-          Row, Col, } from 'reactstrap';
+          Row, Col,
+        } from 'reactstrap';
 import ReCAPTCHA from "react-google-recaptcha";
-import Select from 'react-select';
 import fetch from "node-fetch";
 import Slider from 'react-animated-slider';
 
