@@ -20,7 +20,7 @@ const whereOptions = [
   { value: 'Facebook', label: 'Facebook' },
   { value: 'Instagram', label: 'Instagram' },
   { value: 'Twitter', label: 'Twitter' },
-  { value: 'Youtube', label: 'Youtube' },
+  { value: 'YouTube', label: 'YouTube' },
   { value: 'Word of Mouth', label: 'Word of Mouth'},
   { value: 'Email Announcement', label: 'Email Announcement'},
   { value: 'Google search', label: 'Google Search'},
