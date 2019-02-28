@@ -261,7 +261,7 @@
   }
 }
 
-.form-control, .message-input {
+.form-control, .message-input, .whom{
   transition: all .2s ease;
 
   &:focus {
@@ -289,4 +289,32 @@
     padding: 0 0 25px 0;
     margin-bottom: 75px;
   }
+}
+
+.whom {
+  border-color: black;
+  border-width: 2px;
+  border-radius: 5px;
+  width: 100%;
+  padding: 5px;
+  padding-left: 10px;
+
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  appearance: none;       /* remove default arrow */
+  //background-image: url(...);   /* add custom arrow */
+
+  background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 15px) 50%,
+    calc(100% - 10px) 50%,
+    calc(100% - 2em) 50%;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 60%;
+  background-repeat: no-repeat;
 }
