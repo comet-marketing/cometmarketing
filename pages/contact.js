@@ -4,13 +4,13 @@ import { Component } from 'react';
 import { Container,
           Button, 
           Form, FormGroup, FormText, Label, Input, 
-          Row, Col, } from 'reactstrap';
+          Row, Col,
+        } from 'reactstrap';
 import ReCAPTCHA from "react-google-recaptcha";
-import Select from 'react-select';
 import fetch from "node-fetch";
 import Slider from 'react-animated-slider';
 
-const options = [
+const whomOptions = [
   { value: 'client', label: 'Student Organization' },
   { value: 'partner', label: 'Business' },
   { value: 'other', label: 'Other' }
@@ -20,28 +20,15 @@ const whereOptions = [
   { value: 'Facebook', label: 'Facebook' },
   { value: 'Instagram', label: 'Instagram' },
   { value: 'Twitter', label: 'Twitter' },
-  { value: 'Youtube', label: 'Youtube' },
-  { value: 'Word of Mouth', label: 'Word of Mouth'}
+  { value: 'YouTube', label: 'YouTube' },
+  { value: 'Word of Mouth', label: 'Word of Mouth'},
+  { value: 'Email Announcement', label: 'Email Announcement'},
+  { value: 'Google search', label: 'Google Search'},
+  { value: 'UTD event', label: 'UTD Event'},
+  { value: 'Comet Marketing Member', label: 'Comet Marketing Member'},
+  { value: 'Presence', label: 'Presence'},
+  { value: 'Other', label: 'Other'}
 ];
-
-const selectStyles = {
-  option: (provided, state) => ({
-    ...provided,
-    color: state.isSelected ? 'white' : 'black',
-    paddingTop: 10,
-    paddingBottom: 10,
-    paddingLeft: 20
-  }),
-  control : (provided, state) => ({
-    ...provided,
-    borderColor: state.isSelected ? 'rgb(253, 153, 23)' : 'black',
-    borderWidth: '2',
-    '&:focus': { outline: 0, borderColor: 'orange', boxShadow: '0 0 0 0.2rem peachpuff', },
-    '&:hover': { outline: 0, borderColor: 'orange', boxShadow: '0 0 0 0.2rem peachpuff', },
-    transition: 'all .2s',
-    borderRadius: 0
-  })
-}
 
 export default class Contact extends Component {
   constructor(props) {
@@ -66,7 +53,8 @@ export default class Contact extends Component {
     this.onNameChange = this.onNameChange.bind(this);
     this.onMessageChange = this.onMessageChange.bind(this);
     this.displayEmailInvalid = this.displayEmailInvalid.bind(this);
-    this.onWhomChange = this.onWhomChange.bind(this);
+    this.onWhomSelect = this.onWhomSelect.bind(this);
+    this.onWhereSelect = this.onWhereSelect.bind(this);
   }
 
   static async getInitialProps() {
@@ -77,7 +65,7 @@ export default class Contact extends Component {
 
   async submitHandler(e) {
     e.preventDefault();
-    if (!(this.state.whom == '' || this.state.email == '' || this.state.name == '' || this.state.message == '' || this.state.emailInvalid || this.state.recaptchaScore == "")) {
+    if (!(this.state.where == '' || this.state.whom == '' || this.state.email == '' || this.state.name == '' || this.state.message == '' || this.state.emailInvalid || this.state.recaptchaScore == "")) {
       this.setState({ displayEmptyMessage: false });
       let response = await fetch('https://utdcometmarketing-api.herokuapp.com/contactmessages', {
         method: 'POST',
@@ -88,8 +76,8 @@ export default class Contact extends Component {
           email: this.state.email,
           name: this.state.name,
           message: this.state.message,
-          whom: this.state.whom.value,
-          where: "Facebook",
+          whom: this.state.whom.toString(),
+          where: this.state.where.toString(),
           recaptchaScore: this.state.recaptchaScore,
         })
       });
@@ -101,6 +89,7 @@ export default class Contact extends Component {
           name: "",
           message: "",
           whom: "",
+          where: "",
           emailInvalid: false,
           displayInvalidMessage: false,
           displayEmptyMessage: false,
@@ -141,8 +130,12 @@ export default class Contact extends Component {
     this.setState({ message: e.target.value })
   }
 
-  onWhomChange(option) {
-    this.setState({ whom: option });
+  onWhomSelect(e) {
+    this.setState({ whom: e.target.value})
+  }
+
+  onWhereSelect(e) {
+    this.setState({ where: e.target.value})
   }
 
   render() {
@@ -166,7 +159,7 @@ export default class Contact extends Component {
               <p className='lead text-center'>Email us about your project ideas!</p>
               <p className='lead text-center'>Remember, we can help with event photography, flyer/graphic design, videoshoots, and much more!</p>
               <p className='lead text-center'>
-                Approximate Comet Marketing Creation Timelines: <br></br>
+                <b>Approximate Comet Marketing Creation Timelines:</b> <br></br>
                 One week for a flyer <br></br>  
                 3 days for event photography or group pictures <br></br>  
                 Videos under one minute: ~2 weeks <br></br>  
@@ -190,16 +183,28 @@ export default class Contact extends Component {
               }
               <Form id='contact-form' className='contact-form' onSubmit={this.submitHandler}>
                 <FormGroup>
-                  <Label for="contactWhom">Who are you?</Label>
-                  <Select onBlur={event => event.preventDefault()} styles={selectStyles} value={this.state.whom} onChange={this.onWhomChange} options={options}
-                          theme={(theme) => ({
-                            ...theme,
-                            colors: {
-                            ...theme.colors,
-                              primary: 'black',
-                            },
-                          })}
-                   />
+                <Label for="contactWho">Who are you?</Label><br></br>
+                  <select
+                  value={this.state.whom}
+                  onChange={this.onWhomSelect}
+                  className='whom'>
+                    <option value='' disabled >Select...</option>
+                    {whomOptions.map((option, i) => (
+                      <option key={i} value={option.value}>{option.label}</option>
+                    ))}
+                  </select>
+                </FormGroup>
+                <FormGroup>
+                <Label for="contactWho">How did you hear about us?</Label><br></br>
+                  <select
+                  value={this.state.where}
+                  onChange={this.onWhereSelect}
+                  className='whom'>
+                    <option value='' disabled>Select...</option>
+                    {whereOptions.map((option, i) => (
+                      <option key={i} value={option.value}>{option.label}</option>
+                    ))}
+                  </select>
                 </FormGroup>
                 <FormGroup>
                   <Label for="contactEmail">Email</Label>
