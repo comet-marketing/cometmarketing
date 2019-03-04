@@ -27,14 +27,20 @@ app.prepare()
       app.render(req, res, actualPage, queryParams)
     })
 
-    server.get('/photo-project/:slug', (req, res) => {
+    server.get('/portfolio/photo-project/:slug', (req, res) => {
       const photoPage = '/photoproject'
       const queryParams = { slug: req.params.slug }
       app.render(req, res, photoPage, queryParams)
     })
 
-    server.get('/video-project/:slug', (req, res) => {
+    server.get('/portfolio/video-project/:slug', (req, res) => {
       const photoPage = '/videoproject'
+      const queryParams = { slug: req.params.slug }
+      app.render(req, res, photoPage, queryParams)
+    })
+    
+    server.get('/portfolio/design-project/:slug', (req, res) => {
+      const photoPage = '/designproject'
       const queryParams = { slug: req.params.slug }
       app.render(req, res, photoPage, queryParams)
     })

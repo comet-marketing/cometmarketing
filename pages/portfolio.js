@@ -14,7 +14,9 @@ export default class Portfolio extends Component {
     const photoprojects = await res.json()
     const res2 = await fetch('https://utdcometmarketing-api.herokuapp.com/videoprojects')
     const videoprojects = await res2.json()
-    return { photoprojects, videoprojects }
+    const res3 = await fetch('https://utdcometmarketing-api.herokuapp.com/designprojects')
+    const designprojects = await res3.json()
+    return { photoprojects, videoprojects, designprojects }
   }
 
   render() {
@@ -24,7 +26,7 @@ export default class Portfolio extends Component {
             {this.props.photoprojects.map((project) =>(
               <Row>
                 <Col>
-                  <DynamicLink displayRoute='photo-project' actualRoute='photoproject' slug={project.slug}>
+                  <DynamicLink displayRoute='portfolio/photo-project' actualRoute='photoproject' slug={project.slug}>
                     <h1>{project.title}</h1>
                   </DynamicLink>
                 </Col>
@@ -33,7 +35,16 @@ export default class Portfolio extends Component {
             {this.props.videoprojects.map((project) =>(
               <Row>
                 <Col>
-                  <DynamicLink displayRoute='video-project' actualRoute='videoproject' slug={project.slug}>
+                  <DynamicLink displayRoute='portfolio/video-project' actualRoute='videoproject' slug={project.slug}>
+                    <h1>{project.title}</h1>
+                  </DynamicLink>
+                </Col>
+              </Row>
+            ))}
+            {this.props.designprojects.map((project) =>(
+              <Row>
+                <Col>
+                  <DynamicLink displayRoute='portfolio/design-project' actualRoute='designproject' slug={project.slug}>
                     <h1>{project.title}</h1>
                   </DynamicLink>
                 </Col>

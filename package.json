@@ -29,7 +29,7 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "next build && node server.js"
+    "start": "yarn && next build && node server.js"
   },
   "keywords": [],
   "author": "",
