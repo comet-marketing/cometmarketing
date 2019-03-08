@@ -214,8 +214,8 @@ export default class Contact extends Component {
                   }
                 </FormGroup>
                 <FormGroup>
-                  <Label for="contactSubject">Name</Label>
-                  <Input onChange={this.onNameChange} value={this.state.name} type="text" name="Name" id="Name" placeholder="Temoc" />
+                  <Label for="contactSubject">Name &#160;(Organization)</Label>
+                  <Input onChange={this.onNameChange} value={this.state.name} type="text" name="Name" id="Name" placeholder="Temoc   (University of Texas at Dallas)" />
                 </FormGroup>
                 <FormGroup>
                   <Label for="contactBody">Message Body</Label>

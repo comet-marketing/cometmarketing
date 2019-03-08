@@ -54,10 +54,18 @@
       background-color: lighten($color-background-light, 10);
     }
   }
-
-  img {
+  .crop {
+    overflow: hidden;
     margin-bottom: 15px;
+
+    img {
+      object-fit: cover;
+      width: 300px;
+      height: 250px;
+      margin: 0px 0 0 0;
+    }
   }
+  
 
   .content {
     flex: 1

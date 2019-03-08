@@ -108,7 +108,9 @@ export default class Index extends Component {
                 <Col md='4' className='person-listing' key={person.id}>
                   <DynamicLink displayRoute='people' actualRoute='person' slug={person.slug}>
                     {!!person.profilepicture &&
+                       <div className='crop'>
                         <img className='img-fluid' src={person.profilepicture.url}></img>
+                       </div>
                     }
                       <h2 className='heading'>{person.name}</h2>
                       <p className='lead'>{person.role}</p>
