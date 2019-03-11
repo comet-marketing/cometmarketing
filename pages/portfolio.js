@@ -5,30 +5,48 @@ import DynamicLink from '../components/DynamicLink';
 import {
   Container, 
   Row,
-  Col
+  Col,
+  Button
 } from 'reactstrap';
 
-const HandleLink = ({type, slug, title}) => {
-  console.log(type)
-  if(type == 'photoproject') {
+const HandleLink = ({project}) => {
+  console.log(project.type)
+  if(project.type == 'photoproject') {
     return(
-    <DynamicLink displayRoute='portfolio/photo-project' actualRoute='photoproject' slug={slug}>
-      <h1>{title}</h1>
+    <Col className='photo-listing' sm='4' key={project.id}>
+    <DynamicLink displayRoute='portfolio/photo-project' actualRoute='photoproject' slug={project.slug}>
+      <div className='crop'>
+        <img className='img-fluid' src={project.photos[0].url}></img>
+      </div>
+      <h2 className='heading'>{project.title}</h2>
+      <p className='content'>{project.description.substring(0, 100) + '...'}</p>
+      <Button>Read more</Button>
     </DynamicLink>
+    </Col>
     )
   }
-  else if(type == 'videoproject') {
+  else if(project.type == 'videoproject') {
     return(
-    <DynamicLink displayRoute='portfolio/video-project' actualRoute='videoproject' slug={slug}>
-      <h1>{title}</h1>
-    </DynamicLink>
+    <Col className='video-listing' sm='4' key={project.id}>
+    <DynamicLink displayRoute='portfolio/video-project' actualRoute='videoproject' slug={project.slug}>
+      <h2 className='heading'>{project.title}</h2>
+      <p className='content'>{project.description.substring(0, 100) + '...'}</p>
+      <Button>Read more</Button>    </DynamicLink>
+    </Col>
     )
   }
-  else if(type == 'designproject') {
+  else if(project.type == 'designproject') {
     return(
-    <DynamicLink displayRoute='portfolio/design-project' actualRoute='designproject' slug={slug}>
-      <h1>{title}</h1>
+    <Col className='design-listing' sm='4' key={project.id}>
+    <DynamicLink displayRoute='portfolio/design-project' actualRoute='designproject' slug={project.slug}>
+      <div className='crop'>
+        <img className='img-fluid' src={project.graphics[0].url}></img>
+      </div>
+      <h2 className='heading'>{project.title}</h2>
+      <p className='content'>{project.description.substring(0, 100) + '...'}</p>
+      <Button>Read more</Button>
     </DynamicLink>
+    </Col>
     )
   }
   return(<p>fuck off</p>)
@@ -88,8 +106,7 @@ export default class Portfolio extends Component {
             {this.props.projects.map((row, i ) => (
               <Row key={i} className='row-no-margin'>
                 {row.map((project) => (
-                  <Col className='person-listing' sm='4' key={project.id}>
-                    <HandleLink title={project.title} type={project.type} slug={project.slug}/>                </Col>
+                  <HandleLink project={project}/>                
                 ))}
               </Row>
             ))}

@@ -36,7 +36,7 @@
   }
 }
 
-.person-listing, .project-listing {
+.photo-listing, .video-listing, .design-listing, .person-listing, .project-listing {
   margin-bottom: 35px;
   align-self: stretch;
   display: flex;
@@ -76,6 +76,55 @@
   a {
     &:hover {
       background-color: lighten($color-theme-green, 50);
+    }
+  }
+}
+
+.photo-listing {
+  a {
+    background-color: #2C363F;
+
+    .content, .heading {
+      color: $color-background-light;
+    }
+    &:hover {
+      background-color: #F4B7C5;
+      .content, .heading {
+        color: $color-background-dark;
+      }
+    }
+  }
+}
+
+.video-listing {
+  a {
+    background-color: #2C363F;
+
+    .content, .heading {
+      color: $color-background-light;
+    }
+    &:hover {
+      background-color: #DCC9FC;
+      .content, .heading {
+        color: $color-background-dark;
+      }
+    }
+  }
+}
+
+.design-listing {
+  a {
+    background-color: #2C363F;
+
+    .content, .heading {
+      color: $color-background-light;
+    }
+
+    &:hover {
+      background-color: $color-background-gray;
+      .content, .heading {
+        color: $color-background-dark;
+      }
     }
   }
 }
