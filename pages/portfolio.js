@@ -10,7 +10,6 @@ import {
 } from 'reactstrap';
 
 const HandleLink = ({project}) => {
-  console.log(project.type)
   if(project.type == 'photoproject') {
     return(
     <Col className='photo-listing' sm='4' key={project.id}>
@@ -26,9 +25,14 @@ const HandleLink = ({project}) => {
     )
   }
   else if(project.type == 'videoproject') {
+    var result = project.videoURLs[0].url.match(/https:\/\/www\.youtube\.com\/watch\?v=(.+)/)
+    var url = 'https://img.youtube.com/vi/'+ result[1] + '/0.jpg'
     return(
     <Col className='video-listing' sm='4' key={project.id}>
     <DynamicLink displayRoute='portfolio/video-project' actualRoute='videoproject' slug={project.slug}>
+      <div className='crop'>
+        <img className='img-fluid' src={url}></img>
+      </div>
       <h2 className='heading'>{project.title}</h2>
       <p className='content'>{project.description.substring(0, 100) + '...'}</p>
       <Button>Read more</Button>    </DynamicLink>
@@ -49,7 +53,8 @@ const HandleLink = ({project}) => {
     </Col>
     )
   }
-  return(<p>fuck off</p>)
+  console.log("type not found")
+  return(<p>ERROR</p>)
 }
 
 export default class Portfolio extends Component {
