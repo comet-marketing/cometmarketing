@@ -17,7 +17,7 @@ export default class Footer extends Component {
         <Container>
           <Row className='justify-content-center'>
             <Col sm='4'>
-              <h2>Comet Marketing</h2>
+              <h2><a href='/index'>Comet Marketing</a></h2>
               <p>Here to help you market you.</p>
             </Col>
             <Col sm='8'>
