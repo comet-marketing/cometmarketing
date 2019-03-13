@@ -66,7 +66,7 @@ export default class CmNav extends React.Component {
                   </NavLink>
                 </NavItem> 
                 <NavItem>
-                  <NavLink className='icon-wrapper' href='https://www.youtube.com/channel/UCr0ZmhNICA5pJsp4tq1d3rg?app=desktop' target='_blank'>
+                  <NavLink className='icon-wrapper' href='https://twitter.com/UTDallasCM' target='_blank'>
                   <svg className='twitter-icon' xmlns="http://www.w3.org/2000/svg" height= '20' viewBox="328 355 335 276"><path d="
                     M 630, 425
                     A 195, 195 0 0 1 331, 600
