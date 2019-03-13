@@ -21,6 +21,12 @@ export default class Footer extends Component {
               <p>Here to help you market you.</p>
             </Col>
             <Col sm='8'>
+              <hr></hr>
+              <p className='github'>Website by Al and Mustafa | <a href='https://github.com/almadireddy/cometmarketing'>Github</a></p>
+            </Col>
+          </Row>
+          <Row className='justify-content-center'>
+            <Col md='12'>
               <Nav>
                 <NavItem>
                   <NavLink href="/people">People</NavLink>
@@ -30,9 +36,6 @@ export default class Footer extends Component {
                 </NavItem>
                 <NavItem>
                   <NavLink href="/contact">Contact Us</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="https://goo.gl/forms/vCYE7wFGCeralb9B3" target="_blank">Join Us</NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink className='icon-wrapper' href='https://facebook.com/utdcometmarketing/' target="_blank">
@@ -49,9 +52,27 @@ export default class Footer extends Component {
                     <svg className='youtube-icon' xmlns="http://www.w3.org/2000/svg" height='20' viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" /></svg>
                   </NavLink>
                 </NavItem>
+                <NavItem>
+                    <NavLink className='icon-wrapper' href='https://twitter.com/UTDallasCM' target='_blank'>
+                    <svg className='twitter-icon' xmlns="http://www.w3.org/2000/svg" height= '20' viewBox="328 355 335 276"><path d="
+                      M 630, 425
+                      A 195, 195 0 0 1 331, 600
+                      A 142, 142 0 0 0 428, 570
+                      A  70,  70 0 0 1 370, 523
+                      A  70,  70 0 0 0 401, 521
+                      A  70,  70 0 0 1 344, 455
+                      A  70,  70 0 0 0 372, 460
+                      A  70,  70 0 0 1 354, 370
+                      A 195, 195 0 0 0 495, 442
+                      A  67,  67 0 0 1 611, 380
+                      A 117, 117 0 0 0 654, 363
+                      A  65,  65 0 0 1 623, 401
+                      A 117, 117 0 0 0 662, 390
+                      A  65,  65 0 0 1 630, 425
+                      Z"/></svg>
+                    </NavLink>
+                  </NavItem>
               </Nav>
-              <hr></hr>
-              <p className='github'>Website by Al and Mustafa | <a href='https://github.com/almadireddy/cometmarketing'>Github</a></p>
             </Col>
           </Row>
         </Container>

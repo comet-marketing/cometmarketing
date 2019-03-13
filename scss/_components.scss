@@ -184,10 +184,10 @@
 
   .nav {
     @media(min-width: 600px) {
-      justify-content: flex-end;
-      margin: 0;
+      justify-content: center;
+      margin-bottom: 0;
     }
-    margin: 30px auto;
+    margin: 35px auto;
     a {
       padding: 0 5px;
       margin: 0 15px;
