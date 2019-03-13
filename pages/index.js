@@ -32,7 +32,6 @@ export default class Index extends Component {
       designproj: this.props.designproj,
       vidproj: this.props.vidproj,
     })
-    console.log(this.props.photoproj)
   }
 
   render() {
