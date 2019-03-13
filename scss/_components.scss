@@ -36,7 +36,7 @@
   }
 }
 
-.person-listing, .project-listing {
+.photo-listing, .video-listing, .design-listing, .person-listing, .project-listing {
   margin-bottom: 35px;
   align-self: stretch;
   display: flex;
@@ -76,6 +76,55 @@
   a {
     &:hover {
       background-color: lighten($color-theme-green, 50);
+    }
+  }
+}
+
+.photo-listing {
+  a {
+    background-color: #2C363F;
+
+    .content, .heading {
+      color: $color-background-light;
+    }
+    &:hover {
+      background-color: #F4B7C5;
+      .content, .heading {
+        color: $color-background-dark;
+      }
+    }
+  }
+}
+
+.video-listing {
+  a {
+    background-color: #2C363F;
+
+    .content, .heading {
+      color: $color-background-light;
+    }
+    &:hover {
+      background-color: #DCC9FC;
+      .content, .heading {
+        color: $color-background-dark;
+      }
+    }
+  }
+}
+
+.design-listing {
+  a {
+    background-color: #2C363F;
+
+    .content, .heading {
+      color: $color-background-light;
+    }
+
+    &:hover {
+      background-color: $color-background-gray;
+      .content, .heading {
+        color: $color-background-dark;
+      }
     }
   }
 }
@@ -134,14 +183,17 @@
   }
 
   .nav {
-    @media(min-width: 600px) {
-      justify-content: flex-end;
-      margin: 0;
-    }
-    margin: 30px auto;
+    justify-content: center;
+    margin-top: 35px;
     a {
       padding: 0 5px;
       margin: 0 15px;
+    }
+    @media(max-width: 600px) {
+      a {
+        padding: 0 5px;
+        margin: 10px 15px;
+      }
     }
   }
   hr {

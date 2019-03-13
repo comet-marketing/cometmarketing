@@ -190,7 +190,7 @@
   margin: 15px auto 0 auto;
 }
 
-.fb-icon, .insta-icon, .youtube-icon {
+.fb-icon, .insta-icon, .youtube-icon, .twitter-icon {
   transition: all .2s ease;
   fill: white;
   margin-top: -2px;
@@ -198,6 +198,10 @@
   margin-right: 0px;
   margin-bottom: 2px;
   border: none;
+}
+
+.twitter-icon {
+  transform: scale(0.85)
 }
 
 .services-container {
