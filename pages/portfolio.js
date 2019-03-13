@@ -44,7 +44,7 @@ const HandleLink = ({project}) => {
     <Col className='design-listing' sm='4' key={project.id}>
     <DynamicLink displayRoute='portfolio/design-project' actualRoute='designproject' slug={project.slug}>
       <div className='crop'>
-        <img className='img-fluid' src={project.graphics[0].url}></img>
+        <img className='img-fluid' src={project.thumbnail.url}></img>
       </div>
       <h2 className='heading'>{project.title}</h2>
       <p className='content'>{project.description.substring(0, 100) + '...'}</p>
