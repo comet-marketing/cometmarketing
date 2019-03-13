@@ -183,14 +183,17 @@
   }
 
   .nav {
-    @media(min-width: 600px) {
-      justify-content: center;
-      margin-bottom: 0;
-    }
-    margin: 35px auto;
+    justify-content: center;
+    margin-top: 35px;
     a {
       padding: 0 5px;
       margin: 0 15px;
+    }
+    @media(max-width: 600px) {
+      a {
+        padding: 0 5px;
+        margin: 10px 15px;
+      }
     }
   }
   hr {
