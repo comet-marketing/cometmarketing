@@ -188,6 +188,9 @@
     a {
       padding: 0 5px;
       margin: 0 15px;
+      &:hover {
+        color: $color-text-light
+      }
     }
     @media(max-width: 600px) {
       a {
@@ -213,8 +216,14 @@
       text-align: right;
       margin-right: 20px;
     }
+    a {
+      &:hover {
+      color: $color-text-light
+    }
   }
-}
+  }
+  }
+
 
 input[type="text"], input[type="email"], .message-input {
   border: 2px solid $color-background-dark;
