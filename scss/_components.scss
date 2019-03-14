@@ -211,6 +211,16 @@
     margin: 30px auto;
   }
 
+  h2 {
+    a {
+      font-family: "merriweather", sans-serif;
+      color: $color-text-light;
+      &:hover{
+        color: $color-theme-orange
+      }
+    }
+  }
+
   .github {
     @media (min-width: 600px) {
       text-align: right;

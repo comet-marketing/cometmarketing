@@ -14,13 +14,23 @@ export default class Index extends Component {
     let projects = await res.json()
     const res2 = await fetch('https://utdcometmarketing-api.herokuapp.com/members?_limit=3&_sort=gradyear:ASC')
     let members = await res2.json()
-    return { projects, members }
+    const one = await fetch('https://utdcometmarketing-api.herokuapp.com/photoprojects?_limit=1_sort=featured')
+    let photoproj = await one.json()
+    const two = await fetch('https://utdcometmarketing-api.herokuapp.com/designprojects?_limit=1_sort=featured')
+    let designproj = await two.json()
+    const three = await fetch('https://utdcometmarketing-api.herokuapp.com/videoprojects?_limit=1_sort=featured')
+    let vidproj = await three.json()
+
+    return { projects, members, photoproj, designproj, vidproj }
   }
 
   componentWillMount() {
     this.setState({
       projects: this.props.projects,
-      members: this.props.members
+      members: this.props.members,
+      photoproj: this.props.photoproj,
+      designproj: this.props.designproj,
+      vidproj: this.props.vidproj,
     })
   }
 
@@ -87,16 +97,34 @@ export default class Index extends Component {
         <FluidSectionHeader text='Recent Projects' className='projects-header' backgroundImage='/static/bookparty_optimized.jpg'></FluidSectionHeader>
         <Container>
           <div className='recent-projects'>
-          <Row className='home-video justify-content-center'>
-              <div className='player-wrapper justify-content-center'>
-                <ReactPlayer
-                  url='https://www.youtube.com/watch?v=SNR5vzwwrj0'
-                  className='react-player'
-                  controls
-                  width='100%'
-                  height='100%'
-                />
-              </div>
+          <Row className='recent-projects-row row-no-margin'>
+            <Col className='photo-listing' sm='4' key={this.props.photoproj[0].id}>
+              <DynamicLink displayRoute='portfolio/photo-project' actualRoute='photoproject' slug={this.props.photoproj[0].slug}>
+                  <div className='crop'>
+                    <img className='img-fluid' src={this.props.photoproj[0].photos[0].url}></img>
+                  </div>
+                  <h2 className='heading'>{this.props.photoproj[0].title}</h2>
+                  <p className='content'>{this.props.photoproj[0].description.substring(0, 100) + '...'}</p>
+              </DynamicLink>
+            </Col>
+            <Col className='video-listing' sm='4' key={this.props.vidproj[0].id}>
+              <DynamicLink displayRoute='portfolio/video-project' actualRoute='videoproject' slug={this.props.vidproj[0].slug}>
+                <div className='crop'>
+                  <img className='img-fluid' src={'https://img.youtube.com/vi/'+ this.props.vidproj[0].videoURLs[0].url.match(/https:\/\/www\.youtube\.com\/watch\?v=(.+)/)[1] + '/0.jpg'}></img>
+                </div>
+                <h2 className='heading'>{this.props.vidproj[0].title}</h2>
+                <p className='content'>{this.props.vidproj[0].description.substring(0, 100) + '...'}</p>
+              </DynamicLink>
+            </Col>
+            <Col className='design-listing' sm='4' key={this.props.designproj[0].id}>
+              <DynamicLink displayRoute='portfolio/design-project' actualRoute='designproject' slug={this.props.designproj[0].slug}>
+                <div className='crop'>
+                  <img className='img-fluid' src={this.props.designproj[0].thumbnail.url}></img>
+                </div>
+                <h2 className='heading'>{this.props.designproj[0].title}</h2>
+                <p className='content'>{this.props.designproj[0].description.substring(0, 100) + '...'}</p>
+              </DynamicLink>
+            </Col>
           </Row>
           </div>
         </Container>

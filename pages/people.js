@@ -37,11 +37,8 @@ export default class People extends Component {
     })
   }
 
-  render() {
-    return(
-      <Layout title='People' pageName='People' intro='This Is Us' banner='/static/Group_pic2_optimized.jpg'>
-        <Container>
-          <Row className='justify-content-center'>
+  useless() {
+    <Row className='justify-content-center'>
             <Col sm='6'>
               <p className='lead'>Creative, talented, and looking for a way to show it off?</p>
               <p className='lead'>Comet Marketing is looking for designers, photographers, videographers, illustrators, and more to join the team!</p>
@@ -49,6 +46,12 @@ export default class People extends Component {
               <CallToAction dark href='https://goo.gl/forms/vCYE7wFGCeralb9B3'>Join Here!</CallToAction>
             </Col>
           </Row>
+  }
+
+  render() {
+    return(
+      <Layout title='People' pageName='People' intro='This Is Us' banner='/static/Group_pic2_optimized.jpg'>
+        <Container>
           {this.props.people.map((row, i) => (
             <Row key={i} className='row-no-margin'>
               {row.map((person) => (
