@@ -5,8 +5,7 @@ import fetch from "node-fetch";
 import { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import CallToAction from "../components/CallToAction";
-import ReactPlayer from 'react-player'
-
+import LazyLoad from "react-lazy-load";
 
 export default class Index extends Component {
   static async getInitialProps() {
@@ -95,6 +94,7 @@ export default class Index extends Component {
           </Container>
         </Container>
         <FluidSectionHeader text='Recent Projects' className='projects-header' backgroundImage='/static/bookparty_optimized.jpg'></FluidSectionHeader>
+        <LazyLoad offset={2000}>
         <Container>
           <div className='recent-projects'>
           <Row className='recent-projects-row row-no-margin'>
@@ -128,7 +128,9 @@ export default class Index extends Component {
           </Row>
           </div>
         </Container>
+        </LazyLoad>
         <FluidSectionHeader text='Meet Our Team' className='team-header' backgroundImage='/static/group-home-optimized.jpg'></FluidSectionHeader>
+        <LazyLoad offset={2000}>
         <Container>
           <div className='meet-our-team'>
             <Row className='recent-projects-row row-no-margin'>
@@ -152,6 +154,7 @@ export default class Index extends Component {
             </Row>
           </div>
         </Container>
+        </LazyLoad>
       </Layout>
     )
   }
