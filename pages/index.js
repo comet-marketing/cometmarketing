@@ -93,7 +93,9 @@ export default class Index extends Component {
             </Row>
           </Container>
         </Container>
+        <LazyLoad offset={3000}>
         <FluidSectionHeader text='Recent Projects' className='projects-header' backgroundImage='/static/bookparty_optimized.jpg'></FluidSectionHeader>
+        </LazyLoad>
         <LazyLoad offset={2000}>
         <Container>
           <div className='recent-projects'>
@@ -129,7 +131,9 @@ export default class Index extends Component {
           </div>
         </Container>
         </LazyLoad>
+        <LazyLoad offset={4000}>
         <FluidSectionHeader text='Meet Our Team' className='team-header' backgroundImage='/static/group-home-optimized.jpg'></FluidSectionHeader>
+        </LazyLoad>
         <LazyLoad offset={2000}>
         <Container>
           <div className='meet-our-team'>
