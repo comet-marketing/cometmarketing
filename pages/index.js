@@ -96,33 +96,38 @@ export default class Index extends Component {
         <LazyLoad offset={3000}>
         <FluidSectionHeader text='Recent Projects' className='projects-header' backgroundImage='/static/bookparty_optimized.jpg'></FluidSectionHeader>
         </LazyLoad>
-        <LazyLoad offset={2000}>
         <Container>
           <div className='recent-projects'>
           <Row className='recent-projects-row row-no-margin'>
             <Col className='photo-listing' sm='4' key={this.props.photoproj[0].id}>
               <DynamicLink displayRoute='portfolio/photo-project' actualRoute='photoproject' slug={this.props.photoproj[0].slug}>
+                <LazyLoad offset={2000}>
                   <div className='crop'>
                     <img className='img-fluid' src={this.props.photoproj[0].photos[0].url}></img>
                   </div>
+                </LazyLoad>
                   <h2 className='heading'>{this.props.photoproj[0].title}</h2>
                   <p className='content'>{this.props.photoproj[0].description.substring(0, 100) + '...'}</p>
               </DynamicLink>
             </Col>
             <Col className='video-listing' sm='4' key={this.props.vidproj[0].id}>
               <DynamicLink displayRoute='portfolio/video-project' actualRoute='videoproject' slug={this.props.vidproj[0].slug}>
+                <LazyLoad offset={2000}>
                 <div className='crop'>
                   <img className='img-fluid' src={'https://img.youtube.com/vi/'+ this.props.vidproj[0].videoURLs[0].url.match(/https:\/\/www\.youtube\.com\/watch\?v=(.+)/)[1] + '/0.jpg'}></img>
                 </div>
+                </LazyLoad>
                 <h2 className='heading'>{this.props.vidproj[0].title}</h2>
                 <p className='content'>{this.props.vidproj[0].description.substring(0, 100) + '...'}</p>
               </DynamicLink>
             </Col>
             <Col className='design-listing' sm='4' key={this.props.designproj[0].id}>
               <DynamicLink displayRoute='portfolio/design-project' actualRoute='designproject' slug={this.props.designproj[0].slug}>
+                <LazyLoad offset={2000}>
                 <div className='crop'>
                   <img className='img-fluid' src={this.props.designproj[0].thumbnail.url}></img>
                 </div>
+                </LazyLoad>
                 <h2 className='heading'>{this.props.designproj[0].title}</h2>
                 <p className='content'>{this.props.designproj[0].description.substring(0, 100) + '...'}</p>
               </DynamicLink>
@@ -130,26 +135,29 @@ export default class Index extends Component {
           </Row>
           </div>
         </Container>
-        </LazyLoad>
         <LazyLoad offset={4000}>
         <FluidSectionHeader text='Meet Our Team' className='team-header' backgroundImage='/static/group-home-optimized.jpg'></FluidSectionHeader>
         </LazyLoad>
-        <LazyLoad offset={2000}>
         <Container>
           <div className='meet-our-team'>
             <Row className='recent-projects-row row-no-margin'>
               {this.props.members.map((person) => (
                 <Col md='4' className='person-listing' key={person.id}>
+                                      
                   <DynamicLink displayRoute='people' actualRoute='person' slug={person.slug}>
                     {!!person.profilepicture &&
-                       <div className='crop'>
+                      <LazyLoad offset={2000}>
+                      <div className='crop'>
                         <img className='img-fluid' src={person.profilepicture.url}></img>
-                       </div>
+                      </div>
+                      </LazyLoad>
+
                     }
                       <h2 className='heading'>{person.name}</h2>
                       <p className='lead'>{person.role}</p>
                       <p className='content'>{person.bio.substring(0, 100) + '...'}</p>
                   </DynamicLink>
+
                 </Col>
               ))}
               <Col sm='12' className='d-flex justify-content-center'>
@@ -158,7 +166,6 @@ export default class Index extends Component {
             </Row>
           </div>
         </Container>
-        </LazyLoad>
       </Layout>
     )
   }
