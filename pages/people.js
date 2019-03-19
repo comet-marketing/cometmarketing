@@ -9,6 +9,7 @@ import {
 } from 'reactstrap';
 import DynamicLink from "../components/DynamicLink";
 import CallToAction from "../components/CallToAction";
+import LazyLoad from "react-lazy-load";
 
 export default class People extends Component {
   static chunk(array, size) {
@@ -58,9 +59,11 @@ export default class People extends Component {
                 <Col className='person-listing' sm="4" key={person.id}>
                   <DynamicLink displayRoute='people' actualRoute='person' slug={person.slug}>
                     {!!person.profilepicture &&
+                      <LazyLoad offset={500}>
                       <div className='crop'>
                       <img className='img-fluid' src={person.profilepicture.url}></img>
                       </div>
+                      </LazyLoad>
                     }
                     <h2 className='heading'>{person.name}</h2>
                     <p className='lead'>{person.role}</p>
