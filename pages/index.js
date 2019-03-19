@@ -98,7 +98,7 @@ export default class Index extends Component {
         <Container>
           <div className='recent-projects'>
           <Row className='recent-projects-row row-no-margin'>
-            <Col className='photo-listing' sm='4' key={this.props.photoproj[0].id}>
+            <Col className='photo-listing' md='4' key={this.props.photoproj[0].id}>
               <DynamicLink displayRoute='portfolio/photo-project' actualRoute='photoproject' slug={this.props.photoproj[0].slug}>
                   <div className='crop'>
                     <img className='img-fluid' src={this.props.photoproj[0].photos[0].url}></img>
@@ -107,7 +107,7 @@ export default class Index extends Component {
                   <p className='content'>{this.props.photoproj[0].description.substring(0, 100) + '...'}</p>
               </DynamicLink>
             </Col>
-            <Col className='video-listing' sm='4' key={this.props.vidproj[0].id}>
+            <Col className='video-listing' md='4' key={this.props.vidproj[0].id}>
               <DynamicLink displayRoute='portfolio/video-project' actualRoute='videoproject' slug={this.props.vidproj[0].slug}>
                 <div className='crop'>
                   <img className='img-fluid' src={'https://img.youtube.com/vi/'+ this.props.vidproj[0].videoURLs[0].url.match(/https:\/\/www\.youtube\.com\/watch\?v=(.+)/)[1] + '/0.jpg'}></img>
@@ -116,7 +116,7 @@ export default class Index extends Component {
                 <p className='content'>{this.props.vidproj[0].description.substring(0, 100) + '...'}</p>
               </DynamicLink>
             </Col>
-            <Col className='design-listing' sm='4' key={this.props.designproj[0].id}>
+            <Col className='design-listing' md='4' key={this.props.designproj[0].id}>
               <DynamicLink displayRoute='portfolio/design-project' actualRoute='designproject' slug={this.props.designproj[0].slug}>
                 <div className='crop'>
                   <img className='img-fluid' src={this.props.designproj[0].thumbnail.url}></img>
@@ -124,6 +124,11 @@ export default class Index extends Component {
                 <h2 className='heading'>{this.props.designproj[0].title}</h2>
                 <p className='content'>{this.props.designproj[0].description.substring(0, 100) + '...'}</p>
               </DynamicLink>
+            </Col>
+          </Row>
+          <Row>
+            <Col sm='12' className='d-flex justify-content-center'>
+                <CallToAction dark href='/portfolio'>View all</CallToAction>
             </Col>
           </Row>
           </div>
