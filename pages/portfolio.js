@@ -8,15 +8,18 @@ import {
   Col,
   Button
 } from 'reactstrap';
+import LazyLoad from 'react-lazy-load';
 
 const HandleLink = ({project}) => {
   if(project.type == 'photoproject') {
     return(
     <Col className='photo-listing' sm='4' key={project.id}>
     <DynamicLink displayRoute='portfolio/photo-project' actualRoute='photoproject' slug={project.slug}>
+      <LazyLoad offset={500}>
       <div className='crop'>
         <img className='img-fluid' src={project.photos[0].url}></img>
       </div>
+      </LazyLoad>
       <h2 className='heading'>{project.title}</h2>
       <p className='content'>{project.description.substring(0, 100) + '...'}</p>
       <Button>Read more</Button>
@@ -30,9 +33,11 @@ const HandleLink = ({project}) => {
     return(
     <Col className='video-listing' sm='4' key={project.id}>
     <DynamicLink displayRoute='portfolio/video-project' actualRoute='videoproject' slug={project.slug}>
+      <LazyLoad offset={500}>
       <div className='crop'>
         <img className='img-fluid' src={url}></img>
       </div>
+      </LazyLoad>
       <h2 className='heading'>{project.title}</h2>
       <p className='content'>{project.description.substring(0, 100) + '...'}</p>
       <Button>Read more</Button>    </DynamicLink>
@@ -43,9 +48,11 @@ const HandleLink = ({project}) => {
     return(
     <Col className='design-listing' sm='4' key={project.id}>
     <DynamicLink displayRoute='portfolio/design-project' actualRoute='designproject' slug={project.slug}>
+      <LazyLoad offset={500}>
       <div className='crop'>
         <img className='img-fluid' src={project.thumbnail.url}></img>
       </div>
+      </LazyLoad>
       <h2 className='heading'>{project.title}</h2>
       <p className='content'>{project.description.substring(0, 100) + '...'}</p>
       <Button>Read more</Button>
