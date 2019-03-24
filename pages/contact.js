@@ -171,13 +171,13 @@ export default class Contact extends Component {
             <Col sm='12' md='6'>
               {this.state.displaySuccessMessage &&
                 <div className='success-message'>
-                  <h3>Thanks for reaching out!</h3>
+                  <h3>Thanks for reaching out! 🎉</h3>
                   <p>We will get back to you at the email you provided.</p>
                 </div>
               }
               {this.state.displayErrorMessage &&
                 <div className='error-message'>
-                  <h3 className='text-danger'>Something went wrong</h3>
+                  <h3 className='text-danger'>Something went wrong 😔</h3>
                   <p>Try submitting the form again.</p>
                 </div>
               }
