@@ -26,7 +26,7 @@ class Person extends Component {
         <BreadcrumbRow parentText="People" parentHref="/people" activeText={this.props.person.name}></BreadcrumbRow>
           <Row>
             <Col>
-              <img className='img-fluid profile' src={this.props.person.profilepicture.url}></img>
+              <img alt={this.props.person.name + this.props.person.role} className='img-fluid profile' src={this.props.person.profilepicture.url}></img>
             </Col>
             <Col sm="7">
               <p className='lead'>{this.props.person.bio}</p>

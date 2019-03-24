@@ -48,7 +48,7 @@ export default class Index extends Component {
                 </div>
               </Col>
               <Col md='5'>
-                <img className='img-fluid' height='100%' width='100%' src='./static/photo.png'></img>
+                <img alt='comet_marketing_photography' className='img-fluid' height='100%' width='100%' src='./static/photo.png'></img>
               </Col>
             </Row>
             <Row className='grid-row reverse-items'>
@@ -61,7 +61,7 @@ export default class Index extends Component {
                 </div>
               </Col>
               <Col md='5'>
-                <img className='img-fluid' height='100%' width='100%' src='./static/design.png'></img>
+                <img alt='comet_marketing_graphic_design' className='img-fluid' height='100%' width='100%' src='./static/design.png'></img>
               </Col>
             </Row>
             <Row className='grid-row'>
@@ -75,7 +75,7 @@ export default class Index extends Component {
                 </div>
               </Col>
               <Col md='5'>
-                <img className='img-fluid' height='100%' width='100%' src='./static/web.png'></img>
+                <img alt='comet_marketing_web_design' className='img-fluid' height='100%' width='100%' src='./static/web.png'></img>
               </Col>
             </Row>
             <Row className='grid-row reverse-items'>
@@ -88,7 +88,7 @@ export default class Index extends Component {
                 </div>
               </Col>
               <Col md='5'>
-                <img className='img-fluid' height='100%' width='100%' src='./static/video.png'></img>
+                <img alt='comet_marketing_videography' className='img-fluid' height='100%' width='100%' src='./static/video.png'></img>
               </Col>
             </Row>
           </Container>
@@ -103,7 +103,7 @@ export default class Index extends Component {
               <DynamicLink displayRoute='portfolio/photo-project' actualRoute='photoproject' slug={this.props.photoproj[0].slug}>
                 <LazyLoad offset={2000}>
                   <div className='crop'>
-                    <img className='img-fluid' src={this.props.photoproj[0].photos[0].url}></img>
+                    <img alt={this.props.photoproj[0].title} className='img-fluid' src={this.props.photoproj[0].photos[0].url}></img>
                   </div>
                 </LazyLoad>
                   <h2 className='heading'>{this.props.photoproj[0].title}</h2>
@@ -114,7 +114,7 @@ export default class Index extends Component {
               <DynamicLink displayRoute='portfolio/video-project' actualRoute='videoproject' slug={this.props.vidproj[0].slug}>
                 <LazyLoad offset={2000}>
                 <div className='crop'>
-                  <img className='img-fluid' src={'https://img.youtube.com/vi/'+ this.props.vidproj[0].videoURLs[0].url.match(/https:\/\/www\.youtube\.com\/watch\?v=(.+)/)[1] + '/0.jpg'}></img>
+                  <img alt={this.props.vidproj[0].title} className='img-fluid' src={'https://img.youtube.com/vi/'+ this.props.vidproj[0].videoURLs[0].url.match(/https:\/\/www\.youtube\.com\/watch\?v=(.+)/)[1] + '/0.jpg'}></img>
                 </div>
                 </LazyLoad>
                 <h2 className='heading'>{this.props.vidproj[0].title}</h2>
@@ -125,7 +125,7 @@ export default class Index extends Component {
               <DynamicLink displayRoute='portfolio/design-project' actualRoute='designproject' slug={this.props.designproj[0].slug}>
                 <LazyLoad offset={2000}>
                 <div className='crop'>
-                  <img className='img-fluid' src={this.props.designproj[0].thumbnail.url}></img>
+                  <img alt={this.props.designproj[0].title} className='img-fluid' src={this.props.designproj[0].thumbnail.url}></img>
                 </div>
                 </LazyLoad>
                 <h2 className='heading'>{this.props.designproj[0].title}</h2>
@@ -153,7 +153,7 @@ export default class Index extends Component {
                     {!!person.profilepicture &&
                       <LazyLoad offset={2000}>
                       <div className='crop'>
-                        <img className='img-fluid' src={person.profilepicture.url}></img>
+                        <img alt={person.name} className='img-fluid' src={person.profilepicture.url}></img>
                       </div>
                       </LazyLoad>
 

@@ -61,7 +61,7 @@ export default class People extends Component {
                     {!!person.profilepicture &&
                       <LazyLoad offset={500}>
                       <div className='crop'>
-                      <img className='img-fluid' src={person.profilepicture.url}></img>
+                        <img alt={'comet_marketing' + person.name} className='img-fluid' src={person.profilepicture.url}></img>
                       </div>
                       </LazyLoad>
                     }

@@ -71,7 +71,7 @@ class Photoproject extends Component {
         src: photo.url,
         width: 3,
         height: 2,
-        alt: photo.url
+        alt: photo.name
       }
     })
     return(
