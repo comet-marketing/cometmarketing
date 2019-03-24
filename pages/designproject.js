@@ -71,11 +71,11 @@ class DesignProject extends Component {
         src: photo.url,
         width: 3,
         height: 2,
-        alt: photo.url
+        alt: photo.name
       }
     })
     return(
-      <Layout pageName={this.props.project.title} title={this.props.project.title}>
+      <Layout pageName={this.props.project.title} title={this.props.project.title} description={this.props.project.description.substring(0,70)} keywords={'Comet Marketing,UTD,graphic,design'+this.props.project.title}>
         <Container>
           <BreadcrumbRow parentHref="/portfolio" parentText="Portfolio" activeText=   {this.props.project.title}>
           </BreadcrumbRow>

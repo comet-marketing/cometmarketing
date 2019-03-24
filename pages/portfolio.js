@@ -17,7 +17,7 @@ const HandleLink = ({project}) => {
     <DynamicLink displayRoute='portfolio/photo-project' actualRoute='photoproject' slug={project.slug}>
       <LazyLoad offset={500}>
       <div className='crop'>
-        <img className='img-fluid' src={project.photos[0].url}></img>
+        <img alt={project.title} className='img-fluid' src={project.photos[0].url}></img>
       </div>
       </LazyLoad>
       <h2 className='heading'>{project.title}</h2>
@@ -35,7 +35,7 @@ const HandleLink = ({project}) => {
     <DynamicLink displayRoute='portfolio/video-project' actualRoute='videoproject' slug={project.slug}>
       <LazyLoad offset={500}>
       <div className='crop'>
-        <img className='img-fluid' src={url}></img>
+        <img alt={project.title} className='img-fluid' src={url}></img>
       </div>
       </LazyLoad>
       <h2 className='heading'>{project.title}</h2>
@@ -50,7 +50,7 @@ const HandleLink = ({project}) => {
     <DynamicLink displayRoute='portfolio/design-project' actualRoute='designproject' slug={project.slug}>
       <LazyLoad offset={500}>
       <div className='crop'>
-        <img className='img-fluid' src={project.thumbnail.url}></img>
+        <img alt={project.title} className='img-fluid' src={project.thumbnail.url}></img>
       </div>
       </LazyLoad>
       <h2 className='heading'>{project.title}</h2>
@@ -113,7 +113,7 @@ export default class Portfolio extends Component {
 
   render() {
     return(
-      <Layout pageName='Portfolio' title='Portfolio'>
+      <Layout pageName='Portfolio' title='Portfolio' intro='Our Pride and Joy' description='A portfolio of past projects completed by Comet Marketing.' keywords='Comet Marketing,UTD,utd,cm,portfolio,projects'>
         <Container>
             {this.props.projects.map((row, i ) => (
               <Row key={i} className='row-no-margin'>
