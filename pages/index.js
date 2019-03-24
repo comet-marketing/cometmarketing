@@ -35,7 +35,7 @@ export default class Index extends Component {
 
   render() {
     return (    
-      <Layout title='Comet Marketing' pageName='Comet Marketing' isHome={true}>
+      <Layout title='Comet Marketing' pageName='Comet Marketing' isHome={true} keywords='Comet Marketing,UTD,University of Texas at Dallas,Graphic Design,Videography,Photography' description='Comet Marketing provides professional marketing solutions to UTD organizations.' author='Al Madireddy Mustafa Sadriwala'>
         <Container fluid className='services-container'>
           <Container className='services-grid'>
             <Row className='grid-row '>

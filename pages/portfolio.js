@@ -113,7 +113,7 @@ export default class Portfolio extends Component {
 
   render() {
     return(
-      <Layout pageName='Portfolio' title='Portfolio'>
+      <Layout pageName='Portfolio' title='Portfolio' intro='Our Pride and Joy' description='A portfolio of past projects completed by Comet Marketing.' keywords='Comet Marketing,UTD,utd,cm,portfolio,projects'>
         <Container>
             {this.props.projects.map((row, i ) => (
               <Row key={i} className='row-no-margin'>

@@ -140,7 +140,7 @@ export default class Contact extends Component {
 
   render() {
     return (
-      <Layout title="Contact Us" pageName='Contact Us'>
+      <Layout title="Contact Us" pageName='Contact Us' intro='Hit Us Up'>
         <Container>
           <Row className='justify-content-center'>
             <Slider className='slider' autoplay={3000} infinite='true' >

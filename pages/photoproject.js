@@ -75,9 +75,9 @@ class Photoproject extends Component {
       }
     })
     return(
-      <Layout pageName={this.props.project.title} title={this.props.project.title}>
+      <Layout pageName={this.props.project.title} title={this.props.project.title} description={this.props.project.description.substring(0,70)} keywords={'Comet Marketing,UTD,photography,' + this.props.project.title}>
         <Container>
-          <BreadcrumbRow parentHref="/portfolio" parentText="Portfolio" activeText=   {this.props.project.title}>
+          <BreadcrumbRow parentHref="/portfolio" parentText="Portfolio" activeText={this.props.project.title}>
           </BreadcrumbRow>
           <Row className='justify-content-center'>
             <Col sm='8'>

@@ -34,7 +34,7 @@ class Photoproject extends Component {
 
   render() {
     return(
-      <Layout pageName={this.props.project.title} title={this.props.project.title}>
+      <Layout pageName={this.props.project.title} title={this.props.project.title} description={this.props.project.description.substring(0,70)} keywords={'Comet Marketing,UTD,video,'+this.props.project.title}>
         <Container>
         <BreadcrumbRow parentHref="/portfolio" parentText="Portfolio" activeText={this.props.project.title}>
           </BreadcrumbRow>

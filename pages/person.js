@@ -21,7 +21,7 @@ class Person extends Component {
   }
   render() {
     return(
-      <Layout pageName={this.props.person.name} title={this.props.person.name} intro={this.props.person.role}>
+      <Layout pageName={this.props.person.name} title={this.props.person.name} intro={this.props.person.role} description={'Comet Marketing\'s' +this.props.person.role+':'+this.props.person.name} keywords={'Comet Marketing,UTD,'+this.props.person.name}>
         <Container className='person'>
         <BreadcrumbRow parentText="People" parentHref="/people" activeText={this.props.person.name}></BreadcrumbRow>
           <Row>
