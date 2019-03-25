@@ -4,11 +4,22 @@ import fetch from 'node-fetch';
 import DynamicLink from '../components/DynamicLink';
 import {
   Container, 
-  Row,
-  Col,
-  Button
+  Row, Col,
+  Button,
 } from 'reactstrap';
 import LazyLoad from 'react-lazy-load';
+
+const sortOptions = [
+  { value: 'recent', label: 'Most Recent' },
+  { value: 'old', label: 'Oldest'},
+  { value: 'abc', label: 'Alphabetically' },
+];
+
+const filterOptions = [
+  { value: 'photo', label: 'Photo Projects' },
+  { value: 'design', label: 'Design Projects' },
+  { value: 'video', label: 'Video Projects' }
+];
 
 const HandleLink = ({project}) => {
   if(project.type == 'photoproject') {
@@ -66,6 +77,17 @@ const HandleLink = ({project}) => {
 
 export default class Portfolio extends Component {
 
+  constructor(props){
+    super(props);
+    this.state={
+      sort: "recent",
+      filter: "",
+      projects: this.props.projects,
+    };
+    this.onSortSelect = this.onSortSelect.bind(this);
+    this.onFilterSelect = this.onFilterSelect.bind(this);
+  }
+
   static chunk(array, size) {
     const chunked_arr = [];
     for (let i = 0; i < array.length; i++) {
@@ -108,14 +130,73 @@ export default class Portfolio extends Component {
       return bTime - aTime
     })
     projects = this.chunk(projects, 3)
-    return { projects }
+    return { projects, designprojects, photoprojects, videoprojects }
+  }
+
+  onSortSelect(e) {
+    this.setState({ sort: e.target.value})
+    let projects = []
+    Array.prototype.push.apply(projects, this.props.photoprojects)
+    Array.prototype.push.apply(projects, this.props.designprojects)
+    Array.prototype.push.apply(projects, this.props.videoprojects)
+    if(this.state.sort == 'old')
+    {
+      projects.sort((a, b) => {
+        var aTime = new Date(a.date).getTime()
+        var bTime = new Date(b.date).getTime()
+        // positive results sort b before a
+        // negative results sort a before b
+        // return 0 when order doesn't matter
+        return bTime - aTime
+      })
+    }
+    else if(this.state.sort == 'abc')
+    {
+      projects.sort((a, b) => {
+        var aName = a.title.toString()
+        var bName = b.title.toString()
+        // positive results sort b before a
+        // negative results sort a before b
+        // return 0 when order doesn't matter
+        return aName - bName
+      })
+    }
+    else
+    {
+      projects.sort((a, b) => {
+        var aTime = new Date(a.date).getTime()
+        var bTime = new Date(b.date).getTime()
+        // positive results sort b before a
+        // negative results sort a before b
+        // return 0 when order doesn't matter
+        return aTime - bTime
+      })
+    }
+    this.setState({projects: this.constructor.chunk(projects, 3)})
+  }
+
+  onFilterSelect(e) {
+    this.setState({ filter: e.target.value})
   }
 
   render() {
     return(
       <Layout pageName='Portfolio' title='Portfolio' intro='Our Pride and Joy' description='A portfolio of past projects completed by Comet Marketing.' keywords='Comet Marketing,UTD,utd,cm,portfolio,projects'>
         <Container>
-            {this.props.projects.map((row, i ) => (
+            <Row>
+              <Col>
+              <select
+                value={this.state.sort}
+                onChange={this.onSortSelect}
+                className='whom'>
+                {sortOptions.map((option, i) => (
+                  <option key={i} value={option.value}>{option.label}</option>
+                ))
+                }
+              </select>
+              </Col>
+            </Row>
+            {this.state.projects.map((row, i ) => (
               <Row key={i} className='row-no-margin'>
                 {row.map((project) => (
                   <HandleLink project={project}/>                
