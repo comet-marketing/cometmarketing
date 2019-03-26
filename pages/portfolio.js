@@ -16,6 +16,7 @@ const sortOptions = [
 ];
 
 const filterOptions = [
+  { value: 'all', label: 'All Projects'},
   { value: 'photo', label: 'Photo Projects' },
   { value: 'design', label: 'Design Projects' },
   { value: 'video', label: 'Video Projects' }
@@ -83,9 +84,12 @@ export default class Portfolio extends Component {
       sort: "recent",
       filter: "",
       projects: this.props.projects,
+      chunkedprojects: this.props.chunkedprojects,
     };
     this.onSortSelect = this.onSortSelect.bind(this);
     this.onFilterSelect = this.onFilterSelect.bind(this);
+    this.sort = this.sort.bind(this);
+    this.filter = this.filter.bind(this);
   }
 
   static chunk(array, size) {
@@ -129,39 +133,17 @@ export default class Portfolio extends Component {
       // return 0 when order doesn't matter
       return bTime - aTime
     })
-    projects = this.chunk(projects, 3)
-    return { projects, designprojects, photoprojects, videoprojects }
+    let chunkedprojects = this.chunk(projects, 3)
+    return { projects, designprojects, photoprojects, videoprojects, chunkedprojects }
   }
 
   onSortSelect(e) {
     this.setState({ sort: e.target.value})
-    let projects = []
-    Array.prototype.push.apply(projects, this.props.photoprojects)
-    Array.prototype.push.apply(projects, this.props.designprojects)
-    Array.prototype.push.apply(projects, this.props.videoprojects)
-    if(this.state.sort == 'old')
-    {
-      projects.sort((a, b) => {
-        var aTime = new Date(a.date).getTime()
-        var bTime = new Date(b.date).getTime()
-        // positive results sort b before a
-        // negative results sort a before b
-        // return 0 when order doesn't matter
-        return bTime - aTime
-      })
-    }
-    else if(this.state.sort == 'abc')
-    {
-      projects.sort((a, b) => {
-        var aName = a.title.toString()
-        var bName = b.title.toString()
-        // positive results sort b before a
-        // negative results sort a before b
-        // return 0 when order doesn't matter
-        return aName - bName
-      })
-    }
-    else
+    this.sort(e.target.value, this.state.projects)
+  }
+
+  sort(state, projects){
+    if(state == 'old')
     {
       projects.sort((a, b) => {
         var aTime = new Date(a.date).getTime()
@@ -172,34 +154,89 @@ export default class Portfolio extends Component {
         return aTime - bTime
       })
     }
-    this.setState({projects: this.constructor.chunk(projects, 3)})
+    else if(state == 'abc')
+    {
+      projects.sort((a, b) => {
+        // positive results sort b before a
+        // negative results sort a before b
+        // return 0 when order doesn't matter
+        return a.title.localeCompare(b.title)
+      })
+    }
+    else if(state == 'recent')
+    {
+      projects.sort((a, b) => {
+        var aTime = new Date(a.date).getTime()
+        var bTime = new Date(b.date).getTime()
+        // positive results sort b before a
+        // negative results sort a before b
+        // return 0 when order doesn't matter
+        return bTime - aTime
+      })
+    }
+    this.setState({projects: projects})
+    this.setState({chunkedprojects: this.constructor.chunk(projects, 3)})
   }
 
   onFilterSelect(e) {
     this.setState({ filter: e.target.value})
+    this.filter(e.target.value)
+  }
+
+  filter(state){
+    let projects = []
+    if(state == 'photo')
+    {
+      Array.prototype.push.apply(projects, this.props.photoprojects)
+    }
+    else if(state == 'design')
+    {
+      Array.prototype.push.apply(projects, this.props.designprojects)
+    }
+    else if(state == 'video')
+    {
+      Array.prototype.push.apply(projects, this.props.videoprojects)
+    }
+    else {
+      Array.prototype.push.apply(projects, this.props.photoprojects)
+      Array.prototype.push.apply(projects, this.props.designprojects)
+      Array.prototype.push.apply(projects, this.props.videoprojects)
+    }
+    this.setState({projects: projects})
+    this.sort(this.state.sort, projects)
   }
 
   render() {
     return(
       <Layout pageName='Portfolio' title='Portfolio' intro='Our Pride and Joy' description='A portfolio of past projects completed by Comet Marketing.' keywords='Comet Marketing,UTD,utd,cm,portfolio,projects'>
         <Container>
-            <Row>
-              <Col>
+            <Row className='row-no-margin'>
+              <Col sm={{size: 3, order: 1, offset: 6}}>
               <select
                 value={this.state.sort}
                 onChange={this.onSortSelect}
-                className='whom'>
+                className='filter'>
                 {sortOptions.map((option, i) => (
                   <option key={i} value={option.value}>{option.label}</option>
                 ))
                 }
               </select>
               </Col>
+              <Col sm={{size:3, order: 2}}>
+                <select
+                  value={this.state.filter}
+                  onChange={this.onFilterSelect}
+                  className='filter'>
+                  {filterOptions.map((option, i) => (
+                    <option key={i} value={option.value}>{option.label}</option>
+                  ))}
+                  </select>
+              </Col>
             </Row>
-            {this.state.projects.map((row, i ) => (
+            {this.state.chunkedprojects.map((row, i ) => (
               <Row key={i} className='row-no-margin'>
                 {row.map((project) => (
-                  <HandleLink project={project}/>                
+                  <HandleLink key={project.id} project={project}/>                
                 ))}
               </Row>
             ))}

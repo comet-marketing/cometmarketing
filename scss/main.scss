@@ -265,7 +265,7 @@
   }
 }
 
-.form-control, .message-input, .whom{
+.form-control, .message-input, .whom, .filter{
   transition: all .2s ease;
 
   &:focus {
@@ -295,7 +295,7 @@
   }
 }
 
-.whom {
+.whom, .filter {
   border-color: black;
   border-width: 2px;
   border-radius: 0;
@@ -322,4 +322,9 @@
   background-repeat: no-repeat;
   background-color: #ffffff;
   color: #6b747d;
+}
+
+.filter {
+  margin: 0 0 20px 0px ;
+
 }
