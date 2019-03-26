@@ -88,7 +88,7 @@
       color: $color-background-light;
     }
     &:hover {
-      background-color: #F4B7C5;
+      background-color: lighten($color-theme-green, 35);
       .content, .heading {
         color: $color-background-dark;
       }
@@ -104,7 +104,7 @@
       color: $color-background-light;
     }
     &:hover {
-      background-color: #DCC9FC;
+      background-color: lighten($color-theme-orange, 25);
       .content, .heading {
         color: $color-background-dark;
       }
