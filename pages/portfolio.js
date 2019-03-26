@@ -10,7 +10,7 @@ import {
 import LazyLoad from 'react-lazy-load';
 
 const sortOptions = [
-  { value: 'recent', label: 'Most Recent' },
+  { value: 'recent', label: 'Newest' },
   { value: 'old', label: 'Oldest'},
   { value: 'abc', label: 'Alphabetically' },
 ];
