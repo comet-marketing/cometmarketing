@@ -143,7 +143,7 @@ export default class Contact extends Component {
       <Layout title="Contact Us" pageName='Contact Us' intro='Hit Us Up'>
         <Container>
           <Row className='justify-content-center'>
-            <Slider className='slider' autoplay={3000} infinite='true' >
+            <Slider className='slider' autoplay={5000} infinite='true' >
               {this.props.testimonials.map((testimonial, i) => 
                 <div className='justify-content-center testimonial' key={i}>
                   <div className='text-center'>
