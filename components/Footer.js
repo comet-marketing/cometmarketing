@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
-
+ 
 import {
   Container,
   Row,
@@ -21,12 +21,11 @@ export default class Footer extends Component {
               <p>Here to help you market you.</p>
             </Col>
             <Col sm='8'>
-              <hr></hr>
               <p className='github'>Website by Al and Mustafa | <a href='https://github.com/almadireddy/cometmarketing'>Github</a></p>
             </Col>
           </Row>
-          <Row className='justify-content-center'>
-            <Col md='12'>
+          <Row className='justify-content-between align-items-center'>
+            <Col md='8'>
               <Nav>
                 <NavItem>
                   <NavLink href="/people">People</NavLink>
@@ -76,6 +75,13 @@ export default class Footer extends Component {
                     </NavLink>
                   </NavItem>
               </Nav>
+            </Col>
+            <Col xs='4' sm='3' md='2' className='footer-logo-container'>
+              <Link href='/'>
+                <a>
+                  <img src='../static/Comet_White.png' className='footer-logo img-fluid'></img>
+                </a>
+              </Link>
             </Col>
           </Row>
         </Container>
