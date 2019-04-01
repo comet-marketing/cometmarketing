@@ -79,7 +79,7 @@ export default class Footer extends Component {
             <Col xs='4' sm='3' md='2' className='footer-logo-container'>
               <Link href='/'>
                 <a>
-                  <img src='../static/Comet_White.png' className='footer-logo img-fluid'></img>
+                  <img src='/static/Comet_White.png' className='footer-logo img-fluid'></img>
                 </a>
               </Link>
             </Col>
