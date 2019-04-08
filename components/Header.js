@@ -37,6 +37,7 @@ export default class Header extends Component {
                 - we are here to make your UT Dallas organization and events a success!
                 </p>
                 <CallToAction href='/contact' id='main-call-to-action'>Contact Us Now!</CallToAction>
+                <CallToAction href='https://goo.gl/forms/vCYE7wFGCeralb9B3' id='main-call-to-action'>Join Comet Marketing!</CallToAction>
               </Col>
             </Row>
           }
