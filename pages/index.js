@@ -35,7 +35,7 @@ export default class Index extends Component {
 
   render() {
     return (    
-      <Layout title='Comet Marketing' pageName='Comet Marketing' isHome={true} keywords='Comet Marketing,UTD,University of Texas at Dallas,Graphic Design,Videography,Photography' description='Comet Marketing provides professional marketing solutions to UTD organizations.' author='Al Madireddy Mustafa Sadriwala'>
+      <Layout title='Comet Marketing' pageName='Comet Marketing' isHome={true} keywords='Comet Marketing,UT Dallas,UTD,University of Texas at Dallas,Graphic Design,Videography,Photography' description='Comet Marketing provides professional marketing solutions to UTD organizations.' author='Al Madireddy Mustafa Sadriwala'>
         <Container fluid className='services-container'>
           <Container className='services-grid'>
             <Row className='grid-row '>
@@ -48,7 +48,7 @@ export default class Index extends Component {
                 </div>
               </Col>
               <Col md='5'>
-                <img alt='comet_marketing_photography' className='img-fluid' height='100%' width='100%' src='./static/photo.png'></img>
+                <img alt='comet_marketing_photography' title='comet_marketing_photography' className='img-fluid' height='100%' width='100%' src='./static/photo.png'></img>
               </Col>
             </Row>
             <Row className='grid-row reverse-items'>
@@ -61,7 +61,7 @@ export default class Index extends Component {
                 </div>
               </Col>
               <Col md='5'>
-                <img alt='comet_marketing_graphic_design' className='img-fluid' height='100%' width='100%' src='./static/design.png'></img>
+                <img alt='comet_marketing_graphic_design' title='comet_marketing_graphic_design' className='img-fluid' height='100%' width='100%' src='./static/design.png'></img>
               </Col>
             </Row>
             <Row className='grid-row'>
@@ -75,7 +75,7 @@ export default class Index extends Component {
                 </div>
               </Col>
               <Col md='5'>
-                <img alt='comet_marketing_web_design' className='img-fluid' height='100%' width='100%' src='./static/web.png'></img>
+                <img alt='comet_marketing_web_design' title='comet_marketing_web_design' className='img-fluid' height='100%' width='100%' src='./static/web.png'></img>
               </Col>
             </Row>
             <Row className='grid-row reverse-items'>
