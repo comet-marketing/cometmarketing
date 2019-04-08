@@ -3,10 +3,6 @@ import { Container, Row, Col } from 'reactstrap';
 import ReactPlayer from 'react-player';
 import CallToAction from "../components/CallToAction";
 
-/* Join Us 
-  <p className='lead'>Want to join the team?</p>
-  <p>We're always looking for amazing, talented people to join the team. Click on Join Us above and apply today!</p>
-*/
 export default () => {
   
   return (
@@ -35,13 +31,32 @@ export default () => {
               <p>We have two teams. Our Administrative Team does outreach and manages all the accounts. They’re the ones you’ll be communicating with for you to get the most out of your project. Our Creative Team is in charge of all our digital media. They’re the artists behind the scenes working to make your creative design come to life. Together, the two teams form Comet Marketing.</p>
               <p className='lead'>Want our help?</p>
               <p>Just fill out our contact form below and let's get the ball rolling!</p>
+              <p className='text-center lead'>
+                <CallToAction dark href='/contact'>Contact us now!</CallToAction>
+              </p>
+              <p className='lead'>Want to join the team?</p>
+              <p>We're always looking for amazing, talented people to join the team. Click on Join Us below and apply today!</p>
+              <p className='text-center lead'>
+                <CallToAction dark href=''>Join Us!</CallToAction>
+              </p>
             </Col>
           </Row>
-          <Row>
+          {/* <Row className='row-no-margin'>
             <Col className='text-center'>
               <CallToAction dark href='/contact'>Contact us now!</CallToAction>
             </Col>
           </Row>
+          <Row className='about-text justify-content-center row-no-margin'>
+            <Col md='8'>
+            <p className='lead'>Want to join the team?</p>
+            <p>We're always looking for amazing, talented people to join the team. Click on Join Us above and apply today!</p>
+            </Col>
+          </Row>
+          <Row className='row-no-margin'>
+            <Col className='text-center'>
+              <CallToAction dark href=''>Join Us!</CallToAction>
+            </Col>
+          </Row> */}
         </Container>
     </Layout>
   )
