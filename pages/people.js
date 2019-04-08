@@ -136,6 +136,14 @@ export default class People extends Component {
     return(
       <Layout title='People' pageName='People' intro='This Is Us' banner='/static/Group_pic2_optimized.jpg' description='Meet the talented UTD students behind Comet Marketing' keywords='comet marketing,Comet Marketing,UTD,this is us,people,members' author='Al Madireddy,Mustafa Sadriwala'>
         <Container>
+        <Row className='justify-content-center'>
+          <Col sm='6'>
+            <p className='lead'>Creative, talented, and looking for a way to show it off?</p>
+            <p className='lead'>Comet Marketing is looking for designers, photographers, videographers, illustrators, and more to join the team!</p>
+            {/*<p className='lead'>We work on flyers, posters, social media posts, short videos, photoshoots, and more!</p>*/}
+            <CallToAction dark href='https://goo.gl/forms/vCYE7wFGCeralb9B3'>Join Here!</CallToAction>
+          </Col>
+        </Row>
           <Row className = 'row-no-margin'>
             <Col sm={{size:3, order: 2, offset: 9}}>
               <select
