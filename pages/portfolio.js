@@ -29,7 +29,7 @@ const HandleLink = ({project}) => {
     <DynamicLink displayRoute='portfolio/photo-project' actualRoute='photoproject' slug={project.slug}>
       <LazyLoad offset={500}>
       <div className='crop'>
-        <img alt={project.title} className='img-fluid' src={project.photos[0].url}></img>
+        <img alt={project.title} title={project.title} className='img-fluid' src={project.photos[0].url}></img>
       </div>
       </LazyLoad>
       <h2 className='heading'>{project.title}</h2>
@@ -47,7 +47,7 @@ const HandleLink = ({project}) => {
     <DynamicLink displayRoute='portfolio/video-project' actualRoute='videoproject' slug={project.slug}>
       <LazyLoad offset={500}>
       <div className='crop'>
-        <img alt={project.title} className='img-fluid' src={url}></img>
+        <img alt={project.title} title={project.title} className='img-fluid' src={url}></img>
       </div>
       </LazyLoad>
       <h2 className='heading'>{project.title}</h2>
@@ -62,7 +62,7 @@ const HandleLink = ({project}) => {
     <DynamicLink displayRoute='portfolio/design-project' actualRoute='designproject' slug={project.slug}>
       <LazyLoad offset={500}>
       <div className='crop'>
-        <img alt={project.title} className='img-fluid' src={project.thumbnail.url}></img>
+        <img alt={project.title} title={project.title} className='img-fluid' src={project.thumbnail.url}></img>
       </div>
       </LazyLoad>
       <h2 className='heading'>{project.title}</h2>
@@ -208,7 +208,7 @@ export default class Portfolio extends Component {
 
   render() {
     return(
-      <Layout pageName='Portfolio' title='Portfolio' intro='Our Pride and Joy' description='A portfolio of past projects completed by Comet Marketing.' keywords='Comet Marketing,UTD,utd,cm,portfolio,projects'>
+      <Layout pageName='Portfolio' title='Portfolio' intro='Our Pride and Joy' description='A portfolio of past projects completed by Comet Marketing that help showcase our past experience making promo videos, headshots, flyers, and much more.' keywords='Comet Marketing,UTD,utd,UT Dallas,cm,portfolio,projects,flyers,headshots,promos'>
         <Container>
             <Row className='row-no-margin'>
               <Col sm={{size: 3, order: 1, offset: 6}}>
