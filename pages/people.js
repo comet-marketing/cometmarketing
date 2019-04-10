@@ -134,7 +134,7 @@ export default class People extends Component {
 */
   render() {
     return(
-      <Layout title='People' pageName='People' intro='This Is Us' banner='/static/Group_pic2_optimized.jpg' description='Meet the talented UTD students behind Comet Marketing' keywords='comet marketing,Comet Marketing,UTD,this is us,people,members' author='Al Madireddy,Mustafa Sadriwala'>
+      <Layout title='People - UTD Comet Marketing' pageName='People' intro='This Is Us' banner='/static/Group_pic2_optimized.jpg' description='Meet the talented UTD students that make Comet Marketing a reality. From gifted graphic designers to skilled marketing gurus, we are incredibly proud of our exceptionally talented team.' keywords='comet marketing,Comet Marketing,CM,UTD,this is us,people,members,team' author='Al Madireddy,Mustafa Sadriwala'>
         <Container>
         <Row className='justify-content-center'>
           <Col sm='6'>

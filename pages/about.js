@@ -6,7 +6,7 @@ import CallToAction from "../components/CallToAction";
 export default () => {
   
   return (
-    <Layout title="about" pageName='Our Mission' intro="We're here to help you market you" description='Who, what, and why is Comet Marketing.' keywords='Comet Marketing,UTD,University of Texas at Dallas,about,who is,what is' author='Mira Jambusaria'>
+    <Layout title="About - UTD Comet Marketing" pageName='Our Mission' intro="We're here to help you market you" description='Who, what, and why is Comet Marketing. Learn how Comet Marketing came to be a UT Dallas organization is and what our vision for the future looks like.' keywords='Comet Marketing,UT Dallas,CM,UTD,University of Texas at Dallas,about,who is,what is' author='Mira Jambusaria'>
       <Container>
           <Row className='home-video justify-content-center'>
             <div className='player-wrapper justify-content-center'>
