@@ -35,7 +35,7 @@ export default class Index extends Component {
 
   render() {
     return (    
-      <Layout title='Comet Marketing' pageName='Comet Marketing' isHome={true} keywords='Comet Marketing,UT Dallas,UTD,University of Texas at Dallas,Graphic Design,Videography,Photography' description='Comet Marketing provides professional photography, videography, graphic design, web design, and general marketing solutions to UT Dallas organizations.' author='Al Madireddy Mustafa Sadriwala'>
+      <Layout title='UTD Comet Marketing' pageName='Comet Marketing' isHome={true} keywords='Comet Marketing,UT Dallas,UTD,University of Texas at Dallas,Graphic Design,Videography,Photography,Web Design,Marketing,CM' description='Comet Marketing is a UTD organization that provides professional photography, videography, graphic design, web design, and general marketing solutions to other UT Dallas organizations. Our goal is to help YOU market YOU!' author='Al Madireddy,Mustafa Sadriwala'>
         <Container fluid className='services-container'>
           <Container className='services-grid'>
             <Row className='grid-row'>

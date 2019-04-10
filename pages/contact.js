@@ -140,7 +140,7 @@ export default class Contact extends Component {
 
   render() {
     return (
-      <Layout title="Contact Us" pageName='Contact Us' intro='Hit Us Up'>
+      <Layout title="Contact Us - UTD Comet Marketing" pageName='Contact Us' intro='Hit Us Up' description='Shoot us an email to inquire about future projects or collaborations! We can do graphic design, photography, videography, web design, and help with your general marketing needs!' keywords='UTD,Comet Marketing,CM,UT Dallas,Contact,contact,form,email' author='Al Madireddy,Mustafa Sadriwala'>
         <Container>
           <Row className='justify-content-center'>
             <Slider className='slider' autoplay={5000} infinite='true' >

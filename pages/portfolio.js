@@ -208,7 +208,7 @@ export default class Portfolio extends Component {
 
   render() {
     return(
-      <Layout pageName='Portfolio' title='Portfolio' intro='Our Pride and Joy' description='A portfolio of past projects completed by Comet Marketing that help showcase our past experience making promo videos, headshots, flyers, and much more.' keywords='Comet Marketing,UTD,utd,UT Dallas,cm,portfolio,projects,flyers,headshots,promos'>
+      <Layout pageName='Portfolio' title='Portfolio - UTD Comet Marketing' intro='Our Pride and Joy' description='A portfolio of past projects completed by Comet Marketing that showcase our past experience making promo videos, headshots, flyers, and much more.' keywords='Comet Marketing,UTD,utd,UT Dallas,cm,portfolio,projects,flyers,headshots,promos'>
         <Container>
             <Row className='row-no-margin'>
               <Col sm={{size: 3, order: 1, offset: 6}}>
