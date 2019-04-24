@@ -28,8 +28,8 @@ export default class People extends Component {
     super(props);
     this.state={
       filter: 'all',
-      projects: this.props.projects,
-      chunkedprojects: this.props.chunkedprojects,
+      people: this.props.people,
+      unchunkedPeople: this.props.unchunkedPeople,
     };
     this.onFilterSelect = this.onFilterSelect.bind(this);
     this.filter = this.filter.bind(this);
@@ -52,6 +52,9 @@ export default class People extends Component {
   static async getInitialProps() {
     const res = await fetch('https://utdcometmarketing-api.herokuapp.com/members?_sort=name')
     let unchunkedPeople = await res.json()
+    unchunkedPeople = unchunkedPeople.filter(function(element) {
+      return !element.Alum
+    })
     let people = this.chunk(unchunkedPeople, 3)
     return { people, unchunkedPeople }
   }
