@@ -6,12 +6,8 @@ import DynamicLink from "../components/DynamicLink"
 
 export default class Alumni extends Component {
     static async getInitialProps() {
-        const res = await fetch('https://utdcometmarketing-api.herokuapp.com/members?_sort=gradyear:DESC')
+        const res = await fetch('https://utdcometmarketing-api.herokuapp.com/members?Alum=true&_sort=gradyear:DESC')
         let people = await res.json()
-        people = people.filter(function(element) {
-          return element.Alum
-        })
-        console.log(people.toString())
         return { people }
       }
 

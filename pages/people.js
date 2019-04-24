@@ -50,11 +50,8 @@ export default class People extends Component {
   }
 
   static async getInitialProps() {
-    const res = await fetch('https://utdcometmarketing-api.herokuapp.com/members?_sort=name')
+    const res = await fetch('https://utdcometmarketing-api.herokuapp.com/members?_sort=name&Alum=false')
     let unchunkedPeople = await res.json()
-    unchunkedPeople = unchunkedPeople.filter(function(element) {
-      return !element.Alum
-    })
     let people = this.chunk(unchunkedPeople, 3)
     return { people, unchunkedPeople }
   }
