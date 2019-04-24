@@ -34,29 +34,13 @@ export default () => {
               <p className='text-center lead'>
                 <CallToAction dark href='/contact'>Contact us now!</CallToAction>
               </p>
-              <p className='lead'>Want to join the team?</p>
+              {/* <p className='lead'>Want to join the team?</p>
               <p>We're always looking for amazing, talented people to join the team. Click on Join Us below and apply today!</p>
               <p className='text-center lead'>
                 <CallToAction dark href=''>Join Us!</CallToAction>
-              </p>
+              </p> */}
             </Col>
           </Row>
-          {/* <Row className='row-no-margin'>
-            <Col className='text-center'>
-              <CallToAction dark href='/contact'>Contact us now!</CallToAction>
-            </Col>
-          </Row>
-          <Row className='about-text justify-content-center row-no-margin'>
-            <Col md='8'>
-            <p className='lead'>Want to join the team?</p>
-            <p>We're always looking for amazing, talented people to join the team. Click on Join Us above and apply today!</p>
-            </Col>
-          </Row>
-          <Row className='row-no-margin'>
-            <Col className='text-center'>
-              <CallToAction dark href=''>Join Us!</CallToAction>
-            </Col>
-          </Row> */}
         </Container>
     </Layout>
   )
