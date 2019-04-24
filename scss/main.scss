@@ -326,5 +326,14 @@
 
 .filter {
   margin: 0 0 20px 0px ;
+}
+
+.alumni-btn {
+  &:hover{
+    background-image: linear-gradient(135deg, $color-theme-green 10%, $color-theme-orange );
+    background-color: white;
+    box-shadow: -5px 5px 0 0 #000000;
+
+  }
 
 }
