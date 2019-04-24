@@ -172,7 +172,7 @@ export default class People extends Component {
           ))}
           <Row className ='justify-content-center row-no-margin'>
             <Col sm='1'>
-                    <CallToAction dark href='#' className='alumni-btn'>Alumni</CallToAction>
+                    <CallToAction dark href='/alumni' className='alumni-btn'>Alumni</CallToAction>
             </Col>
           </Row>
         </Container>
