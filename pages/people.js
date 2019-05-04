@@ -28,8 +28,8 @@ export default class People extends Component {
     super(props);
     this.state={
       filter: 'all',
-      projects: this.props.projects,
-      chunkedprojects: this.props.chunkedprojects,
+      people: this.props.people,
+      unchunkedPeople: this.props.unchunkedPeople,
     };
     this.onFilterSelect = this.onFilterSelect.bind(this);
     this.filter = this.filter.bind(this);
@@ -50,7 +50,7 @@ export default class People extends Component {
   }
 
   static async getInitialProps() {
-    const res = await fetch('https://utdcometmarketing-api.herokuapp.com/members?_sort=name')
+    const res = await fetch('https://utdcometmarketing-api.herokuapp.com/members?_sort=name&Alum=false')
     let unchunkedPeople = await res.json()
     let people = this.chunk(unchunkedPeople, 3)
     return { people, unchunkedPeople }
@@ -167,6 +167,11 @@ export default class People extends Component {
               ))}
             </Row>
           ))}
+          <Row className ='justify-content-center row-no-margin'>
+            <Col sm='1'>
+                    <CallToAction dark href='/alumni' className='alumni-btn'>Alumni</CallToAction>
+            </Col>
+          </Row>
         </Container>
       </Layout>
     )

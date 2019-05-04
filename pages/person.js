@@ -23,7 +23,12 @@ class Person extends Component {
     return(
       <Layout pageName={this.props.person.name} title={this.props.person.name} intro={this.props.person.role} description={'Comet Marketing\'s' +this.props.person.role+':'+this.props.person.name} keywords={'Comet Marketing,UTD,'+this.props.person.name}>
         <Container className='person'>
+        {this.props.person.Alum && 
+        <BreadcrumbRow parentText="Alumni" parentHref="/alumni" activeText={this.props.person.name}></BreadcrumbRow>
+        } 
+        {!this.props.person.Alum &&
         <BreadcrumbRow parentText="People" parentHref="/people" activeText={this.props.person.name}></BreadcrumbRow>
+        }          
           <Row>
             <Col>
               <img alt={this.props.person.name + ' ' + this.props.person.role} title={this.props.person.name + ' ' + this.props.person.role} className='img-fluid profile' src={this.props.person.profilepicture.url}></img>
