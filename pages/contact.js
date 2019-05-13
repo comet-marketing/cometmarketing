@@ -5,6 +5,7 @@ import { Container,
           Button, 
           Form, FormGroup, FormText, Label, Input, 
           Row, Col,
+          Modal, ModalHeader, ModalBody, ModalFooter,
         } from 'reactstrap';
 import ReCAPTCHA from "react-google-recaptcha";
 import fetch from "node-fetch";
@@ -46,6 +47,7 @@ export default class Contact extends Component {
       displayErrorMessage: false,
       recaptchaScore: "",
       dropdownOpen: false,
+      modal: false,
     };
     this.submitHandler = this.submitHandler.bind(this);
     this.onRecaptchaChange = this.onRecaptchaChange.bind(this);
@@ -55,12 +57,20 @@ export default class Contact extends Component {
     this.displayEmailInvalid = this.displayEmailInvalid.bind(this);
     this.onWhomSelect = this.onWhomSelect.bind(this);
     this.onWhereSelect = this.onWhereSelect.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
+
   }
 
   static async getInitialProps() {
     const res = await fetch('https://utdcometmarketing-api.herokuapp.com/testimonials?')
     let testimonials = await res.json()
     return {testimonials}
+  }
+
+  componentDidMount() {
+    this.setState({
+      modal: true,
+    })
   }
 
   async submitHandler(e) {
@@ -138,10 +148,40 @@ export default class Contact extends Component {
     this.setState({ where: e.target.value})
   }
 
+  toggleModal() {
+    this.setState(prevState => ({
+      modal: !prevState.modal
+    }));
+  }
+
   render() {
     return (
       <Layout title="Contact Us - UTD Comet Marketing" pageName='Contact Us' intro='Hit Us Up' description='Shoot us an email to inquire about future projects or collaborations! We can do graphic design, photography, videography, web design, and help with your general marketing needs!' keywords='UTD,Comet Marketing,CM,UT Dallas,Contact,contact,form,email' author='Al Madireddy,Mustafa Sadriwala'>
         <Container>
+          <div>
+            <Modal isOpen={this.state.modal} toggle={this.toggleModal}>
+              <ModalHeader toggle={this.toggleModal}>
+              <p className='lead'>Summer Break Disclaimer</p>
+              </ModalHeader>
+              <ModalBody>
+                <p>
+                  Thank you so much for wanting to reach out to us! At the moment, most of our members are
+                  on their summer breaks pursuing their passions and so are not able to regularly create content.
+                  We hope you understand and apologize for any inconvenience.
+                </p>
+                <p>
+                  If you have project ideas for the fall semester we would still love to hear them and will gladly
+                  talk with you about planning them so that your organisation can hit the ground running when the
+                  time comes. Until then, have a great summer from all of us here at Comet Marketing!
+                </p>
+                <p className='text-center'>
+                  ☀️☁️️    ☁️ ☁️      ☁️ <br/>
+                  ☁️   ☁️   ⁣      ☁️   <br/>🐬 <br/>
+                  🌊🌊🏄🌊🌊🌊🌊🌊🌊🏖🌴
+                </p>
+              </ModalBody>
+            </Modal>
+          </div>
           <Row className='justify-content-center'>
             <Slider className='slider' autoplay={5000} infinite='true' >
               {this.props.testimonials.map((testimonial, i) => 
