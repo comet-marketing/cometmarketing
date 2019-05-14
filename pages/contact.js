@@ -171,8 +171,9 @@ export default class Contact extends Component {
                 </p>
                 <p>
                   If you have project ideas for the fall semester we would still love to hear them and will gladly
-                  talk with you about planning them so that your organisation can hit the ground running when the
-                  time comes. Until then, have a great summer from all of us here at Comet Marketing!
+                  talk with you about planning them so that your organization can hit the ground running when the
+                  time comes. We will resume all of our resumes at the beginning of the Fall 2019 semester (August 26).
+                  Until then, have a great summer from all of us here at Comet Marketing!
                 </p>
                 <p className='text-center'>
                   ☀️☁️️    ☁️ ☁️      ☁️ <br/>
