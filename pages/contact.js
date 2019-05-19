@@ -165,15 +165,13 @@ export default class Contact extends Component {
               </ModalHeader>
               <ModalBody>
                 <p>
-                  Thank you so much for wanting to reach out to us! At the moment, most of our members are
-                  on their summer breaks pursuing their passions and so are not able to regularly create content.
-                  We hope you understand and apologize for any inconvenience.
+                  Thank you so much for your interest in Comet Marketing! At the moment, most of our members are on their summer breaks and are consequently not available to regularly create content. As such, our listed creation timelines will not apply until we return in late August. We apologize for any inconvenience and appreciate your understanding.
                 </p>
                 <p>
-                  If you have project ideas for the fall semester we would still love to hear them and will gladly
-                  talk with you about planning them so that your organization can hit the ground running when the
-                  time comes. We will resume all of our resumes at the beginning of the Fall 2019 semester (August 26).
-                  Until then, have a great summer from all of us here at Comet Marketing!
+                  If you have any project ideas for the fall semester we would still love to hear them. Feel free to fill out the contact form for our CM staff to review so that we can help you hit the ground running when August rolls around.
+                </p>
+                <p>
+                  Have a great summer from all of us here at Comet Marketing!
                 </p>
                 <p className='text-center'>
                   ☀️☁️️    ☁️ ☁️      ☁️ <br/>
