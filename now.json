@@ -1,7 +1,7 @@
 {
     "version": 2,
     "name": "cometmarketing",
-    "alias": ["utdcometmarketing.com"],
+    "alias": "utdcometmarketing.com",
     "builds": [
         { "src": "server.js", "use": "@now/node" },
         { "src": "next.config.js", "use": "@now/next" }
