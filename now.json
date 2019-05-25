@@ -1,0 +1,8 @@
+{
+    "version": 2,
+    "name": "cometmarketing",
+    "builds": [
+        { "src": "server.js", "use": "@now/node" },
+        { "src": "next.config.js", "use": "@now/next" }
+    ]
+}
