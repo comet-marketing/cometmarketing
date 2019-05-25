@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 import { withRouter } from 'next/router'
-import Link from "next/link";
 import Layout from '../components/Layout';
 import fetch from 'node-fetch';
 import {
   Container,
   Row,
-  Col,
-  Breadcrumb, 
-  BreadcrumbItem
+  Col
 } from 'reactstrap';
 import Gallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
-import DynamicLink from '../components/DynamicLink';
+import ProjectCredits from '../components/ProjectCredits';
 import BreadcrumbRow from '../components/Breadcrumb';
 
 class Photoproject extends Component {
@@ -23,8 +20,8 @@ class Photoproject extends Component {
     this.openLightbox = this.openLightbox.bind(this);
     this.gotoNext = this.gotoNext.bind(this);
     this.gotoPrevious = this.gotoPrevious.bind(this);
-    this.getDate = this.getDate.bind(this);
   }
+
   static async getInitialProps({query}) {
     const res = await fetch(`https://utdcometmarketing-api.herokuapp.com/photoprojects/${query.slug}`)
     const data = await res.json()
@@ -59,12 +56,6 @@ class Photoproject extends Component {
     });
   }
 
-  getDate() {
-    var d = new Date(this.props.project.date)
-    var string = d.toDateString()
-    return string
-  }
-
   render() {
     const galleryPhotos = this.props.project.photos.map((photo, i) => {
       return {
@@ -84,6 +75,7 @@ class Photoproject extends Component {
               <p className='lead'>{this.props.project.description}</p>
             </Col>
           </Row>
+          <ProjectCredits members={this.props.project.members} date={this.props.project.date}></ProjectCredits>
           <Gallery photos={galleryPhotos} onClick={this.openLightbox} />
           <Lightbox images={galleryPhotos}
             onClose={this.closeLightbox}
@@ -92,19 +84,6 @@ class Photoproject extends Component {
             currentImage={this.state.currentImage}
             isOpen={this.state.lightboxIsOpen}
           />
-          <Row className='recent-projects-row row-no-margin project-members'>
-          <Col sm='8'>
-            <p className='lead'>Project Members:</p>
-            {this.props.project.members.map((person) => (
-              <DynamicLink displayRoute='people' actualRoute='person' slug={person.slug}>
-                  <h2 className='lead'>{person.name}</h2>
-              </DynamicLink>
-            ))}
-          </Col>
-          <Col sm='4'>
-              <p className='lead text-right'>{this.getDate()}</p>
-          </Col>
-          </Row>
         </Container>
       </Layout>
     )
