@@ -17,5 +17,6 @@ make changes
 git add .
 git commit -m 'your message here'
 git push 
+```
 
 access the site at [utdcometmarketing.com](https://utdcometmarketing.com)
