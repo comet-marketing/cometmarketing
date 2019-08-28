@@ -12,7 +12,7 @@ import {
 
 class Post extends Component {
   static async getInitialProps({ query }) {
-    const res = await fetch(`http://localhost:1337/posts/${query.slug}`)
+    const res = await fetch(`https://utdcometmarketing-api.herokuapp.com/posts/${query.slug}`)
     const data = await res.json()
 
     return {
