@@ -31,32 +31,6 @@ const whereOptions = [
   { value: 'Other', label: 'Other'}
 ];
 
-/*
-  <div>
-            <Modal isOpen={this.state.modal} toggle={this.toggleModal}>
-              <ModalHeader toggle={this.toggleModal}>
-              <p className='lead'>Summer Break Disclaimer</p>
-              </ModalHeader>
-              <ModalBody>
-                <p>
-                  Thank you so much for your interest in Comet Marketing! At the moment, most of our members are on their summer breaks and are consequently not available to regularly create content. As such, our listed creation timelines will not apply until we return in late August. We apologize for any inconvenience and appreciate your understanding.
-                </p>
-                <p>
-                  If you have any project ideas for the fall semester we would still love to hear them. Feel free to fill out the contact form for our CM staff to review so that we can help you hit the ground running when August rolls around.
-                </p>
-                <p>
-                  Have a great summer from all of us here at Comet Marketing!
-                </p>
-                <p className='text-center'>
-                  ☀️☁️️    ☁️ ☁️      ☁️ <br/>
-                  ☁️   ☁️   ⁣      ☁️   <br/>🐬 <br/>
-                  🌊🌊🏄🌊🌊🌊🌊🌊🌊🏖🌴
-                </p>
-              </ModalBody>
-            </Modal>
-          </div>
-  */
-
 export default class Contact extends Component {
   constructor(props) {
     super(props);
