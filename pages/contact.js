@@ -175,12 +175,16 @@ export default class Contact extends Component {
             <Col sm='6'>
               <p className='lead text-center'>Contact us below about your project ideas!</p>
               <p className='lead text-center'>Remember, we can help with event photography, flyer/graphic design, videoshoots, and much more!</p>
+              <p classname='lead text-center'></p>
               <p className='lead text-center'>
+                <p className='text-center'>
                 <b>Comet Marketing Creation Timelines:</b> <br></br>
-                One week for a flyer <br></br>  
-                3 days for event photography or group pictures <br></br>  
-                Videos under one minute: ~2 weeks <br></br>  
-                Videos over one minute: ~1 month <br></br>  
+                </p>
+                Two weeks for a flyer <br></br>
+                One month for a custom designed logo<br></br>  
+                One week notice for small event photography or group pictures <br></br>
+                Two weeks for photography edits <br></br>
+                Around 1 month for videos <br></br>
               </p>
             </Col>
           </Row>
