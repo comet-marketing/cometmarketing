@@ -8,7 +8,7 @@ cd cometmarketing
 yarn
 node server.js 
 ```
-Site is now running at localhost:3000 
+Site is now running at localhost:3000
 
 ```
 git branch -branchName-
@@ -20,3 +20,4 @@ git push
 ```
 
 access the site at [utdcometmarketing.com](https://utdcometmarketing.com)
+The site may load slowly because the backend is hosted on a free-tier of Heroku
