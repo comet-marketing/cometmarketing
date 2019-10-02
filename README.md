@@ -20,4 +20,5 @@ git push
 ```
 
 access the site at [utdcometmarketing.com](https://utdcometmarketing.com)
-The site may load slowly because the backend is hosted on a free-tier of Heroku
+
+The site may load slowly because the backend is hosted on a free-tier of Heroku.
