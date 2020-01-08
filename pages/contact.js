@@ -6,6 +6,7 @@ import { Container,
           Form, FormGroup, FormText, Label, Input, 
           Row, Col,
           Modal, ModalHeader, ModalBody, ModalFooter,
+          Popover, PopoverHeader, PopoverBody
         } from 'reactstrap';
 import ReCAPTCHA from "react-google-recaptcha";
 import fetch from "node-fetch";
@@ -175,9 +176,12 @@ export default class Contact extends Component {
             <Col sm='6'>
               <p className='lead text-center'>Contact us below about your project ideas!</p>
               <p className='lead text-center'>Remember, we can help with event photography, flyer/graphic design, videoshoots, and much more!</p>
-              <p classname='lead text-center'></p>
+              <p className='lead text-center'>Are you a SOC organization? Our services are <b>free</b>!<br></br></p>
               <p className='lead text-center'>
                 <p className='text-center'>
+                  <br></br>
+                  <br></br>
+                  <br></br>
                 <b>Comet Marketing Creation Timelines:</b> <br></br>
                 </p>
                 Two weeks for a flyer <br></br>
