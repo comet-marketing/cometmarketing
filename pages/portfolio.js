@@ -6,6 +6,7 @@ import {
   Container, 
   Row, Col,
   Button,
+  Pagination, PaginationItem, PaginationLink
 } from 'reactstrap';
 import LazyLoad from 'react-lazy-load';
 
@@ -80,16 +81,20 @@ export default class Portfolio extends Component {
 
   constructor(props){
     super(props);
+    const pageCount = Math.ceil(this.props.projects.length / 9) || 1;
     this.state={
       sort: "recent",
       filter: "",
       projects: this.props.projects,
       chunkedprojects: this.props.chunkedprojects,
+      pageCount: pageCount,
+      currentPage: 0,
     };
     this.onSortSelect = this.onSortSelect.bind(this);
     this.onFilterSelect = this.onFilterSelect.bind(this);
     this.sort = this.sort.bind(this);
     this.filter = this.filter.bind(this);
+    this.onPageClick = this.onPageClick.bind(this);
   }
 
   static chunk(array, size) {
@@ -202,11 +207,30 @@ export default class Portfolio extends Component {
       Array.prototype.push.apply(projects, this.props.designprojects)
       Array.prototype.push.apply(projects, this.props.videoprojects)
     }
-    this.setState({projects: projects})
+    let pageCount = Math.ceil(projects.length / 9)
+    console.log(pageCount)
+    this.setState({
+                    projects: projects,
+                    pageCount: pageCount,
+                    currentPage: 0})
     this.sort(this.state.sort, projects)
   }
 
+  onPageClick(e, index){
+    e.preventDefault();
+    this.setState({
+      currentPage: index
+    });
+  }
+
   render() {
+    const currentPage = this.state.currentPage;
+    console.log(currentPage);
+    const currentProjects = [];
+    for(let i = (currentPage)*3; i < Math.min((currentPage+1)*3, this.state.chunkedprojects.length); i++){
+      currentProjects.push(this.state.chunkedprojects[i]);
+    }
+    console.log(currentProjects);
     return(
       <Layout pageName='Portfolio' title='Portfolio - UTD Comet Marketing' intro='Our Pride and Joy' description='A portfolio of past projects completed by Comet Marketing that showcase our past experience making promo videos, headshots, flyers, and much more.' keywords='Comet Marketing,UTD,utd,UT Dallas,cm,portfolio,projects,flyers,headshots,promos'>
         <Container>
@@ -233,13 +257,68 @@ export default class Portfolio extends Component {
                   </select>
               </Col>
             </Row>
-            {this.state.chunkedprojects.map((row, i ) => (
+            <Row className='row-no-margin'>
+              <Col sm={{size:6}}>
+                <Pagination size="sm" aria-label="Page navigation">
+                  <PaginationItem disabled={currentPage<=0}>
+                    <PaginationLink
+                      onClick={e => this.onPageClick(e, currentPage - 1)}
+                      previous
+                      href="#"
+                    />
+                  </PaginationItem>
+                  {[...Array(this.state.pageCount)].map((page, i) => 
+                    <PaginationItem active={i === currentPage} key={i}>
+                      <PaginationLink onClick={e => this.onPageClick(e, i)} href="#">
+                        {i + 1}
+                      </PaginationLink>
+                    </PaginationItem>
+                  )}
+                  <PaginationItem disabled={currentPage >= this.state.pageCount-1}>
+                    <PaginationLink
+                      onClick={e => this.onPageClick(e, currentPage + 1)}
+                      next
+                      href="#"
+                    />
+                  </PaginationItem>
+                </Pagination>
+              </Col>
+            </Row>
+            {currentProjects
+            .map((row, i ) => (
               <Row key={i} className='row-no-margin'>
                 {row.map((project) => (
                   <HandleLink key={project.id} project={project}/>                
                 ))}
               </Row>
             ))}
+            <Row className='row-no-margin'>
+              <Col sm={{size:6}}>
+                <Pagination size="sm" aria-label="Page navigation">
+                  <PaginationItem disabled={currentPage<=0}>
+                    <PaginationLink
+                      onClick={e => this.onPageClick(e, currentPage - 1)}
+                      previous
+                      href="#"
+                    />
+                  </PaginationItem>
+                  {[...Array(this.state.pageCount)].map((page, i) => 
+                    <PaginationItem active={i === currentPage} key={i}>
+                      <PaginationLink onClick={e => this.onPageClick(e, i)} href="#">
+                        {i + 1}
+                      </PaginationLink>
+                    </PaginationItem>
+                  )}
+                  <PaginationItem disabled={currentPage >= this.state.pageCount-1}>
+                    <PaginationLink
+                      onClick={e => this.onPageClick(e, currentPage + 1)}
+                      next
+                      href="#"
+                    />
+                  </PaginationItem>
+                </Pagination>
+              </Col>
+            </Row>
         </Container>
       </Layout>
     )
