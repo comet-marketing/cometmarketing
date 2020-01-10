@@ -208,7 +208,6 @@ export default class Portfolio extends Component {
       Array.prototype.push.apply(projects, this.props.videoprojects)
     }
     let pageCount = Math.ceil(projects.length / 9)
-    console.log(pageCount)
     this.setState({
                     projects: projects,
                     pageCount: pageCount,
@@ -225,12 +224,10 @@ export default class Portfolio extends Component {
 
   render() {
     const currentPage = this.state.currentPage;
-    console.log(currentPage);
     const currentProjects = [];
     for(let i = (currentPage)*3; i < Math.min((currentPage+1)*3, this.state.chunkedprojects.length); i++){
       currentProjects.push(this.state.chunkedprojects[i]);
     }
-    console.log(currentProjects);
     return(
       <Layout pageName='Portfolio' title='Portfolio - UTD Comet Marketing' intro='Our Pride and Joy' description='A portfolio of past projects completed by Comet Marketing that showcase our past experience making promo videos, headshots, flyers, and much more.' keywords='Comet Marketing,UTD,utd,UT Dallas,cm,portfolio,projects,flyers,headshots,promos'>
         <Container>

@@ -337,3 +337,38 @@
   }
 
 }
+
+ul.pagination {
+  transition: all .2s ease;
+  margin-top: 0;
+  margin-bottom: 15px;
+
+
+
+  li.page-item.active {
+
+    a.page-link {
+      color: darken(#6b747d, 20%);
+      background-color: lighten($color-theme-orange, 10%) !important;
+      border-color: $color-theme-orange !important;
+    }
+  }
+
+  li.page-item.disabled {
+    a.page-link {
+      background-color: lighten(#6b747d, 45%);
+    }
+  }
+
+  a.page-link {
+    text-align: center;
+    box-shadow: none !important;
+    color: #6b747d;
+
+    &:hover {
+      background-color: lighten($color-theme-orange,25%);
+      color: darken(#6b747d, 10%);
+      border-color: $color-theme-orange !important;
+      box-shadow: 0 0 0 0.1rem rgba($color-theme-orange, 0.25) !important;    }
+  }
+}
