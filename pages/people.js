@@ -131,7 +131,7 @@ export default class People extends Component {
             <p className='lead'>Creative, talented, and looking for a way to show it off?</p>
             <p className='lead'>Comet Marketing is looking for designers, photographers, videographers, illustrators, and more to join the team!</p>
             <p className='lead'>We work on flyers, posters, social media posts, short videos, photoshoots, and more!</p>
-            <CallToAction dark href='https://forms.gle/UGgvqdmeTVcHtpMd6'>Join Here!</CallToAction>
+            <CallToAction dark href='https://forms.gle/UGgvqdmeTVcHtpMd6' target="_blank">Join Here!</CallToAction>
           </Col>
         </Row>
           <Row className = 'row-no-margin'>

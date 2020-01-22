@@ -23,7 +23,7 @@ export default class CallToAction extends Component {
   render() {
     if (this.props.href) {
       return(
-        <a id={this.props.id} className={this.rootClassNames()} href={this.props.href}>{this.props.children}</a>
+        <a id={this.props.id} className={this.rootClassNames()} href={this.props.href} target={this.props.target}>{this.props.children}</a>
       )
     }
     return(
