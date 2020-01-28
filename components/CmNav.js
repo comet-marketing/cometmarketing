@@ -54,7 +54,7 @@ export default class CmNav extends React.Component {
                   <NavLink href="/contact">Contact Us</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="https://tinyurl.com/CMF19app" target="_blank">Join Us</NavLink>
+                  <NavLink href="https://forms.gle/UGgvqdmeTVcHtpMd6" target="_blank">Join Us</NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink className='icon-wrapper' href='https://facebook.com/utdcometmarketing/' target="_blank">
