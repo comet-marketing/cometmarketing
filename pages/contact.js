@@ -37,6 +37,7 @@ export default class Contact extends Component {
     super(props);
     this.state = {
       email: "",
+      phone: "",
       name: "",
       message: "",
       whom: "",
@@ -54,6 +55,7 @@ export default class Contact extends Component {
     this.onRecaptchaChange = this.onRecaptchaChange.bind(this);
     this.onEmailChange = this.onEmailChange.bind(this);
     this.onNameChange = this.onNameChange.bind(this);
+    this.onPhoneChange = this.onPhoneChange.bind(this);
     this.onMessageChange = this.onMessageChange.bind(this);
     this.displayEmailInvalid = this.displayEmailInvalid.bind(this);
     this.onWhomSelect = this.onWhomSelect.bind(this);
@@ -86,6 +88,7 @@ export default class Contact extends Component {
         body: JSON.stringify({
           email: this.state.email,
           name: this.state.name,
+          phone: this.state.phone,
           message: this.state.message,
           whom: this.state.whom.toString(),
           where: this.state.where.toString(),
@@ -98,6 +101,7 @@ export default class Contact extends Component {
         this.setState({
           email: "",
           name: "",
+          phone: "",
           message: "",
           whom: "",
           where: "",
@@ -135,6 +139,10 @@ export default class Contact extends Component {
 
   onNameChange(e) {
     this.setState({ name: e.target.value });
+  }
+
+  onPhoneChange(e) {
+    this.setState({ phone: e.target.value });
   }
 
   onMessageChange(e) {
@@ -237,6 +245,10 @@ export default class Contact extends Component {
                   {this.state.displayInvalidMessage && 
                     <span className='text-danger'>Enter a valid email!</span>
                   }
+                </FormGroup>
+                <FormGroup>
+                  <Label for="contactPhone">Phone Number</Label>
+                  <Input onChange={this.onPhoneChange} value={this.state.phone} type="text" name="Phone" id="Phone" placeholder="111-222-1234" />
                 </FormGroup>
                 <FormGroup>
                   <Label for="contactSubject">Name &#160;(Organization)</Label>
