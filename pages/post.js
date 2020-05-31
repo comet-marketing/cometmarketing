@@ -1,3 +1,4 @@
+// unused JS file
 import React, { Component } from 'react';
 import { withRouter } from 'next/router'
 import Layout from '../components/Layout';
