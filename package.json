@@ -11,7 +11,7 @@
     "next": "^7.0.2",
     "next-ga": "https://github.com/almadireddy/next-ga",
     "node-fetch": "^2.3.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.14.1",
     "react": "^16.6.3",
     "react-animated-slider": "^1.1.4",
     "react-dom": "^16.6.3",
