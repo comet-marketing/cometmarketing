@@ -34,11 +34,11 @@ export default () => {
               <p className='text-center lead'>
                 <CallToAction dark href='/contact'>Contact us now!</CallToAction>
               </p>
-              {/* <p className='lead'>Want to join the team?</p>
+              <p className='lead'>Want to join the team?</p>
               <p>We're always looking for amazing, talented people to join the team. Click on Join Us below and apply today!</p>
               <p className='text-center lead'>
-                <CallToAction dark href=''>Join Us!</CallToAction>
-              </p> */}
+                <CallToAction dark href='https://forms.gle/fyE5cY3HnGthryW99' target="_blank">Join Us!</CallToAction>
+              </p>
             </Col>
           </Row>
         </Container>
