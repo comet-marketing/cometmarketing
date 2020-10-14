@@ -14,7 +14,7 @@ export default class Layout extends Component {
           <meta name='description' content={this.props.description}></meta>
           <meta name='keywords' content={this.props.keywords}></meta>
           <meta name='author' content={this.props.author}></meta>
-          {props.isHome && <meta name="google-site-verification" content="hxjFc4l-CMCNGmdIW7lkTbik_bc1hNOUcuUdFwhiUBU" />}
+          {this.props.isHome && <meta name="google-site-verification" content="hxjFc4l-CMCNGmdIW7lkTbik_bc1hNOUcuUdFwhiUBU" />}
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
           <meta charSet="UTF-8"></meta>
           <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400" rel="stylesheet"></link>
