@@ -1,13 +1,15 @@
 import Layout from "../components/Layout";
 import CallToAction from '../components/CallToAction';
 import { Component } from 'react';
-import { Container,
-          Button, 
-          Form, FormGroup, FormText, Label, Input, 
-          Row, Col,
-          Modal, ModalHeader, ModalBody, ModalFooter,
-          Popover, PopoverHeader, PopoverBody
-        } from 'reactstrap';
+import {
+  Container,
+  Button,
+  Form, FormGroup, FormText, Label, Input,
+  Row, Col,
+  Modal, ModalHeader, ModalBody, ModalFooter,
+  Popover, PopoverHeader, PopoverBody,
+  Collapse, Card, CardBody
+} from 'reactstrap';
 import ReCAPTCHA from "react-google-recaptcha";
 import fetch from "node-fetch";
 import Slider from 'react-animated-slider';
@@ -23,13 +25,13 @@ const whereOptions = [
   { value: 'Instagram', label: 'Instagram' },
   { value: 'Twitter', label: 'Twitter' },
   { value: 'YouTube', label: 'YouTube' },
-  { value: 'Word of Mouth', label: 'Word of Mouth'},
-  { value: 'Email Announcement', label: 'Email Announcement'},
-  { value: 'Google search', label: 'Google Search'},
-  { value: 'UTD event', label: 'UTD Event'},
-  { value: 'Comet Marketing Member', label: 'Comet Marketing Member'},
-  { value: 'Presence', label: 'Presence'},
-  { value: 'Other', label: 'Other'}
+  { value: 'Word of Mouth', label: 'Word of Mouth' },
+  { value: 'Email Announcement', label: 'Email Announcement' },
+  { value: 'Google search', label: 'Google Search' },
+  { value: 'UTD event', label: 'UTD Event' },
+  { value: 'Comet Marketing Member', label: 'Comet Marketing Member' },
+  { value: 'Presence', label: 'Presence' },
+  { value: 'Other', label: 'Other' }
 ];
 
 export default class Contact extends Component {
@@ -50,6 +52,7 @@ export default class Contact extends Component {
       recaptchaScore: "",
       dropdownOpen: false,
       modal: false,
+      tosBox: true
     };
     this.submitHandler = this.submitHandler.bind(this);
     this.onRecaptchaChange = this.onRecaptchaChange.bind(this);
@@ -67,7 +70,7 @@ export default class Contact extends Component {
   static async getInitialProps() {
     const res = await fetch('https://utdcometmarketing-api.herokuapp.com/testimonials?')
     let testimonials = await res.json()
-    return {testimonials}
+    return { testimonials }
   }
 
   componentDidMount() {
@@ -78,7 +81,7 @@ export default class Contact extends Component {
 
   async submitHandler(e) {
     e.preventDefault();
-    if (!(this.state.where == '' || this.state.whom == '' || this.state.email == '' || this.state.name == '' || this.state.message == '' || this.state.emailInvalid || this.state.recaptchaScore == "")) {
+    if (!(this.state.where == '' || this.state.whom == '' || this.state.email == '' || this.state.name == '' || this.state.message == '' || this.state.emailInvalid || this.state.recaptchaScore == "" || this.state.tosBox == true)) {
       this.setState({ displayEmptyMessage: false });
       let response = await fetch('https://utdcometmarketing-api.herokuapp.com/contactmessages', {
         method: 'POST',
@@ -96,7 +99,7 @@ export default class Contact extends Component {
         })
       });
       if (response.status == 200) {
-        this.setState({displaySuccessMessage: true});
+        this.setState({ displaySuccessMessage: true });
 
         this.setState({
           email: "",
@@ -111,29 +114,29 @@ export default class Contact extends Component {
           recaptchaScore: ""
         });
       } else {
-        this.setState({displayErrorMessage: true})
+        this.setState({ displayErrorMessage: true })
       }
       grecaptcha.reset();
     }
-    else 
-      this.setState({displayEmptyMessage: true});
+    else
+      this.setState({ displayEmptyMessage: true });
   }
 
   onRecaptchaChange(e) {
-    this.setState({recaptchaScore: e});
+    this.setState({ recaptchaScore: e });
   }
 
   onEmailChange(e) {
     this.setState({ email: e.target.value });
     let emailInvalid = e.target.value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) === null;
-    this.setState({ emailInvalid: emailInvalid}); 
+    this.setState({ emailInvalid: emailInvalid });
   }
 
   displayEmailInvalid() {
     if (this.state.emailInvalid) {
-      this.setState({displayInvalidMessage: true})
+      this.setState({ displayInvalidMessage: true })
     } else {
-      this.setState({displayInvalidMessage: false})
+      this.setState({ displayInvalidMessage: false })
     }
   }
 
@@ -150,11 +153,11 @@ export default class Contact extends Component {
   }
 
   onWhomSelect(e) {
-    this.setState({ whom: e.target.value})
+    this.setState({ whom: e.target.value })
   }
 
   onWhereSelect(e) {
-    this.setState({ where: e.target.value})
+    this.setState({ where: e.target.value })
   }
 
   toggleModal() {
@@ -163,6 +166,8 @@ export default class Contact extends Component {
     }));
   }
 
+  toggle = () => this.setState({tosBox: !this.state.tosBox});
+
 
   render() {
     return (
@@ -170,7 +175,7 @@ export default class Contact extends Component {
         <Container>
           <Row className='justify-content-center'>
             <Slider className='slider' autoplay={5000} infinite='true' >
-              {this.props.testimonials.map((testimonial, i) => 
+              {this.props.testimonials.map((testimonial, i) =>
                 <div className='justify-content-center testimonial' key={i}>
                   <div className='text-center'>
                     <p className='testimonial-quote'>" {testimonial.quote} "</p>
@@ -190,10 +195,10 @@ export default class Contact extends Component {
                   <br></br>
                   <br></br>
                   <br></br>
-                <b>Comet Marketing Creation Timelines:</b> <br></br>
+                  <b>Comet Marketing Creation Timelines:</b> <br></br>
                 </p>
                 Two weeks for a flyer <br></br>
-                One month for a custom designed logo<br></br>  
+                One month for a custom designed logo<br></br>
                 One week notice for small event photography or group pictures <br></br>
                 Two weeks for photography edits <br></br>
                 Around 1 month for videos <br></br>
@@ -216,11 +221,11 @@ export default class Contact extends Component {
               }
               <Form id='contact-form' className='contact-form' onSubmit={this.submitHandler}>
                 <FormGroup>
-                <Label for="contactWho">Who are you?</Label><br></br>
+                  <Label for="contactWho">Who are you?</Label><br></br>
                   <select
-                  value={this.state.whom}
-                  onChange={this.onWhomSelect}
-                  className='whom'>
+                    value={this.state.whom}
+                    onChange={this.onWhomSelect}
+                    className='whom'>
                     <option value='' disabled >Select...</option>
                     {whomOptions.map((option, i) => (
                       <option key={i} value={option.value}>{option.label}</option>
@@ -228,11 +233,11 @@ export default class Contact extends Component {
                   </select>
                 </FormGroup>
                 <FormGroup>
-                <Label for="contactWho">How did you hear about us?</Label><br></br>
+                  <Label for="contactWho">How did you hear about us?</Label><br></br>
                   <select
-                  value={this.state.where}
-                  onChange={this.onWhereSelect}
-                  className='whom'>
+                    value={this.state.where}
+                    onChange={this.onWhereSelect}
+                    className='whom'>
                     <option value='' disabled>Select...</option>
                     {whereOptions.map((option, i) => (
                       <option key={i} value={option.value}>{option.label}</option>
@@ -242,7 +247,7 @@ export default class Contact extends Component {
                 <FormGroup>
                   <Label for="contactEmail">Email</Label>
                   <Input onBlur={this.displayEmailInvalid} onChange={this.onEmailChange} value={this.state.email} type="email" name="email" id="email" placeholder="your_org@mail.com" />
-                  {this.state.displayInvalidMessage && 
+                  {this.state.displayInvalidMessage &&
                     <span className='text-danger'>Enter a valid email!</span>
                   }
                 </FormGroup>
@@ -256,12 +261,66 @@ export default class Contact extends Component {
                 </FormGroup>
                 <FormGroup>
                   <Label for="contactBody">Message Body</Label>
-                  <FormText rows='8' color='#2b2b2b' className='message-input' tag='textarea' onChange={this.onMessageChange} value={this.state.message} type="textarea" name="message" id="message" 
-                            placeholder="If enquiring about a future project please also include a probable timeline/deadline."></FormText>
+                  <FormText rows='8' color='#2b2b2b' className='message-input' tag='textarea' onChange={this.onMessageChange} value={this.state.message} type="textarea" name="message" id="message"
+                    placeholder="If enquiring about a future project please also include a probable timeline/deadline."></FormText>
                 </FormGroup>
                 {this.state.displayEmptyMessage &&
                   <p className='text-danger'>Make sure everything is filled out!</p>
                 }
+                <FormGroup>
+                    <Label check>
+                      <Input type="checkbox" onClick={this.toggle} />
+                      I Agree to the Terms and Conditions
+                    </Label>
+                    <br />
+                  <Collapse isOpen={this.state.tosBox}>
+                    <Card>
+                      <CardBody>
+                      Hello Valued Client! 
+                      
+                      We here at Comet Marketing (CM) value our clients and want to give you the best product 
+                      possible! However, we also value our artists and specialists so we ask you to agree to these 
+                      terms and conditions before we start working on your projects. This way we can keep our clients and 
+                      our CM members happy! 
+                      
+                      As a reminder, all our services are FREE and only cost the time of our dedicated members. 
+                      Please understand that along with being artists, our members are also students. 
+                      
+                      Ground Rules 
+                      
+                      We ask that you do not remove any Comet Marketing logos on any content, including 
+                      photography, videography, and graphic design. We also ask that you do not change any content 
+                      with our logo without approval from our team. 
+                      
+                      Graphic Design 
+                      
+                      We are limiting the number of major revisions on a design to 2 free revisions. Minor revisions 
+                      will be done at the inclination of the graphic designer.After 2, the project will be forwarded to 
+                      the graphic designer for a fee based on the designer. 
+                      
+                      Videography 
+                      
+                      Confirmations must be made 7 days in advance of the event. Cancellations must be done 24 
+                      hours in advance of the event. The only exception would be for emergencies. 
+                      
+                      Photography 
+                      
+                      Confirmations must be made 7 days in advance of the event. Cancellations must be done 24 
+                      hours in advance of the event. The only exception would be for emergencies.
+                      
+                      Penalty 
+                      
+                      Unfortunately, if you break the Terms and Conditions, we will no longer be able to prioritize 
+                      your project. Continued failure to uphold the Terms and Conditions will lead to a yearlong ban 
+                      of your organization from working with Comet Marketing. We know this sounds drastic, but if 
+                      you value our artists’ time like we do, it will not come to this. 
+                      
+                      Thank you for your understanding and we look forward to working with you! 
+                      </CardBody>
+                    </Card>
+                  </Collapse>
+                </FormGroup>
+                <br />
                 <FormGroup>
                   <ReCAPTCHA
                     sitekey="6LeyIokUAAAAAD86i0PeGaQUFDNzpa4pIuePOIp8"

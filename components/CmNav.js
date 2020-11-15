@@ -41,7 +41,7 @@ export default class CmNav extends React.Component {
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
-                <NavItem>
+                {/* <NavItem>
                   <NavLink href="/people">People</NavLink>
                 </NavItem>
                 <NavItem>
@@ -52,7 +52,7 @@ export default class CmNav extends React.Component {
                 </NavItem>
                 <NavItem>
                   <NavLink href="/contact">Contact Us</NavLink>
-                </NavItem>
+                </NavItem> */}
                 <NavItem>
                   <NavLink href="https://forms.gle/fyE5cY3HnGthryW99" target="_blank">Join Us</NavLink>
                 </NavItem>

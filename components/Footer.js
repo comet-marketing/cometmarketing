@@ -21,13 +21,13 @@ export default class Footer extends Component {
               <p>Here to help you market you.</p>
             </Col>
             <Col sm='8'>
-              <p className='github'>Website by Al and Mustafa | <a href='https://github.com/almadireddy/cometmarketing'>Github</a></p>
+              <p className='github'>Website by Al, Mustafa, and Bea | <a href='https://github.com/almadireddy/cometmarketing'>Github</a></p>
             </Col>
           </Row>
           <Row className='justify-content-between align-items-center'>
             <Col md='8'>
               <Nav>
-                <NavItem>
+                {/* <NavItem>
                   <NavLink href="/people">People</NavLink>
                 </NavItem>
                 <NavItem>
@@ -38,7 +38,7 @@ export default class Footer extends Component {
                 </NavItem>
                 <NavItem>
                   <NavLink href="/contact">Contact Us</NavLink>
-                </NavItem>
+                </NavItem> */}
                 <NavItem>
                   <NavLink href="https://forms.gle/fyE5cY3HnGthryW99" target="_blank">Join Us</NavLink>
                 </NavItem>
