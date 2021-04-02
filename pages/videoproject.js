@@ -17,10 +17,10 @@ class Photoproject extends Component {
   }
 
   static async getInitialProps({query}) {
-    const res = await fetch(`https://utdcmpatch.herokuapp.com/videoprojects/${query.slug}`)
+    const res = await fetch(`https://utdcmpatch.herokuapp.com/videoprojects/?slug=${query.slug}`)
     const data = await res.json()
     return {
-      project: data
+      project: data[0]
     }
   }
 

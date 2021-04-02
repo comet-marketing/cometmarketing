@@ -23,10 +23,10 @@ class DesignProject extends Component {
   }
 
   static async getInitialProps({query}) {
-    const res = await fetch(`https://utdcmpatch.herokuapp.com/designprojects/${query.slug}`)
+    const res = await fetch(`https://utdcmpatch.herokuapp.com/designprojects/?slug=${query.slug}`)
     const data = await res.json()
     return {
-      project: data
+      project: data[0]
     }
   }
 
@@ -59,7 +59,7 @@ class DesignProject extends Component {
   render() {
     const galleryPhotos = this.props.project.graphics.map((photo, i) => {
       return {
-        src: photo.url,
+        src: 'https://utdcmpatch.herokuapp.com' + photo.url,
         width: 3,
         height: 2,
         alt: photo.name

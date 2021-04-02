@@ -103,7 +103,7 @@ export default class Index extends Component {
                 <DynamicLink displayRoute='portfolio/photo-project' actualRoute='photoproject' slug={this.props.photoproj[0].slug}>
                   <LazyLoad offset={2000}>
                     <div className='crop'>
-                      <img alt={this.props.photoproj[0].title} className='img-fluid' src={this.props.photoproj[0].photos[0].url}></img>
+                      <img alt={this.props.photoproj[0].title} className='img-fluid' src={'https://utdcmpatch.herokuapp.com' + this.props.photoproj[0].photos[0].url}></img>
                     </div>
                   </LazyLoad>
                   <h2 className='heading'>{this.props.photoproj[0].title}</h2>
@@ -125,7 +125,7 @@ export default class Index extends Component {
                 <DynamicLink displayRoute='portfolio/design-project' actualRoute='designproject' slug={this.props.designproj[0].slug}>
                   <LazyLoad offset={2000}>
                     <div className='crop'>
-                      <img alt={this.props.designproj[0].title} className='img-fluid' src={this.props.designproj[0].thumbnail.url}></img>
+                      <img alt={this.props.designproj[0].title} className='img-fluid' src={'https://utdcmpatch.herokuapp.com' + this.props.designproj[0].thumbnail.url}></img>
                     </div>
                   </LazyLoad>
                   <h2 className='heading'>{this.props.designproj[0].title}</h2>

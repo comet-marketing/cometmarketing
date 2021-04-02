@@ -30,7 +30,7 @@ const HandleLink = ({project}) => {
     <DynamicLink displayRoute='portfolio/photo-project' actualRoute='photoproject' slug={project.slug}>
       <LazyLoad offset={500}>
       <div className='crop'>
-        <img alt={project.title} title={project.title} className='img-fluid' src={project.photos[0].url}></img>
+        <img alt={project.title} title={project.title} className='img-fluid' src={'https://utdcmpatch.herokuapp.com' + project.photos[0].url}></img>
       </div>
       </LazyLoad>
       <h2 className='heading'>{project.title}</h2>
@@ -63,7 +63,7 @@ const HandleLink = ({project}) => {
     <DynamicLink displayRoute='portfolio/design-project' actualRoute='designproject' slug={project.slug}>
       <LazyLoad offset={500}>
       <div className='crop'>
-        <img alt={project.title} title={project.title} className='img-fluid' src={project.thumbnail.url}></img>
+        <img alt={project.title} title={project.title} className='img-fluid' src={'https://utdcmpatch.herokuapp.com' + project.thumbnail.url}></img>
       </div>
       </LazyLoad>
       <h2 className='heading'>{project.title}</h2>
