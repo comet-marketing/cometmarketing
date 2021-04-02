@@ -34,6 +34,15 @@ export default class Index extends Component {
   }
 
   render() { 
+
+    return (
+      <Layout title='UTD Comet Marketing' pageName='Comet Marketing' keywords='Comet Marketing,UT Dallas,UTD,University of Texas at Dallas,Graphic Design,Videography,Photography,Web Design,Marketing,CM' description='Comet Marketing is a student-run marketing organization at UT Dallas. We offer photography, videography, graphic design, and general marketing solutions.' author='Al Madireddy,Mustafa Sadriwala'>
+        <div>
+          <p align="center">Sorry, this website is currently under maintenance!</p>
+          <p align="center">Please contact utdcometmarketing@gmail.com for further inquiries</p>
+        </div>
+      </Layout>
+    )
     return (
       <Layout title='UTD Comet Marketing' pageName='Comet Marketing' isHome={true} keywords='Comet Marketing,UT Dallas,UTD,University of Texas at Dallas,Graphic Design,Videography,Photography,Web Design,Marketing,CM' description='Comet Marketing is a student-run marketing organization at UT Dallas. We offer photography, videography, graphic design, and general marketing solutions.' author='Al Madireddy,Mustafa Sadriwala'>
         <Container fluid className='services-container'>
@@ -153,7 +162,7 @@ export default class Index extends Component {
                     {!!person.profilepicture &&
                       <LazyLoad offset={2000}>
                         <div className='crop'>
-                          <img alt={person.name} className='img-fluid' src={person.profilepicture.url}></img>
+                          <img alt={person.name} className='img-fluid' src={'https://utdcmpatch.herokuapp.com' + person.profilepicture.url}></img>
                         </div>
                       </LazyLoad>
 
