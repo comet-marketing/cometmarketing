@@ -17,7 +17,7 @@ class Photoproject extends Component {
   }
 
   static async getInitialProps({query}) {
-    const res = await fetch(`https://utdcometmarketing-api.herokuapp.com/videoprojects/${query.slug}`)
+    const res = await fetch(`https://utdcmpatch.herokuapp.com/videoprojects/${query.slug}`)
     const data = await res.json()
     return {
       project: data

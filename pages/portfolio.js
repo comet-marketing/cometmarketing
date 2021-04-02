@@ -111,11 +111,12 @@ export default class Portfolio extends Component {
   }
 
   static async getInitialProps() {
-    const res = await fetch('https://utdcometmarketing-api.herokuapp.com/photoprojects?_sort=date')
+    const res = await fetch('https://utdcmpatch.herokuapp.com/photoprojects?_sort=date')
     const photoprojects = await res.json()
-    const res2 = await fetch('https://utdcometmarketing-api.herokuapp.com/videoprojects?_sort=date')
+    console.log(photoprojects)
+    const res2 = await fetch('https://utdcmpatch.herokuapp.com/videoprojects?_sort=date')
     const videoprojects = await res2.json()
-    const res3 = await fetch('https://utdcometmarketing-api.herokuapp.com/designprojects?_sort=date')
+    const res3 = await fetch('https://utdcmpatch.herokuapp.com/designprojects?_sort=date')
     const designprojects = await res3.json()
     photoprojects.map(element => {
       element.type = 'photoproject'

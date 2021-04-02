@@ -12,7 +12,7 @@ import BreadcrumbRow from '../components/Breadcrumb';
 
 class Person extends Component {
   static async getInitialProps({query}) {
-    const res = await fetch(`https://utdcometmarketing-api.herokuapp.com/members/${query.slug}`)
+    const res = await fetch(`https://utdcmpatch.herokuapp.com/members/${query.slug}`)
     const data = await res.json()
 
     return {

@@ -8,30 +8,30 @@ import CallToAction from "../components/CallToAction";
 import LazyLoad from "react-lazy-load";
 
 export default class Index extends Component {
-  // static async getInitialProps() {
-  //   const res = await fetch('https://utdcometmarketing-api.herokuapp.com/projects?featured=true&_limit=3&_sort=createdAt:ASC')
-  //   let projects = await res.json()
-  //   const res2 = await fetch('https://utdcometmarketing-api.herokuapp.com/members?_limit=3&_sort=gradyear:DSC&Alum=false')
-  //   let members = await res2.json()
-  //   const one = await fetch('https://utdcometmarketing-api.herokuapp.com/photoprojects?_limit=1_sort=featured')
-  //   let photoproj = await one.json()
-  //   const two = await fetch('https://utdcometmarketing-api.herokuapp.com/designprojects?_limit=1_sort=featured')
-  //   let designproj = await two.json()
-  //   const three = await fetch('https://utdcometmarketing-api.herokuapp.com/videoprojects?_limit=1_sort=featured')
-  //   let vidproj = await three.json()
+  static async getInitialProps() {
+    // const res = await fetch('https://utdcmpatch.herokuapp.com/projects?featured=true&_limit=3&_sort=createdAt:ASC')
+    // let projects = await res.json()
+    const res2 = await fetch('https://utdcmpatch.herokuapp.com/members?_limit=3&_sort=gradyear:DSC&Alum=false')
+    let members = await res2.json()
+    const one = await fetch('https://utdcmpatch.herokuapp.com/photoprojects?_limit=1_sort=featured')
+    let photoproj = await one.json()
+    const two = await fetch('https://utdcmpatch.herokuapp.com/designprojects?_limit=1_sort=featured')
+    let designproj = await two.json()
+    const three = await fetch('https://utdcmpatch.herokuapp.com/videoprojects?_limit=1_sort=featured')
+    let vidproj = await three.json()
 
-  //   return { projects, members, photoproj, designproj, vidproj }
-  // }
+    return { /*projects,*/ members, photoproj, designproj, vidproj }
+  }
 
-  // componentWillMount() {
-  //   this.setState({
-  //     projects: this.props.projects,
-  //     members: this.props.members,
-  //     photoproj: this.props.photoproj,
-  //     designproj: this.props.designproj,
-  //     vidproj: this.props.vidproj,
-  //   })
-  // }
+  componentWillMount() {
+    this.setState({
+      projects: this.props.projects,
+      members: this.props.members,
+      photoproj: this.props.photoproj,
+      designproj: this.props.designproj,
+      vidproj: this.props.vidproj,
+    })
+  }
 
   render() {
     return (

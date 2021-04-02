@@ -11,7 +11,7 @@ import BlogPostPreview from '../components/BlogPostPreview';
 
 export default class Blog extends Component {
   static async getInitialProps() {
-    const res = await fetch('https://utdcometmarketing-api.herokuapp.com/posts')
+    const res = await fetch('https://utdcmpatch.herokuapp.com/posts')
     const posts = await res.json()
   
     return { posts }

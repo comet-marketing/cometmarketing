@@ -68,7 +68,7 @@ export default class Contact extends Component {
   }
 
   static async getInitialProps() {
-    const res = await fetch('https://utdcometmarketing-api.herokuapp.com/testimonials?')
+    const res = await fetch('https://utdcmpatch.herokuapp.com/testimonials?')
     let testimonials = await res.json()
     return { testimonials }
   }
@@ -83,7 +83,7 @@ export default class Contact extends Component {
     e.preventDefault();
     if (!(this.state.where == '' || this.state.whom == '' || this.state.email == '' || this.state.name == '' || this.state.message == '' || this.state.emailInvalid || this.state.recaptchaScore == "" || this.state.tosBox == true)) {
       this.setState({ displayEmptyMessage: false });
-      let response = await fetch('https://utdcometmarketing-api.herokuapp.com/contactmessages', {
+      let response = await fetch('https://utdcmpatch.herokuapp.com/contactmessages', {
         method: 'POST',
         headers: {
           "Content-Type": "application/json"

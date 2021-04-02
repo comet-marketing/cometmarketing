@@ -11,7 +11,7 @@ export default class Alumni extends Component {
       }
 
     static async getInitialProps() {
-        const res = await fetch('https://utdcometmarketing-api.herokuapp.com/members?Alum=true&_sort=gradyear:DESC')
+        const res = await fetch('https://utdcmpatch.herokuapp.com/members?Alum=true&_sort=gradyear:DESC')
         let people = await res.json()
         return { people }
       }
