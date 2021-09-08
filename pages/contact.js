@@ -111,6 +111,7 @@ export default class Contact extends Component {
           emailInvalid: false,
           displayInvalidMessage: false,
           displayEmptyMessage: false,
+          tosBox: true,
           recaptchaScore: ""
         });
       } else {
