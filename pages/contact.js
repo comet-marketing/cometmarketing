@@ -205,9 +205,9 @@ export default class Contact extends Component {
               </p>
             </Col>
           </Row>
-
-          <CallToAction href='https://forms.gle/v2xnnL3zTbK9aWEFA' id='main-call-to-action' target="_blank">Fill out our form here!</CallToAction>
-          
+          <Row className='justify-content-center'>
+            <CallToAction href='https://forms.gle/v2xnnL3zTbK9aWEFA' id='main-call-to-action' target="_blank" dark>Fill out our form here!</CallToAction>
+          </Row>
           {/* <Row className='justify-content-center'>
             <Col sm='12' md='6'>
               {this.state.displaySuccessMessage &&
