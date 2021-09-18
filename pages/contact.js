@@ -204,8 +204,6 @@ export default class Contact extends Component {
                 Around 1 month for videos <br></br>
               </p>
             </Col>
-          </Row>
-          <Row className='justify-content-center'>
             <CallToAction href='https://forms.gle/v2xnnL3zTbK9aWEFA' id='main-call-to-action' target="_blank" dark>Fill out our form here!</CallToAction>
           </Row>
           {/* <Row className='justify-content-center'>
