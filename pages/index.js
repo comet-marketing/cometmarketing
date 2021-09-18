@@ -78,7 +78,7 @@ export default class Index extends Component {
                 <h3 className="title">Web Design</h3>
                 <hr></hr>
                 <div>
-                  <p><span>&#191;</span>Like our website?</p>
+                  <p>Like our website?</p>
                   <p>We can help design, maintain, and update your organization's current website or help in creating a vision for a completely new one!</p>
                   <p>Having a beautiful online website will help to keep your organization relevant and visually stunning in the 21st century.</p>
                 </div>
