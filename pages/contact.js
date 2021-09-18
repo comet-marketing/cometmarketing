@@ -205,7 +205,7 @@ export default class Contact extends Component {
               </p>
             </Col>
           </Row>
-          <Row style="text-align: center;" className='justify-content-center'>
+          <Row className='justify-content-center'>
             <Col sm='6'>
               <CallToAction href='https://forms.gle/v2xnnL3zTbK9aWEFA' id='main-call-to-action' target="_blank" dark>Fill out our form here!</CallToAction>
             </Col>
