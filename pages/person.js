@@ -31,7 +31,7 @@ class Person extends Component {
         }          
           <Row>
             <Col>
-              <img alt={this.props.person.name + ' ' + this.props.person.role} title={this.props.person.name + ' ' + this.props.person.role} className='img-fluid profile' src={'https://utdcmpatch.herokuapp.com' + this.props.person.profilepicture.url}></img>
+              <img alt={this.props.person.name + ' ' + this.props.person.role} title={this.props.person.name + ' ' + this.props.person.role} className='img-fluid profile' src={this.props.person.profilepicture.url}></img>
             </Col>
             <Col sm="7">
               <p className='lead'>{this.props.person.bio}</p>

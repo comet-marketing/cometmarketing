@@ -59,7 +59,7 @@ class Photoproject extends Component {
   render() {
     const galleryPhotos = this.props.project.photos.map((photo, i) => {
       return {
-        src: 'https://utdcmpatch.herokuapp.com' + photo.url,
+        src: photo.url,
         width: 3,
         height: 2,
         alt: photo.name
