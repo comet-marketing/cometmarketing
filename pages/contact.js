@@ -13,6 +13,15 @@ import {
 import ReCAPTCHA from "react-google-recaptcha";
 import fetch from "node-fetch";
 import Slider from 'react-animated-slider';
+import styled from 'styled-components'
+
+const Wrapper = styled.button`
+  width: 100%;
+  border: 1px solid black;
+  display: block;
+  border: None;
+  background: None;
+`
 
 const whomOptions = [
   { value: 'client', label: 'Student Organization' },
@@ -166,7 +175,7 @@ export default class Contact extends Component {
     }));
   }
 
-  toggle = () => this.setState({tosBox: !this.state.tosBox});
+  toggle = () => this.setState({ tosBox: !this.state.tosBox });
 
 
   render() {
@@ -224,7 +233,9 @@ export default class Contact extends Component {
                   <p>Try submitting the form again.</p>
                 </div>
               }
-              <CallToAction href='https://forms.gle/v2xnnL3zTbK9aWEFA' id='main-call-to-action' target="_blank" dark>Fill out our form here!</CallToAction>
+              <Wrapper>
+                <CallToAction href='https://forms.gle/v2xnnL3zTbK9aWEFA' id='main-call-to-action' target="_blank" dark>Fill out our form here!</CallToAction>
+              </Wrapper>
               {/* 
               <Form id='contact-form' className='contact-form' onSubmit={this.submitHandler}>
                 <FormGroup>
