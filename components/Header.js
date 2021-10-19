@@ -38,7 +38,7 @@ export default class Header extends Component {
                 </p>
                 <CallToAction href='/contact' id='main-call-to-action'>Contact Us Now!</CallToAction>
                 
-                  <CallToAction href='https://forms.gle/fyE5cY3HnGthryW99' id='main-call-to-action' target="_blank">Join Comet Marketing!</CallToAction>
+                  {/* <CallToAction href='https://forms.gle/fyE5cY3HnGthryW99' id='main-call-to-action' target="_blank">Join Comet Marketing!</CallToAction> */}
                
               </Col>
             </Row>
