@@ -126,14 +126,14 @@ export default class People extends Component {
     return(
       <Layout title='People - UTD Comet Marketing' pageName='People' intro='This Is Us' banner='/static/Group_pic2_optimized.jpg' description='Meet the talented UTD students that make Comet Marketing a reality. From gifted graphic designers to skilled marketing gurus, we are incredibly proud of our exceptionally talented team.' keywords='comet marketing,Comet Marketing,CM,UTD,this is us,people,members,team' author='Al Madireddy,Mustafa Sadriwala'>
         <Container>
-        <Row className='justify-content-center'>
+        {/* <Row className='justify-content-center'>
           <Col sm='6'>
             <p className='lead'>Creative, talented, and looking for a way to show it off?</p>
             <p className='lead'>Comet Marketing is looking for designers, photographers, videographers, illustrators, and more to join the team!</p>
             <p className='lead'>We work on flyers, posters, social media posts, short videos, photoshoots, and more!</p>
-            {/* <CallToAction dark href='https://forms.gle/fyE5cY3HnGthryW99' target="_blank">Join Here!</CallToAction> */}
+            <CallToAction dark href='https://forms.gle/fyE5cY3HnGthryW99' target="_blank">Join Here!</CallToAction>
           </Col>
-          </Row>
+          </Row> */}
           <Row className = 'row-no-margin'>
             <Col sm={{size:3, order: 2, offset: 9}}>
               <select
